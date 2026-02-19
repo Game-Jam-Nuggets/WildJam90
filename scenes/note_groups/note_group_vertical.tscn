@@ -9,15 +9,16 @@ script = ExtResource("1_lg2cr")
 [node name="note_container" type="Node2D" parent="." unique_id=1616491492]
 
 [node name="note_medium" parent="note_container" unique_id=1990359077 instance=ExtResource("2_712g8")]
+position = Vector2(0, 121)
 
 [node name="note_medium2" parent="note_container" unique_id=1042077005 instance=ExtResource("2_712g8")]
-position = Vector2(0, -80)
+position = Vector2(0, 41)
 
 [node name="note_medium3" parent="note_container" unique_id=1132763664 instance=ExtResource("2_712g8")]
-position = Vector2(0, -160)
+position = Vector2(0, -39)
 
 [node name="note_medium4" parent="note_container" unique_id=922674661 instance=ExtResource("2_712g8")]
-position = Vector2(0, -240)
+position = Vector2(0, -119)
 
 [node name="existence_timer" type="Timer" parent="." unique_id=1942558551]
 one_shot = true

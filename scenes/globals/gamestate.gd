@@ -30,6 +30,7 @@ func _ready():
 	
 	for info in level_infos:
 		level_dict[info.name] = info
+	
 
 func _establish_events():
 	Events.group_finished.connect(_group_finished)

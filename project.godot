@@ -21,6 +21,16 @@ Gamestate="*uid://cv7s1dwsycv3c"
 Events="*uid://cx20otxa87gdr"
 Enums="*uid://c1rbw8j0mwig1"
 
+[file_customization]
+
+folder_colors={
+"res://assets/": "green",
+"res://assets/audio/": "teal",
+"res://assets/visual/": "blue",
+"res://scenes/": "orange",
+"res://scenes/globals/": "gray"
+}
+
 [physics]
 
 common/physics_ticks_per_second=120
