@@ -1,0 +1,18 @@
+[gd_resource type="Theme" format=3 uid="uid://b713thhl0tehm"]
+
+[ext_resource type="FontFile" uid="uid://b53i0n502ixiy" path="res://assets/visual/ui/main_menu/body_font.ttf" id="1_va2tg"]
+[ext_resource type="StyleBox" uid="uid://dvka7payfr23e" path="res://themes/menu_button_box.tres" id="2_058lc"]
+
+[resource]
+Button/colors/font_color = Color(0.6901961, 0.45490196, 0.16862746, 1)
+Button/colors/font_focus_color = Color(0.87058824, 0.59607846, 0.27450982, 1)
+Button/colors/font_hover_color = Color(0.86903757, 0.5968675, 0.27611607, 1)
+Button/colors/font_hover_pressed_color = Color(0.5178272, 0.33515885, 0.11088275, 1)
+Button/colors/font_pressed_color = Color(0.5176471, 0.33333334, 0.10980392, 1)
+Button/font_sizes/font_size = 60
+Button/fonts/font = ExtResource("1_va2tg")
+Button/styles/disabled = ExtResource("2_058lc")
+Button/styles/focus = ExtResource("2_058lc")
+Button/styles/hover = ExtResource("2_058lc")
+Button/styles/normal = ExtResource("2_058lc")
+Button/styles/pressed = ExtResource("2_058lc")

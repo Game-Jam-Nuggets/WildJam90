@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://cyn5jqcvbhafk"]
+
+[ext_resource type="Theme" uid="uid://b713thhl0tehm" path="res://themes/main_menu.tres" id="1_gaoia"]
+[ext_resource type="Texture2D" uid="uid://r7wycdrpjpps" path="res://assets/visual/ui/main_menu/menu_background.jpg" id="1_hldyk"]
+[ext_resource type="Texture2D" uid="uid://bhf4o2vw0uhw5" path="res://assets/visual/ui/main_menu/star_map.png" id="2_bvsed"]
+[ext_resource type="Texture2D" uid="uid://b50inn3vichg5" path="res://assets/visual/ui/main_menu/star_stamp.png" id="3_kpwh7"]
+[ext_resource type="Texture2D" uid="uid://d1rme2adksdgq" path="res://assets/visual/ui/main_menu/menu_border.png" id="4_kpwh7"]
+[ext_resource type="FontFile" uid="uid://bi8ayjyxn2dxa" path="res://assets/visual/ui/main_menu/title_font.ttf" id="5_gaoia"]
+
+[node name="MainMenu" type="Control" unique_id=1344294756]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_gaoia")
+
+[node name="BG" type="TextureRect" parent="." unique_id=222124499]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_hldyk")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1976396852]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StarChart" type="TextureRect" parent="." unique_id=111031272]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 15.0
+offset_right = 377.0
+offset_bottom = 361.0
+texture = ExtResource("2_bvsed")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="StarStamp" type="TextureRect" parent="." unique_id=967892003]
+layout_mode = 0
+offset_left = 1635.0
+offset_top = 14.0
+offset_right = 1886.0
+offset_bottom = 265.0
+texture = ExtResource("3_kpwh7")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=26840146]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VSplitContainer" type="VSplitContainer" parent="CenterContainer" unique_id=1754267750]
+layout_mode = 2
+split_offsets = PackedInt32Array(300)
+split_offset = 300
+
+[node name="TitleBorder" type="TextureRect" parent="CenterContainer/VSplitContainer" unique_id=550444631]
+layout_mode = 2
+texture = ExtResource("4_kpwh7")
+
+[node name="Title" type="Label" parent="CenterContainer/VSplitContainer/TitleBorder" unique_id=472385740]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -239.77667
+offset_top = -87.90848
+offset_right = 227.74542
+offset_bottom = 68.09152
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.08726646
+theme_override_colors/font_color = Color(0.2627451, 0.18431373, 0.1882353, 1)
+theme_override_fonts/font = ExtResource("5_gaoia")
+theme_override_font_sizes/font_size = 76
+text = "Menu"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/VSplitContainer" unique_id=2070097341]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_right = 128
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VSplitContainer/MarginContainer" unique_id=1893015678]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LevelsButton" type="Button" parent="CenterContainer/VSplitContainer/MarginContainer/VBoxContainer" unique_id=44922294]
+layout_mode = 2
+text = "levels"
+
+[node name="SettingsButton" type="Button" parent="CenterContainer/VSplitContainer/MarginContainer/VBoxContainer" unique_id=2074663169]
+layout_mode = 2
+text = "settings"
+
+[node name="CreditsButton" type="Button" parent="CenterContainer/VSplitContainer/MarginContainer/VBoxContainer" unique_id=1735130559]
+layout_mode = 2
+text = "credits"

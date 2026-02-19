@@ -11,7 +11,7 @@ var current_scene: Node = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	load_game_scene()
+	load_main_menu_scene()
 	
 ## --- public methods ---
 
