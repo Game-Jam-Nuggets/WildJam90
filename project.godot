@@ -10,14 +10,14 @@ config_version=5
 
 [application]
 
-config/name="fruiting my ninja"
+config/name="hyla the star mapper"
 run/main_scene="uid://dff2qerboyywc"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Gamestate="*uid://bjs75bujddsv1"
+Gamestate="*uid://cv7s1dwsycv3c"
 Events="*uid://cx20otxa87gdr"
 Enums="*uid://c1rbw8j0mwig1"
 
