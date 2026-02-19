@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="fruiting my ninja"
-run/main_scene="uid://dff2qerboyywc"
+run/main_scene="uid://dy8pprnwm2b0y"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Gamestate="*uid://bjs75bujddsv1"
 Events="*uid://cx20otxa87gdr"
 Enums="*uid://c1rbw8j0mwig1"
+SceneManager="*uid://mr4xcjcvobtu"
 
 [physics]
 

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://mr4xcjcvobtu"]
+
+[ext_resource type="Script" uid="uid://gyybt16tc4wh" path="res://scenes/autoload/scene_manager.gd" id="1_p0tc3"]
+[ext_resource type="PackedScene" uid="uid://dff2qerboyywc" path="res://scenes/game.tscn" id="2_ta8lv"]
+
+[node name="SceneManager" type="Node" unique_id=760863871]
+script = ExtResource("1_p0tc3")
+game_scene = ExtResource("2_ta8lv")
