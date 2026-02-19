@@ -117,8 +117,8 @@ _data = {
 [node name="background_sprite" type="Sprite2D" parent="play_area/background2" unique_id=270263630]
 modulate = Color(0.70380783, 0.70380783, 0.70380783, 1)
 z_index = -2
-position = Vector2(573, 323)
-scale = Vector2(1.8135861, 1.1314878)
+position = Vector2(960.05505, 543.5)
+scale = Vector2(3.036509, 1.8944637)
 texture = ExtResource("1_jh4e4")
 
 [node name="note_area" type="Node2D" parent="play_area" unique_id=121715461]

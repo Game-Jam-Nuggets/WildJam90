@@ -2,6 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://b713thhl0tehm" path="res://themes/main_menu.tres" id="1_gaoia"]
 [ext_resource type="Texture2D" uid="uid://r7wycdrpjpps" path="res://assets/visual/ui/main_menu/menu_background.jpg" id="1_hldyk"]
+[ext_resource type="Script" uid="uid://bjkgtie21wbaf" path="res://scenes/globals/main_menu.gd" id="2_6o1s6"]
 [ext_resource type="Texture2D" uid="uid://bhf4o2vw0uhw5" path="res://assets/visual/ui/main_menu/star_map.png" id="2_bvsed"]
 [ext_resource type="Texture2D" uid="uid://b50inn3vichg5" path="res://assets/visual/ui/main_menu/star_stamp.png" id="3_kpwh7"]
 [ext_resource type="Texture2D" uid="uid://d1rme2adksdgq" path="res://assets/visual/ui/main_menu/menu_border.png" id="4_kpwh7"]
@@ -96,6 +97,7 @@ theme_override_constants/margin_right = 128
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VSplitContainer/MarginContainer" unique_id=1893015678]
 layout_mode = 2
 size_flags_vertical = 3
+script = ExtResource("2_6o1s6")
 
 [node name="LevelsButton" type="Button" parent="CenterContainer/VSplitContainer/MarginContainer/VBoxContainer" unique_id=44922294]
 layout_mode = 2
@@ -108,3 +110,7 @@ text = "settings"
 [node name="CreditsButton" type="Button" parent="CenterContainer/VSplitContainer/MarginContainer/VBoxContainer" unique_id=1735130559]
 layout_mode = 2
 text = "credits"
+
+[connection signal="pressed" from="CenterContainer/VSplitContainer/MarginContainer/VBoxContainer/LevelsButton" to="CenterContainer/VSplitContainer/MarginContainer/VBoxContainer" method="_on_levels_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VSplitContainer/MarginContainer/VBoxContainer/SettingsButton" to="CenterContainer/VSplitContainer/MarginContainer/VBoxContainer" method="_on_settings_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VSplitContainer/MarginContainer/VBoxContainer/CreditsButton" to="CenterContainer/VSplitContainer/MarginContainer/VBoxContainer" method="_on_credits_button_pressed"]
