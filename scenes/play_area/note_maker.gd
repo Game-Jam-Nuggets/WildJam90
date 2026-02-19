@@ -35,6 +35,8 @@ const NOTE_GROUP_CURVE_DOWN = preload("uid://brewv3vxx0xpu")
 
 func _ready():
 	Events.level_start.connect(_start_level)
+	
+	Events.level_selected.emit(Level_Info.LEVEL_NAME.LEVEL_1) # debug
 
 func _start_level(level_info : Level_Info):
 	# setup 
@@ -46,14 +48,13 @@ func _start_level(level_info : Level_Info):
 	# start
 	conductor.play(); music_player.play()
 	
-
-func _add_group(group : Enums.Groups, position : Vector2): # position is by canvas percentage
-	var grouping_spawn_pos = position
+func _add_group(group : Enums.Groups): # position is by canvas percentage
+	#var grouping_spawn_pos = position
 	var group_tscn = _fetch_group(group)
 	
 	var group_instance = group_tscn.instantiate()
 	note_area.add_child(group_instance)
-	group_instance.global_position = _fetch_canvas_pos_by_percent(position)
+	group_instance.global_position = grouping_positioner.position
 
 func _fetch_canvas_pos_by_percent(percent : Vector2):
 	return Vector2(viewport_size.x * (percent.x / 100.0), viewport_size.y * (percent.y / 100.0))

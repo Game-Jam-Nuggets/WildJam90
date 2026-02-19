@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bcstecnlqco6c"
-path="res://.godot/imported/watermelon-4988431_1280.webp-4bfabb8b802ceda199f72dd7e98e14bd.ctex"
+path="res://.godot/imported/watermelon_test.webp-4039afcbf2c4a2766422e95843b6d9a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/watermelon-4988431_1280.webp"
-dest_files=["res://.godot/imported/watermelon-4988431_1280.webp-4bfabb8b802ceda199f72dd7e98e14bd.ctex"]
+source_file="res://assets/visual/sprites/watermelon_test.webp"
+dest_files=["res://.godot/imported/watermelon_test.webp-4039afcbf2c4a2766422e95843b6d9a1.ctex"]
 
 [params]
 

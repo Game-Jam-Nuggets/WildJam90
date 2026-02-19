@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bfiy7q6u5uhcd"
+path="res://.godot/imported/Saint Paul - That 90s Feelin' - EELF.wav-91833da996bdf7733591d0846ba2b78c.sample"
+
+[deps]
+
+source_file="res://assets/audio/music/Saint Paul - That 90s Feelin' - EELF.wav"
+dest_files=["res://.godot/imported/Saint Paul - That 90s Feelin' - EELF.wav-91833da996bdf7733591d0846ba2b78c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
