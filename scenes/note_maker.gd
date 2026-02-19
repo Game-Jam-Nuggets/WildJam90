@@ -1,8 +1,10 @@
 extends Node2D
 
 @onready var conductor: AnimationPlayer = $conductor
+@onready var music_player: AudioStreamPlayer2D = $music_player
 
 @export var note_area : Node2D
+@export var grouping_positioner : Node2D
 
 var grouping_spawn_pos = Vector2(0,0) # percentage between 0 and 100%
 
@@ -20,20 +22,34 @@ const NOTE_GROUP_CURVE_DOWN = preload("uid://brewv3vxx0xpu")
 # this will need to be able to load a song based upon what is stored and it name under an
 # enum, for right now it will just fucking autostart
 
-# note that when spawning notes in the conductor, they should be
-# 1. snapping should be set to increments of seconds that equal the bpm, specifcally 60 / bpm
-# 2. a beat ahead of where they are intended to spawn
+# EDIT: WE REDOING THIS ENTIRELY
 
-# for ex, current song is 125 bpm so snapping is set to 0.48
+# animations will now be the 4 beats per one second
+# this makes it easy for:
+# 1. being able to tell where in the music you are when placing beats
+# 2. allows for proper scaling of animation when being played
+
+# we will instead adjust anim playback speed to match the bpm, much more simple
+# therefore, set all animations to snap at 0.25, and adjust lengths accordingly
+# ps. this means length of animation is basically the amount of measures in a song
 
 func _ready():
-	conductor.play("that 90's feelin"); conductor.pause()
-	conductor.advance(Gamestate.debug_start_time)
-	conductor.play()
+	Events.level_start.connect(_start_level)
+
+func _start_level(level_info : Level_Info):
+	# setup 
+	conductor.current_animation = level_info.conductor_anim
+	conductor.speed_scale = 0.25 * (Gamestate.current_bpm / 60.0) # scaling animation to the bpm
+	
+	music_player.stream = level_info.music_file
+	
+	# start
+	conductor.play(); music_player.play()
+	
 
 func _add_group(group : Enums.Groups, position : Vector2): # position is by canvas percentage
 	var grouping_spawn_pos = position
-	var group_tscn = fetch_group(group)
+	var group_tscn = _fetch_group(group)
 	
 	var group_instance = group_tscn.instantiate()
 	note_area.add_child(group_instance)
@@ -42,7 +58,7 @@ func _add_group(group : Enums.Groups, position : Vector2): # position is by canv
 func _fetch_canvas_pos_by_percent(percent : Vector2):
 	return Vector2(viewport_size.x * (percent.x / 100.0), viewport_size.y * (percent.y / 100.0))
 
-func fetch_group(group_name : Enums.Groups):
+func _fetch_group(group_name : Enums.Groups):
 	var group_tscn = null
 	match group_name:
 		Enums.Groups.HORIZONTAL: group_tscn = NOTE_GROUP_HORIZONTAL

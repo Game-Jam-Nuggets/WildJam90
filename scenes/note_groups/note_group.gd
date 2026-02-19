@@ -13,8 +13,8 @@ func _ready():
 		note.hit.connect(note_hit)
 		note.miss.connect(note_missed)
 		
-	existence_timer.wait_time = Gamestate.beat_length * Gamestate.note_existence_length
- 
+	existence_timer.wait_time = Gamestate.beat_length * float(Gamestate.note_existence_length)
+
 func note_hit():
 	notes_hit += 1
 	notes_finished += 1
