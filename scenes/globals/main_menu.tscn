@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bhf4o2vw0uhw5" path="res://assets/visual/ui/main_menu/star_map.png" id="2_bvsed"]
 [ext_resource type="Texture2D" uid="uid://b50inn3vichg5" path="res://assets/visual/ui/main_menu/star_stamp.png" id="3_kpwh7"]
 [ext_resource type="Texture2D" uid="uid://d1rme2adksdgq" path="res://assets/visual/ui/main_menu/menu_border.png" id="4_kpwh7"]
-[ext_resource type="FontFile" uid="uid://bi8ayjyxn2dxa" path="res://assets/visual/ui/main_menu/title_font.ttf" id="5_gaoia"]
+[ext_resource type="AudioStream" uid="uid://nckpyyyxfd3l" path="res://assets/audio/ui/UI Button Select.ogg" id="8_mwm4x"]
 
 [node name="MainMenu" type="Control" unique_id=1344294756]
 layout_mode = 3
@@ -22,34 +22,6 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_hldyk")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1976396852]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="StarChart" type="TextureRect" parent="." unique_id=111031272]
-layout_mode = 0
-offset_left = 31.0
-offset_top = 15.0
-offset_right = 377.0
-offset_bottom = 361.0
-texture = ExtResource("2_bvsed")
-expand_mode = 1
-stretch_mode = 4
-
-[node name="StarStamp" type="TextureRect" parent="." unique_id=967892003]
-layout_mode = 0
-offset_left = 1635.0
-offset_top = 14.0
-offset_right = 1886.0
-offset_bottom = 265.0
-texture = ExtResource("3_kpwh7")
-expand_mode = 1
-stretch_mode = 4
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=26840146]
 layout_mode = 1
@@ -82,8 +54,6 @@ offset_bottom = 68.09152
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.08726646
-theme_override_colors/font_color = Color(0.2627451, 0.18431373, 0.1882353, 1)
-theme_override_fonts/font = ExtResource("5_gaoia")
 theme_override_font_sizes/font_size = 76
 text = "Menu"
 horizontal_alignment = 1
@@ -98,6 +68,7 @@ theme_override_constants/margin_right = 128
 layout_mode = 2
 size_flags_vertical = 3
 script = ExtResource("2_6o1s6")
+button_sound = ExtResource("8_mwm4x")
 
 [node name="LevelsButton" type="Button" parent="CenterContainer/VSplitContainer/MarginContainer/VBoxContainer" unique_id=44922294]
 layout_mode = 2
@@ -110,6 +81,71 @@ text = "settings"
 [node name="CreditsButton" type="Button" parent="CenterContainer/VSplitContainer/MarginContainer/VBoxContainer" unique_id=1735130559]
 layout_mode = 2
 text = "credits"
+
+[node name="StarChart" type="TextureRect" parent="." unique_id=111031272]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 15.0
+offset_right = 377.0
+offset_bottom = 361.0
+texture = ExtResource("2_bvsed")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="FigLabel" type="Label" parent="StarChart" unique_id=1174505212]
+layout_mode = 0
+offset_left = 95.0
+offset_top = -12.0
+offset_right = 216.0
+offset_bottom = 42.0
+theme_override_font_sizes/font_size = 24
+text = "Fig. 27."
+
+[node name="No4" type="Label" parent="StarChart/FigLabel" unique_id=582317883]
+layout_mode = 0
+offset_left = 242.0
+offset_top = 53.0
+offset_right = 363.0
+offset_bottom = 107.0
+theme_override_font_sizes/font_size = 20
+text = "No. 4."
+
+[node name="No33" type="Label" parent="StarChart/FigLabel" unique_id=104184575]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 132.0
+offset_right = 370.0
+offset_bottom = 186.0
+theme_override_font_sizes/font_size = 20
+text = "No. 33."
+
+[node name="No93" type="Label" parent="StarChart/FigLabel" unique_id=1584677546]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 233.0
+offset_right = 369.0
+offset_bottom = 287.0
+theme_override_font_sizes/font_size = 20
+text = "No. 93."
+
+[node name="StarStamp" type="TextureRect" parent="." unique_id=967892003]
+layout_mode = 0
+offset_left = 1635.0
+offset_top = 14.0
+offset_right = 1886.0
+offset_bottom = 265.0
+texture = ExtResource("3_kpwh7")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="No17" type="Label" parent="StarStamp" unique_id=1999574111]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 233.0
+offset_right = 198.0
+offset_bottom = 305.0
+theme_override_font_sizes/font_size = 32
+text = "No. 17."
 
 [connection signal="pressed" from="CenterContainer/VSplitContainer/MarginContainer/VBoxContainer/LevelsButton" to="CenterContainer/VSplitContainer/MarginContainer/VBoxContainer" method="_on_levels_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VSplitContainer/MarginContainer/VBoxContainer/SettingsButton" to="CenterContainer/VSplitContainer/MarginContainer/VBoxContainer" method="_on_settings_button_pressed"]

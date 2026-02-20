@@ -1,7 +1,6 @@
 extends Node2D
 
 @onready var conductor: AnimationPlayer = $conductor
-@onready var music_player: AudioStreamPlayer2D = $music_player
 
 @export var note_area : Node2D
 @export var grouping_positioner : Node2D
@@ -43,10 +42,11 @@ func _start_level(level_info : Level_Info):
 	conductor.current_animation = level_info.conductor_anim
 	conductor.speed_scale = 0.25 * (Gamestate.current_bpm / 60.0) # scaling animation to the bpm
 	
-	music_player.stream = level_info.music_file
+	# music_player.stream = level_info.music_file
+	AudioManager.set_music(level_info.music_file, 0.5)
 	
 	# start
-	conductor.play(); music_player.play()
+	conductor.play();
 	
 func _add_group(group : Enums.Groups): # position is by canvas percentage
 	#var grouping_spawn_pos = position

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://27puu8x3hot3"
+path="res://.godot/imported/Star Break 3.ogg-c644397b6409a0bc6e311f6df71d919e.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/game/Star Break 3.ogg"
+dest_files=["res://.godot/imported/Star Break 3.ogg-c644397b6409a0bc6e311f6df71d919e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

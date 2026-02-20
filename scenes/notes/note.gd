@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var star_break_sounds: Array[AudioStream]
+
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var existence_timer: Timer = $existence_timer
 
@@ -17,6 +19,8 @@ func _on_area_2d_mouse_shape_entered(shape_idx: int) -> void:
 	note_hit = true
 	animation_player.speed_scale = 1.0
 	animation_player.play("hit")
+	
+	AudioManager.play_sfx(star_break_sounds.pick_random(), 0.5)
 	
 	hit.emit()
 	Events.note_hit.emit()

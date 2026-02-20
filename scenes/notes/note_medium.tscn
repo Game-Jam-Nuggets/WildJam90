@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://cmkgi7bk2np52"]
 
 [ext_resource type="Script" uid="uid://6p6ohgm0b32f" path="res://scenes/notes/note.gd" id="1_66ngb"]
+[ext_resource type="AudioStream" uid="uid://bpyk63dxau5t1" path="res://assets/audio/game/Star Break 1.ogg" id="2_6ioka"]
+[ext_resource type="AudioStream" uid="uid://crnbxxoijrecg" path="res://assets/audio/game/Star Break 2.ogg" id="3_ootjf"]
+[ext_resource type="AudioStream" uid="uid://27puu8x3hot3" path="res://assets/audio/game/Star Break 3.ogg" id="4_r2pak"]
+[ext_resource type="AudioStream" uid="uid://dbrtnhvh63v26" path="res://assets/audio/game/Star Break 4.ogg" id="5_wpmfr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w7eif"]
 radius = 22.0
@@ -350,6 +354,7 @@ _data = {
 [node name="note_medium" type="Node2D" unique_id=1990359077]
 scale = Vector2(1.6, 1.6)
 script = ExtResource("1_66ngb")
+star_break_sounds = Array[AudioStream]([ExtResource("2_6ioka"), ExtResource("3_ootjf"), ExtResource("4_r2pak"), ExtResource("5_wpmfr")])
 
 [node name="area_hit_collider" type="Area2D" parent="." unique_id=1556294286]
 

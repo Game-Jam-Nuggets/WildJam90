@@ -2,6 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://b53i0n502ixiy" path="res://assets/visual/ui/main_menu/body_font.ttf" id="1_va2tg"]
 [ext_resource type="StyleBox" uid="uid://dvka7payfr23e" path="res://themes/menu_button_box.tres" id="2_058lc"]
+[ext_resource type="FontFile" uid="uid://bi8ayjyxn2dxa" path="res://assets/visual/ui/main_menu/title_font.ttf" id="3_058lc"]
 
 [resource]
 Button/colors/font_color = Color(0.6901961, 0.45490196, 0.16862746, 1)
@@ -16,3 +17,6 @@ Button/styles/focus = ExtResource("2_058lc")
 Button/styles/hover = ExtResource("2_058lc")
 Button/styles/normal = ExtResource("2_058lc")
 Button/styles/pressed = ExtResource("2_058lc")
+Label/colors/font_color = Color(0.2627451, 0.18431373, 0.1882353, 1)
+Label/font_sizes/font_size = 24
+Label/fonts/font = ExtResource("3_058lc")
