@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://c5mmc04isp434" path="res://assets/visual/backgrounds/meekworld.PNG" id="1_jh4e4"]
 [ext_resource type="Script" uid="uid://df0rrtau0ynkj" path="res://scenes/play_area/positioner_debug_mesh.gd" id="2_jygib"]
 [ext_resource type="Script" uid="uid://b58x0n1lg8eev" path="res://scenes/play_area/note_maker.gd" id="3_1n7fa"]
-[ext_resource type="AudioStream" uid="uid://bfiy7q6u5uhcd" path="res://assets/audio/music/Saint Paul - That 90s Feelin' - EELF.wav" id="4_o3jcf"]
 [ext_resource type="Script" uid="uid://pi0l8btk6wub" path="res://scenes/play_area/play_area_ui.gd" id="6_mungy"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_tefeu"]
@@ -138,10 +137,6 @@ grouping_positioner = NodePath("../grouping_positioner")
 
 [node name="conductor" type="AnimationPlayer" parent="play_area/note_maker" unique_id=842987069]
 libraries/ = SubResource("AnimationLibrary_o6xl0")
-
-[node name="music_player" type="AudioStreamPlayer2D" parent="play_area/note_maker" unique_id=682278054]
-stream = ExtResource("4_o3jcf")
-volume_db = -4.0
 
 [node name="ui" type="CanvasLayer" parent="play_area" unique_id=1490530999]
 script = ExtResource("6_mungy")

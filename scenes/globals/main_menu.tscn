@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b50inn3vichg5" path="res://assets/visual/ui/main_menu/star_stamp.png" id="3_kpwh7"]
 [ext_resource type="Texture2D" uid="uid://d1rme2adksdgq" path="res://assets/visual/ui/main_menu/menu_border.png" id="4_kpwh7"]
 [ext_resource type="FontFile" uid="uid://bi8ayjyxn2dxa" path="res://assets/visual/ui/main_menu/title_font.ttf" id="5_gaoia"]
+[ext_resource type="AudioStream" uid="uid://nckpyyyxfd3l" path="res://assets/audio/ui/UI Button Select.ogg" id="8_mwm4x"]
 
 [node name="MainMenu" type="Control" unique_id=1344294756]
 layout_mode = 3
@@ -98,6 +99,7 @@ theme_override_constants/margin_right = 128
 layout_mode = 2
 size_flags_vertical = 3
 script = ExtResource("2_6o1s6")
+button_sound = ExtResource("8_mwm4x")
 
 [node name="LevelsButton" type="Button" parent="CenterContainer/VSplitContainer/MarginContainer/VBoxContainer" unique_id=44922294]
 layout_mode = 2
