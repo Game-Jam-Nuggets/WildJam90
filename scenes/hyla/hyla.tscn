@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://b2ikhgnuy6c7x"]
 
 [ext_resource type="Script" uid="uid://cnudljnsc8v1v" path="res://scenes/hyla/hyla.gd" id="1_1osun"]
-[ext_resource type="Texture2D" uid="uid://bcpdif0ydm727" path="res://assets/visual/sprites/Hyla-MC_Back.png" id="1_ufhjr"]
 [ext_resource type="Texture2D" uid="uid://do3addcsoto1f" path="res://assets/visual/sprites/Hyla_Sword-1.png" id="1_vupcl"]
 [ext_resource type="AudioStream" uid="uid://symmg2wk4dxq" path="res://assets/audio/game/Footstep 1.ogg" id="2_rrpej"]
 [ext_resource type="AudioStream" uid="uid://rwaivgvah0a7" path="res://assets/audio/game/Footstep 2.ogg" id="3_x1u1l"]
 [ext_resource type="AudioStream" uid="uid://hnnmja63n2tq" path="res://assets/audio/game/Footstep 3.ogg" id="4_7rp17"]
+[ext_resource type="Texture2D" uid="uid://88rsa24a3yfo" path="res://assets/visual/sprites/Hyla-MC_Back-noLhand.png" id="6_rrpej"]
+[ext_resource type="Texture2D" uid="uid://cpkd2qxnmvqos" path="res://assets/visual/sprites/Hyla_Arm18px-1.png" id="6_x1u1l"]
 
 [sub_resource type="Animation" id="Animation_vupcl"]
 length = 0.001
@@ -56,6 +57,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HylaBody/SwordPoint:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_1osun"]
@@ -127,6 +140,18 @@ tracks/4/keys = {
 "method": &"play_footstep"
 }]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HylaBody/SwordPoint:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.16666661, 0.6, 0.76666665),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.17453292, 0.0, 0.17453292]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lle8x"]
 _data = {
@@ -142,15 +167,20 @@ footstep_sounds = Array[AudioStream]([ExtResource("2_rrpej"), ExtResource("3_x1u
 rotation = -0.21816616
 
 [node name="SwordPoint" type="Node2D" parent="HylaBody" unique_id=717480434]
-position = Vector2(-28, -31)
+position = Vector2(-22.362812, -37.73466)
 
 [node name="HylaSword1" type="Sprite2D" parent="HylaBody/SwordPoint" unique_id=1836803700]
-position = Vector2(0, -23)
+position = Vector2(-15.514835, -8.560953)
+rotation = -0.4245864
 texture = ExtResource("1_vupcl")
+
+[node name="Hand" type="Sprite2D" parent="HylaBody/SwordPoint" unique_id=1155438812]
+position = Vector2(-2.8183522, 3.4723024)
+texture = ExtResource("6_x1u1l")
 
 [node name="HylaMcBack" type="Sprite2D" parent="HylaBody" unique_id=166418454]
 position = Vector2(0, -48)
-texture = ExtResource("1_ufhjr")
+texture = ExtResource("6_rrpej")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=211486629]
 libraries/ = SubResource("AnimationLibrary_lle8x")
