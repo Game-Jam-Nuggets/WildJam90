@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://b2ikhgnuy6c7x"]
 
+[ext_resource type="Script" uid="uid://cnudljnsc8v1v" path="res://scenes/hyla/hyla.gd" id="1_1osun"]
 [ext_resource type="Texture2D" uid="uid://bcpdif0ydm727" path="res://assets/visual/sprites/Hyla-MC_Back.png" id="1_ufhjr"]
 [ext_resource type="Texture2D" uid="uid://do3addcsoto1f" path="res://assets/visual/sprites/Hyla_Sword-1.png" id="1_vupcl"]
+[ext_resource type="AudioStream" uid="uid://symmg2wk4dxq" path="res://assets/audio/game/Footstep 1.ogg" id="2_rrpej"]
+[ext_resource type="AudioStream" uid="uid://rwaivgvah0a7" path="res://assets/audio/game/Footstep 2.ogg" id="3_x1u1l"]
+[ext_resource type="AudioStream" uid="uid://hnnmja63n2tq" path="res://assets/audio/game/Footstep 3.ogg" id="4_7rp17"]
 
 [sub_resource type="Animation" id="Animation_vupcl"]
 length = 0.001
@@ -106,6 +110,23 @@ tracks/3/keys = {
 "update": 0,
 "values": [0.0, -0.08726646, 0.0, 0.08726646]
 }
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"play_footstep"
+}, {
+"args": [],
+"method": &"play_footstep"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lle8x"]
 _data = {
@@ -114,6 +135,8 @@ _data = {
 }
 
 [node name="Hyla" type="Node2D" unique_id=523409213]
+script = ExtResource("1_1osun")
+footstep_sounds = Array[AudioStream]([ExtResource("2_rrpej"), ExtResource("3_x1u1l"), ExtResource("4_7rp17")])
 
 [node name="HylaBody" type="Node2D" parent="." unique_id=782083511]
 rotation = -0.21816616
