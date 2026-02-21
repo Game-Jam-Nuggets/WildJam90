@@ -14,5 +14,5 @@ func play_footstep():
 	
 func play_sword_swing(rating):
 	if (rating != Enums.GroupRating.MISS):
-		AudioManager.play_sfx(sword_slash_sounds.pick_random())
+		AudioManager.play_sfx(sword_slash_sounds.pick_random(), 0.5)
 		sword_animation_player.play("sword_swing")
