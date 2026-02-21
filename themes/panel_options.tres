@@ -1,0 +1,8 @@
+[gd_resource type="Theme" format=3 uid="uid://b08vayo7o0o3i"]
+
+[ext_resource type="FontFile" uid="uid://b53i0n502ixiy" path="res://assets/visual/ui/main_menu/body_font.ttf" id="1_3prn3"]
+
+[resource]
+Label/colors/font_color = Color(0.6901961, 0.45490196, 0.16862746, 1)
+Label/font_sizes/font_size = 48
+Label/fonts/font = ExtResource("1_3prn3")

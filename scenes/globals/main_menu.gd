@@ -19,6 +19,7 @@ func _on_levels_button_pressed() -> void:
 
 func _on_settings_button_pressed() -> void:
 	AudioManager.play_sfx(button_sound)
+	SceneManager.load_settings_scene()
 	pass
 
 func _on_credits_button_pressed() -> void:
