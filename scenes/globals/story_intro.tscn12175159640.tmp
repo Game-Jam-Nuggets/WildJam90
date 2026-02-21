@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://ddtada1uhcwpo"]
+
+[ext_resource type="Script" uid="uid://yjgqopp3mu6g" path="res://scenes/globals/story_intro.gd" id="1_btpjw"]
+[ext_resource type="Texture2D" uid="uid://1dluypn0tggp" path="res://assets/visual/backgrounds/story1.jpg" id="1_tuarq"]
+[ext_resource type="Texture2D" uid="uid://bqmg1i3tgp04e" path="res://assets/visual/backgrounds/story2.jpg" id="2_shopj"]
+[ext_resource type="Texture2D" uid="uid://on6a6wjsdsq8" path="res://assets/visual/backgrounds/story3.jpg" id="3_a0a33"]
+[ext_resource type="Texture2D" uid="uid://ca28e357xuuew" path="res://assets/visual/backgrounds/story4.jpg" id="4_4h4na"]
+[ext_resource type="Texture2D" uid="uid://bkpwc352xjxdp" path="res://assets/visual/backgrounds/story5.jpg" id="5_gwb07"]
+[ext_resource type="AudioStream" uid="uid://x6j1rpni2s68" path="res://assets/audio/music/Hyla_story_theme.wav" id="6_a0a33"]
+[ext_resource type="Texture2D" uid="uid://cfm4h34s8ci86" path="res://assets/visual/backgrounds/menu_background.jpg" id="7_4h4na"]
+[ext_resource type="Texture2D" uid="uid://lnk1temiu6ok" path="res://assets/visual/backgrounds/star_map.png" id="8_gwb07"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gm5bg"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(1.175, 0.725, 0.905)
+emission_shape_scale = Vector3(0.465, 1.655, 1.17)
+velocity_pivot = Vector3(0.415, 1.3, 0)
+direction = Vector3(0.43, 0.85, 0.85)
+spread = 180.0
+initial_velocity_min = 688.62
+initial_velocity_max = 1000.0
+angular_velocity_min = 150.89998
+angular_velocity_max = 719.99994
+gravity = Vector3(0, 98, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a0a33"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4h4na"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(1, 0, 0)
+emission_shape_scale = Vector3(1, 0, 1)
+direction = Vector3(1, 2.83, 3.6)
+spread = 180.0
+initial_velocity_max = 1000.0
+turbulence_noise_strength = 16.03
+
+[node name="StoryIntro" type="Control" unique_id=807440404]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_btpjw")
+
+[node name="BG" type="TextureRect" parent="." unique_id=1423676027]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("7_4h4na")
+
+[node name="background_particles" type="GPUParticles2D" parent="." unique_id=4080334]
+visible = false
+position = Vector2(946, 282)
+emitting = false
+amount = 20
+texture = ExtResource("7_4h4na")
+lifetime = 4.29
+speed_scale = 0.2
+process_material = SubResource("ParticleProcessMaterial_gm5bg")
+
+[node name="Story1" type="TextureRect" parent="." unique_id=1126958091]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_tuarq")
+
+[node name="Story2" type="TextureRect" parent="." unique_id=650315463]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_shopj")
+
+[node name="Story3" type="TextureRect" parent="." unique_id=1409828390]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("3_a0a33")
+
+[node name="Story4" type="TextureRect" parent="." unique_id=1940303752]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("4_4h4na")
+
+[node name="Story5" type="TextureRect" parent="." unique_id=1897883524]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("5_gwb07")
+
+[node name="Story_music" type="AudioStreamPlayer" parent="." unique_id=513332581]
+stream = ExtResource("6_a0a33")
+
+[node name="color_mask" type="ColorRect" parent="." unique_id=1662304092]
+layout_mode = 0
+offset_left = -67.0
+offset_top = -31.0
+offset_right = 1852.0
+offset_bottom = 1044.0
+scale = Vector2(1.0547624, 1.0689713)
+color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+
+[node name="particles" type="GPUParticles2D" parent="." unique_id=1150720082]
+modulate = Color(1, 1, 1, 0)
+material = SubResource("ShaderMaterial_a0a33")
+position = Vector2(973, 472)
+amount = 10
+texture = ExtResource("8_gwb07")
+lifetime = 0.01
+preprocess = 0.37
+speed_scale = 0.0
+process_material = SubResource("ParticleProcessMaterial_4h4na")
+
+[node name="Music" type="Timer" parent="." unique_id=588905425]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Music" to="." method="_on_music_timeout"]

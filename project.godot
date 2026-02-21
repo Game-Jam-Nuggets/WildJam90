@@ -21,6 +21,12 @@ Gamestate="*uid://cv7s1dwsycv3c"
 Events="*uid://cx20otxa87gdr"
 Enums="*uid://c1rbw8j0mwig1"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="viewport"
+
 [file_customization]
 
 folder_colors={

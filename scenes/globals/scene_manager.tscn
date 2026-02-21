@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bvop8rwuptfdh"]
+
+[ext_resource type="Script" path="res://scenes/globals/scene_manager.gd" id="1_mea76"]
+[ext_resource type="PackedScene" uid="uid://76hmjwnhm4yl" path="res://scenes/globals/game.tscn" id="3_uyxjk"]
+
+[node name="SceneManager" type="Node" unique_id=756905510]
+script = ExtResource("1_mea76")
+main_menu_scene = ExtResource("3_uyxjk")
+game_scene = ExtResource("3_uyxjk")

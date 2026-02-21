@@ -1,0 +1,181 @@
+[gd_scene format=3 uid="uid://76hmjwnhm4yl"]
+
+[ext_resource type="Texture2D" uid="uid://c5mmc04isp434" path="res://assets/visual/backgrounds/meekworld.PNG" id="1_jh4e4"]
+[ext_resource type="Script" uid="uid://df0rrtau0ynkj" path="res://scenes/play_area/positioner_debug_mesh.gd" id="2_jygib"]
+[ext_resource type="Script" uid="uid://b58x0n1lg8eev" path="res://scenes/play_area/note_maker.gd" id="3_1n7fa"]
+[ext_resource type="AudioStream" uid="uid://bfiy7q6u5uhcd" path="res://assets/audio/music/Saint Paul - That 90s Feelin' - EELF.wav" id="4_o3jcf"]
+[ext_resource type="Script" uid="uid://pi0l8btk6wub" path="res://scenes/play_area/play_area_ui.gd" id="6_mungy"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_tefeu"]
+radius = 10.0
+height = 20.0
+
+[sub_resource type="Animation" id="Animation_o6xl0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../grouping_positioner:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(985, 537)]
+}
+
+[sub_resource type="Animation" id="Animation_tefeu"]
+resource_name = "that 90's feelin"
+length = 60.0
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../grouping_positioner:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(546, 311), Vector2(275, 191)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [0],
+"method": &"_add_group"
+}, {
+"args": [0],
+"method": &"_add_group"
+}, {
+"args": [0],
+"method": &"_add_group"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o6xl0"]
+_data = {
+&"RESET": SubResource("Animation_o6xl0"),
+&"that 90\'s feelin": SubResource("Animation_tefeu")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_sgp6g"]
+font_size = 64
+
+[sub_resource type="Animation" id="Animation_jyhfs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/MarginContainer/rating_label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_sugp2"]
+resource_name = "update_rating"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/MarginContainer/rating_label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(2.1435475, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jyhfs"]
+_data = {
+&"RESET": SubResource("Animation_jyhfs"),
+&"update_rating": SubResource("Animation_sugp2")
+}
+
+[node name="main" type="Node2D" unique_id=635752093]
+
+[node name="play_area" type="Node2D" parent="." unique_id=1725862042]
+
+[node name="background2" type="Node2D" parent="play_area" unique_id=431924720]
+
+[node name="background_sprite" type="Sprite2D" parent="play_area/background2" unique_id=270263630]
+modulate = Color(0.70380783, 0.70380783, 0.70380783, 1)
+z_index = -2
+position = Vector2(960.05505, 543.5)
+scale = Vector2(3.036509, 1.8944637)
+texture = ExtResource("1_jh4e4")
+
+[node name="note_area" type="Node2D" parent="play_area" unique_id=121715461]
+
+[node name="grouping_positioner" type="Node2D" parent="play_area" unique_id=1155303027]
+position = Vector2(985, 537)
+
+[node name="positioner_debug_mesh" type="MeshInstance2D" parent="play_area/grouping_positioner" unique_id=1618811298]
+mesh = SubResource("SphereMesh_tefeu")
+script = ExtResource("2_jygib")
+show_positioner = true
+
+[node name="note_maker" type="Node2D" parent="play_area" unique_id=1853385169 node_paths=PackedStringArray("note_area", "grouping_positioner")]
+script = ExtResource("3_1n7fa")
+note_area = NodePath("../note_area")
+grouping_positioner = NodePath("../grouping_positioner")
+
+[node name="conductor" type="AnimationPlayer" parent="play_area/note_maker" unique_id=842987069]
+libraries/ = SubResource("AnimationLibrary_o6xl0")
+
+[node name="music_player" type="AudioStreamPlayer2D" parent="play_area/note_maker" unique_id=682278054]
+stream = ExtResource("4_o3jcf")
+volume_db = -4.0
+
+[node name="ui" type="CanvasLayer" parent="play_area" unique_id=1490530999]
+script = ExtResource("6_mungy")
+
+[node name="Control" type="Control" parent="play_area/ui" unique_id=1532379901]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="play_area/ui/Control" unique_id=1802878692]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -103.0
+offset_bottom = 88.0
+grow_horizontal = 0
+mouse_filter = 2
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 16
+
+[node name="rating_label" type="Label" parent="play_area/ui/Control/MarginContainer" unique_id=517529420]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+text = "n/a"
+label_settings = SubResource("LabelSettings_sgp6g")
+
+[node name="rating_animator" type="AnimationPlayer" parent="play_area/ui" unique_id=857259075]
+libraries/ = SubResource("AnimationLibrary_jyhfs")
+
+[node name="root_menu" type="CanvasLayer" parent="." unique_id=521983113]

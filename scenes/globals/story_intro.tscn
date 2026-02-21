@@ -1,0 +1,479 @@
+[gd_scene format=3 uid="uid://ddtada1uhcwpo"]
+
+[ext_resource type="Script" uid="uid://yjgqopp3mu6g" path="res://scenes/globals/story_intro.gd" id="1_btpjw"]
+[ext_resource type="Texture2D" uid="uid://1dluypn0tggp" path="res://assets/visual/backgrounds/story1.jpg" id="1_tuarq"]
+[ext_resource type="Texture2D" uid="uid://bqmg1i3tgp04e" path="res://assets/visual/backgrounds/story2.jpg" id="2_shopj"]
+[ext_resource type="Texture2D" uid="uid://on6a6wjsdsq8" path="res://assets/visual/backgrounds/story3.jpg" id="3_a0a33"]
+[ext_resource type="Texture2D" uid="uid://dqljhs55taqhv" path="res://assets/visual/sprites/star_stamp.png" id="3_btpjw"]
+[ext_resource type="Texture2D" uid="uid://ca28e357xuuew" path="res://assets/visual/backgrounds/story4.jpg" id="4_4h4na"]
+[ext_resource type="Texture2D" uid="uid://bkpwc352xjxdp" path="res://assets/visual/backgrounds/story5.jpg" id="5_gwb07"]
+[ext_resource type="AudioStream" uid="uid://x6j1rpni2s68" path="res://assets/audio/music/Hyla_story_theme.wav" id="6_a0a33"]
+[ext_resource type="Texture2D" uid="uid://lln80tu8jxpr" path="res://assets/visual/backgrounds/hylabanner.jpg" id="9_btpjw"]
+[ext_resource type="Texture2D" uid="uid://6xrvijpuibbo" path="res://assets/visual/backgrounds/story6.jpg" id="9_uacg6"]
+[ext_resource type="FontFile" uid="uid://d0bq0aairnw4a" path="res://assets/title_font.ttf" id="10_btpjw"]
+[ext_resource type="Texture2D" uid="uid://drbquvf558f5i" path="res://assets/visual/backgrounds/story7.jpg" id="10_ycsjx"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gm5bg"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(0, 0, 1)
+angle_min = 1.0728835e-05
+angle_max = 99.20001
+direction = Vector3(0, 0, 0)
+initial_velocity_max = 8.98
+gravity = Vector3(0, 98, 0)
+scale_min = 0.32
+scale_max = 0.32
+
+[sub_resource type="LabelSettings" id="LabelSettings_yv40p"]
+font = ExtResource("10_btpjw")
+font_size = 35
+font_color = Color(0, 0, 0, 1)
+outline_size = 11
+shadow_size = 14
+shadow_color = Color(0, 0, 0, 0.42745098)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a0a33"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4h4na"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(1, 0, 0)
+emission_shape_scale = Vector3(1, 0, 1)
+direction = Vector3(1, 2.83, 3.6)
+spread = 180.0
+initial_velocity_max = 1000.0
+turbulence_noise_strength = 16.03
+
+[sub_resource type="LabelSettings" id="LabelSettings_btpjw"]
+font_size = 123
+
+[node name="StoryIntro" type="Control" unique_id=807440404]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_btpjw")
+
+[node name="BG" type="TextureRect" parent="." unique_id=1423676027]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("9_btpjw")
+
+[node name="star" type="GPUParticles2D" parent="." unique_id=896817987]
+position = Vector2(480, 289.99997)
+scale = Vector2(13.355649, 10.649005)
+amount = 5
+texture = ExtResource("3_btpjw")
+lifetime = 0.01
+speed_scale = 0.1
+process_material = SubResource("ParticleProcessMaterial_gm5bg")
+
+[node name="Story1" type="TextureRect" parent="." unique_id=1126958091]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_tuarq")
+
+[node name="Story2" type="TextureRect" parent="." unique_id=650315463]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_shopj")
+
+[node name="Story3" type="TextureRect" parent="." unique_id=1409828390]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("3_a0a33")
+
+[node name="Story4" type="TextureRect" parent="." unique_id=1940303752]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("4_4h4na")
+
+[node name="Story5" type="TextureRect" parent="." unique_id=1897883524]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("5_gwb07")
+
+[node name="Story6" type="TextureRect" parent="." unique_id=481654191]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("9_uacg6")
+
+[node name="Story7" type="TextureRect" parent="." unique_id=1562120926]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("10_ycsjx")
+
+[node name="Story_music" type="AudioStreamPlayer" parent="." unique_id=513332581]
+stream = ExtResource("6_a0a33")
+
+[node name="color_mask" type="ColorRect" parent="." unique_id=1662304092]
+visible = false
+layout_mode = 0
+offset_left = -67.0
+offset_top = -31.0
+offset_right = 1852.0
+offset_bottom = 1044.0
+scale = Vector2(1.0547624, 1.0689713)
+color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+
+[node name="Subtitles" type="Control" parent="." unique_id=438702710]
+anchors_preset = 0
+offset_left = -48.0
+offset_right = -48.0
+
+[node name="paragraph1" type="Control" parent="Subtitles" unique_id=1363087215]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Humankind" type="Label" parent="Subtitles/paragraph1" unique_id=2063499381]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 480.0
+offset_top = 920.0
+offset_right = 855.0
+offset_bottom = 1034.0
+text = "Humankind..."
+label_settings = SubResource("LabelSettings_yv40p")
+
+[node name="A species" type="Label" parent="Subtitles/paragraph1" unique_id=1725496567]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 762.0
+offset_top = 920.0
+offset_right = 1479.0
+offset_bottom = 1034.0
+text = "a species that thrived for many moons,"
+label_settings = SubResource("LabelSettings_yv40p")
+
+[node name="Has succumb" type="Label" parent="Subtitles/paragraph1" unique_id=83268046]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 480.0
+offset_top = 978.0
+offset_right = 1242.0
+offset_bottom = 1092.0
+text = "has succumbed to the error of their ways."
+label_settings = SubResource("LabelSettings_yv40p")
+
+[node name="paragraph2" type="Control" parent="Subtitles" unique_id=70647858]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="A new order" type="Label" parent="Subtitles/paragraph2" unique_id=1555944092]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 480.0
+offset_top = 920.0
+offset_right = 931.0
+offset_bottom = 1034.0
+text = "A new order has risen..."
+label_settings = SubResource("LabelSettings_yv40p")
+
+[node name="more evolved" type="Label" parent="Subtitles/paragraph2" unique_id=1157219299]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 944.0
+offset_top = 920.0
+offset_right = 1319.0
+offset_bottom = 1034.0
+text = "more evolved..."
+label_settings = SubResource("LabelSettings_yv40p")
+
+[node name="more intelligent" type="Label" parent="Subtitles/paragraph2" unique_id=1072516831]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1239.0
+offset_top = 920.0
+offset_right = 1614.0
+offset_bottom = 1034.0
+text = "more intelligent..."
+label_settings = SubResource("LabelSettings_yv40p")
+
+[node name="more sentient" type="Label" parent="Subtitles/paragraph2" unique_id=1534236190]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 480.0
+offset_top = 978.0
+offset_right = 855.0
+offset_bottom = 1092.0
+text = "more sentient:"
+label_settings = SubResource("LabelSettings_yv40p")
+
+[node name="The Anura" type="Label" parent="Subtitles/paragraph2" unique_id=2120802568]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 750.0
+offset_top = 978.0
+offset_right = 1125.0
+offset_bottom = 1092.0
+text = "The Anura."
+label_settings = SubResource("LabelSettings_yv40p")
+
+[node name="paragraph3" type="Control" parent="Subtitles" unique_id=1967345954]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Cosmic" type="Label" parent="Subtitles/paragraph3" unique_id=1918698821]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 480.0
+offset_top = 920.0
+offset_right = 940.0
+offset_bottom = 1034.0
+text = "Cosmic amphibian power,"
+label_settings = SubResource("LabelSettings_yv40p")
+
+[node name="commanding" type="Label" parent="Subtitles/paragraph3" unique_id=205915417]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 959.0
+offset_top = 920.0
+offset_right = 1521.0
+offset_bottom = 1034.0
+text = "commanding the elemements in"
+label_settings = SubResource("LabelSettings_yv40p")
+
+[node name="and around" type="Label" parent="Subtitles/paragraph3" unique_id=1941245966]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 480.0
+offset_top = 978.0
+offset_right = 855.0
+offset_bottom = 1092.0
+text = "and around us, "
+label_settings = SubResource("LabelSettings_yv40p")
+
+[node name="with a force" type="Label" parent="Subtitles/paragraph3" unique_id=369461558]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 795.00006
+offset_top = 982.00006
+offset_right = 1608.0
+offset_bottom = 1060.0
+scale = Vector2(0.92202723, 0.92202723)
+text = "with a force that no human can withstand."
+label_settings = SubResource("LabelSettings_yv40p")
+
+[node name="paragraph4" type="Control" parent="Subtitles" unique_id=718834617]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="The order" type="Label" parent="Subtitles/paragraph4" unique_id=1688768917]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 480.0
+offset_top = 920.0
+offset_right = 1215.0
+offset_bottom = 1034.0
+text = "The Order of Anura are unstoppable..."
+label_settings = SubResource("LabelSettings_yv40p")
+
+[node name="unwavering" type="Label" parent="Subtitles/paragraph4" unique_id=760960666]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1232.0
+offset_top = 920.0
+offset_right = 1607.0
+offset_bottom = 1034.0
+text = "unwavering..."
+label_settings = SubResource("LabelSettings_yv40p")
+
+[node name="uncomprising" type="Label" parent="Subtitles/paragraph4" unique_id=697728767]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 480.0
+offset_top = 978.0
+offset_right = 898.0
+offset_bottom = 1092.0
+text = "and uncompromising..."
+label_settings = SubResource("LabelSettings_yv40p")
+
+[node name="all but one" type="Label" parent="Subtitles/paragraph4" unique_id=2139404141]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 917.0
+offset_top = 978.0
+offset_right = 1717.0
+offset_bottom = 1056.0
+text = "all but one."
+label_settings = SubResource("LabelSettings_yv40p")
+
+[node name="paragraph5" type="Control" parent="Subtitles" unique_id=1734550449]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Hyla" type="Label" parent="Subtitles/paragraph5" unique_id=918661798]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 480.0
+offset_top = 920.0
+offset_right = 585.0
+offset_bottom = 1034.0
+text = "Hyla,"
+label_settings = SubResource("LabelSettings_yv40p")
+
+[node name="a brilliant" type="Label" parent="Subtitles/paragraph5" unique_id=386791480]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 598.0
+offset_top = 920.0
+offset_right = 1046.0
+offset_bottom = 1034.0
+text = "a brilliant star-mapper;"
+label_settings = SubResource("LabelSettings_yv40p")
+
+[node name="rejected" type="Label" parent="Subtitles/paragraph5" unique_id=1019027086]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1064.0
+offset_top = 920.0
+offset_right = 1490.0
+offset_bottom = 1034.0
+text = "rejected from the order"
+label_settings = SubResource("LabelSettings_yv40p")
+
+[node name="for his" type="Label" parent="Subtitles/paragraph5/rejected" unique_id=2026731226]
+layout_mode = 0
+offset_left = -584.0
+offset_top = 58.0
+offset_right = 72.0
+offset_bottom = 172.0
+text = "for his curiousity towards humans."
+label_settings = SubResource("LabelSettings_yv40p")
+
+[node name="paragraph6" type="Control" parent="Subtitles" unique_id=1811510219]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Fascinated" type="Label" parent="Subtitles/paragraph6" unique_id=1293439745]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 480.0
+offset_top = 920.0
+offset_right = 1233.0
+offset_bottom = 1034.0
+text = "Fascinated with something so pleasantly"
+label_settings = SubResource("LabelSettings_yv40p")
+
+[node name="harmonious" type="Label" parent="Subtitles/paragraph6" unique_id=1348718181]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1252.0
+offset_top = 920.0
+offset_right = 1504.0
+offset_bottom = 1034.0
+text = "harmonious..."
+label_settings = SubResource("LabelSettings_yv40p")
+
+[node name="music" type="Label" parent="Subtitles/paragraph6" unique_id=1984342776]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 489.0
+offset_top = 978.0
+offset_right = 741.0
+offset_bottom = 1092.0
+text = "music."
+label_settings = SubResource("LabelSettings_yv40p")
+
+[node name="paragraph7" type="Control" parent="Subtitles" unique_id=1922093731]
+anchors_preset = 0
+offset_left = -96.0
+offset_top = -173.00002
+offset_right = -56.0
+offset_bottom = -133.00002
+scale = Vector2(1.2, 1.2)
+
+[node name="Without the order" type="Label" parent="Subtitles/paragraph7" unique_id=1585758069]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 485.0
+offset_top = 921.0
+offset_right = 1053.0
+offset_bottom = 999.0
+scale = Vector2(0.7, 0.7)
+text = "Without the order, he is weak,"
+label_settings = SubResource("LabelSettings_yv40p")
+
+[node name="But nothing is" type="Label" parent="Subtitles/paragraph7" unique_id=1374619041]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 894.0
+offset_top = 920.0
+offset_right = 1494.0
+offset_bottom = 998.0
+scale = Vector2(0.7, 0.7)
+text = "but nothing is stopping him from"
+label_settings = SubResource("LabelSettings_yv40p")
+
+[node name="From finding" type="Label" parent="Subtitles/paragraph7/But nothing is" unique_id=1853331406]
+layout_mode = 0
+offset_left = -578.5715
+offset_top = 62.130398
+offset_right = 332.42853
+offset_bottom = 176.1304
+text = "re-charting the stars to journey back home,"
+label_settings = SubResource("LabelSettings_yv40p")
+
+[node name="One beat" type="Label" parent="Subtitles/paragraph7" unique_id=581521715]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1070.0001
+offset_top = 964.0
+offset_right = 1412.0001
+offset_bottom = 1078.0
+rotation = -0.0031667831
+scale = Vector2(0.7, 0.7)
+text = "one beat at a time."
+label_settings = SubResource("LabelSettings_yv40p")
+
+[node name="particles" type="GPUParticles2D" parent="." unique_id=1150720082]
+modulate = Color(1, 1, 1, 0)
+material = SubResource("ShaderMaterial_a0a33")
+position = Vector2(960, 540)
+amount = 10
+texture = ExtResource("3_btpjw")
+lifetime = 0.01
+preprocess = 0.37
+speed_scale = 0.0
+process_material = SubResource("ParticleProcessMaterial_4h4na")
+
+[node name="Music" type="Timer" parent="." unique_id=588905425]
+one_shot = true
+autostart = true
+
+[node name="Text_timer" type="Timer" parent="." unique_id=771220805]
+wait_time = 0.08
+autostart = true
+
+[node name="Label_current_song_time" type="Label" parent="." unique_id=181860509]
+layout_mode = 0
+offset_left = 711.0
+offset_top = 126.0
+offset_right = 1216.0
+offset_bottom = 295.0
+label_settings = SubResource("LabelSettings_btpjw")
+
+[connection signal="timeout" from="Music" to="." method="_on_music_timeout"]
+[connection signal="timeout" from="Text_timer" to="." method="_on_text_timer_timeout"]
