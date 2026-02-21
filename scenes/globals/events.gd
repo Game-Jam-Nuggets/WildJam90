@@ -12,3 +12,4 @@ signal bonus_note_spawned() # gamestate counting
 signal note_hit() # gamestate counting
 signal group_finished(rating : Enums.GroupRating) #gamestate counting, also used by ui to show last group rating
 signal score_updated(p_new_score: int, p_new_score_max: int)
+ 
