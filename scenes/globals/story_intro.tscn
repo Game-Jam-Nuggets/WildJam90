@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://ddtada1uhcwpo"]
+[gd_scene format=3 uid="uid://jrskcxltgumd"]
 
 [ext_resource type="Script" uid="uid://yjgqopp3mu6g" path="res://scenes/globals/story_intro.gd" id="1_btpjw"]
 [ext_resource type="Texture2D" uid="uid://1dluypn0tggp" path="res://assets/visual/backgrounds/story1.jpg" id="1_tuarq"]
@@ -55,6 +55,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_btpjw")
+story_music = ExtResource("6_a0a33")
 
 [node name="BG" type="TextureRect" parent="." unique_id=1423676027]
 layout_mode = 0
@@ -119,9 +120,6 @@ layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("10_ycsjx")
-
-[node name="Story_music" type="AudioStreamPlayer" parent="." unique_id=513332581]
-stream = ExtResource("6_a0a33")
 
 [node name="color_mask" type="ColorRect" parent="." unique_id=1662304092]
 layout_mode = 0
@@ -494,7 +492,6 @@ theme = ExtResource("13_ycsjx")
 theme_override_font_sizes/font_size = 81
 text = "Hold to skip"
 
-[connection signal="finished" from="Story_music" to="." method="_on_story_music_finished"]
 [connection signal="timeout" from="Music" to="." method="_on_music_timeout"]
 [connection signal="timeout" from="Text_timer" to="." method="_on_text_timer_timeout"]
 [connection signal="timeout" from="Skip_timer" to="." method="_on_skip_timer_timeout"]
