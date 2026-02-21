@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://86xthh6ugcfi"]
+
+[ext_resource type="Texture2D" uid="uid://bhiwrrf8u2que" path="res://assets/visual/backgrounds/bg.jpeg" id="1_djtid"]
+
+[node name="ForestBackgroundScene" type="Node2D" unique_id=1618595223]
+
+[node name="Bg" type="Sprite2D" parent="." unique_id=1395908420]
+position = Vector2(960, 540)
+texture = ExtResource("1_djtid")
