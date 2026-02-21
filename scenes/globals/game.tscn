@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b7jufijw4whu2" path="res://scenes/star_progress_bar/star_progress_bar.tscn" id="5_tdb20"]
 [ext_resource type="Script" uid="uid://pi0l8btk6wub" path="res://scenes/play_area/play_area_ui.gd" id="6_mungy"]
 [ext_resource type="FontFile" uid="uid://b53i0n502ixiy" path="res://assets/visual/ui/main_menu/body_font.ttf" id="6_tfx60"]
+[ext_resource type="PackedScene" uid="uid://b2ikhgnuy6c7x" path="res://scenes/hyla/hyla.tscn" id="7_p06x2"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_tefeu"]
 radius = 10.0
@@ -265,5 +266,9 @@ layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_p06x2")
 horizontal_alignment = 1
+
+[node name="Hyla" parent="play_area" unique_id=523409213 instance=ExtResource("7_p06x2")]
+position = Vector2(960, 1000)
+scale = Vector2(3, 3)
 
 [node name="root_menu" type="CanvasLayer" parent="." unique_id=521983113]
