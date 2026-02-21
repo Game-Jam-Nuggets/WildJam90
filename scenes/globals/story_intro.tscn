@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://6xrvijpuibbo" path="res://assets/visual/backgrounds/story6.jpg" id="9_uacg6"]
 [ext_resource type="FontFile" uid="uid://d0bq0aairnw4a" path="res://assets/title_font.ttf" id="10_btpjw"]
 [ext_resource type="Texture2D" uid="uid://drbquvf558f5i" path="res://assets/visual/backgrounds/story7.jpg" id="10_ycsjx"]
+[ext_resource type="Theme" uid="uid://b713thhl0tehm" path="res://themes/main_menu.tres" id="13_ycsjx"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gm5bg"]
 particle_flag_disable_z = true
@@ -475,5 +476,19 @@ offset_right = 1216.0
 offset_bottom = 295.0
 label_settings = SubResource("LabelSettings_btpjw")
 
+[node name="Skip_button" type="Button" parent="." unique_id=239249270]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1559.0001
+offset_top = 968.0
+offset_right = 2404.0
+offset_bottom = 1276.0
+scale = Vector2(0.2895372, 0.2895372)
+theme = ExtResource("13_ycsjx")
+text = "Skip"
+
+[connection signal="finished" from="Story_music" to="." method="_on_story_music_finished"]
 [connection signal="timeout" from="Music" to="." method="_on_music_timeout"]
 [connection signal="timeout" from="Text_timer" to="." method="_on_text_timer_timeout"]
+[connection signal="pressed" from="Skip_button" to="." method="_on_skip_button_pressed"]
