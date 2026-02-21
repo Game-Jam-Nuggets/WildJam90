@@ -236,7 +236,12 @@ func _on_story_music_finished() -> void:
 	# Load next scene
 		SceneManager.load_main_menu_scene()
 
+func _on_skip_button_button_down() -> void:
+	$Skip_timer.start()
 
-func _on_skip_button_pressed() -> void:
+func _on_skip_button_button_up() -> void:
+	$Skip_timer.stop()
+
+func _on_skip_timer_timeout() -> void:
 	# Load next scene
 		SceneManager.load_main_menu_scene()
