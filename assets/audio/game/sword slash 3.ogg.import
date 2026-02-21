@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c328mmnq61f24"
+path="res://.godot/imported/sword slash 3.ogg-5573151d253d8488d2b71acbe947570f.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/game/sword slash 3.ogg"
+dest_files=["res://.godot/imported/sword slash 3.ogg-5573151d253d8488d2b71acbe947570f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ci2o2hvyphpk8"
+path="res://.godot/imported/Intro Sequence.ogg-c529e8df1c571fb5583eeab03af4c5f7.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/story/Intro Sequence.ogg"
+dest_files=["res://.godot/imported/Intro Sequence.ogg-c529e8df1c571fb5583eeab03af4c5f7.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

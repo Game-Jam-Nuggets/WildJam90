@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cemwcq84py2hx"
+path="res://.godot/imported/UI Button Interact 3.ogg-8156837567cbf7dd5464a8a2b2213673.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/ui/UI Button Interact 3.ogg"
+dest_files=["res://.godot/imported/UI Button Interact 3.ogg-8156837567cbf7dd5464a8a2b2213673.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
