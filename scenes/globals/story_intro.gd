@@ -48,6 +48,8 @@ func _process(delta: float) -> void:
 		var tween = create_tween()
 		tween.tween_property(subtitle_text[2], "modulate:a", 1, 1)
 		# "Has succumb"
+		$Skip_button.visible = true
+		tween.tween_property($Skip_button, "modulate:a", 1, 1)
 		
 	if(current_song_time == 17):
 		var tween = create_tween()
@@ -214,8 +216,7 @@ func _process(delta: float) -> void:
 		# Fade out paragraph 7 (Last paragraph)
 		tween.tween_property(subtitle_nodes[6], "modulate:a", 0, 1.5)
 		
-		# Load next scene
-		SceneManager.load_main_menu_scene()
+		
 		
 	if(can_fade_out_color_mask):
 		var tween1 = create_tween()
@@ -228,4 +229,14 @@ func _process(delta: float) -> void:
 		can_fade_out_color_mask = false
 	
 	if Input.is_physical_key_pressed(KEY_ESCAPE):
+		SceneManager.load_main_menu_scene()
+
+
+func _on_story_music_finished() -> void:
+	# Load next scene
+		SceneManager.load_main_menu_scene()
+
+
+func _on_skip_button_pressed() -> void:
+	# Load next scene
 		SceneManager.load_main_menu_scene()
