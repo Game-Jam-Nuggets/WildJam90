@@ -8,6 +8,7 @@ var current_scene: Node = null
 @export var level_select_scene: PackedScene
 @export var game_scene: PackedScene
 @export var settings_scene: PackedScene
+@export var credits_scene: PackedScene
 
 ## --- default methods ---
 
@@ -42,3 +43,7 @@ func load_level_select_scene():
 ## Loads settings scene
 func load_settings_scene():
 	change_room(settings_scene)
+	
+## Loads credits scene
+func load_credits_scene():
+	change_room(credits_scene)
