@@ -1,0 +1,6 @@
+extends Line2D
+
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
+func _ready():
+	animation_player.play("line_fade")

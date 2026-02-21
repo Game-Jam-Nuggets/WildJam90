@@ -20,6 +20,7 @@ const NOTE_GROUP_SINGLE_BONUS = preload("uid://cryc3yhr40dj1")
 const NOTE_GROUP_CIRCLE_ROTATE = preload("uid://bqwa6b0b3c4je")
 const NOTE_GROUP_STRAIGHT = preload("uid://bw1odoph8dl6i")
 
+const NOTE_GROUP_BIG_DIPPER = preload("uid://dvsymbgqr4b01")
 
 # this will need to be able to load a song based upon what is stored and it name under an
 # enum, for right now it will just fucking autostart
@@ -70,6 +71,22 @@ func _add_group(group : Enums.Groups, positioner_index : int): # position is by 
 	group_instance.global_position = current_positioner.position
 	group_instance.global_rotation = current_positioner.rotation
 
+func _add_group_special(group : Enums.Groups, positioner_index : int): # position is by canvas percentage
+	#var grouping_spawn_pos = position
+	var group_tscn = _fetch_group_special(group)
+	
+	var group_instance = group_tscn.instantiate()
+	note_area.add_child(group_instance)
+	var current_positioner = null
+	match positioner_index:
+		0: current_positioner = grouping_positioner_0
+		1: current_positioner = grouping_positioner_1
+		2: current_positioner = grouping_positioner_2
+	
+	group_instance.global_position = current_positioner.position
+	group_instance.global_rotation = current_positioner.rotation
+
+
 #func _fetch_canvas_pos_by_percent(percent : Vector2):
 	#return Vector2(viewport_size.x * (percent.x / 100.0), viewport_size.y * (percent.y / 100.0))
 
@@ -85,6 +102,15 @@ func _fetch_group(group_name : Enums.Groups):
 	
 	if group_tscn != null: return group_tscn
 	else: print_debug("no grouping matching that name?!")
- 
+	
+func _fetch_group_special(group_name : Enums.Groups):
+	var group_tscn = null
+	match group_name:
+		Enums.GroupsSpecial.BIG_DIPPER: group_tscn = NOTE_GROUP_BIG_DIPPER
+	
+	if group_tscn != null: return group_tscn
+	else: print_debug("no grouping matching that name?!")
+	
+
 func _end_song():
 	Events.level_ended.emit()

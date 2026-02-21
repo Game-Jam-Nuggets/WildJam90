@@ -92,10 +92,10 @@ tracks/0/path = NodePath("../positioners/grouping_positioner_0:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5, 3.5, 4.5, 5.5, 6.5, 6.75, 7.5, 7.75, 8, 8.25, 8.5, 9, 9.5, 9.75, 10, 10.25, 10.75, 11.25),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1.5, 3.5, 4.5, 5.5, 6.5, 6.75, 7.5, 7.75, 8, 8.25, 8.5, 9, 9.5, 9.75, 10, 10.25, 10.75, 11.25, 11.5, 12.5, 13, 13.5, 14, 14.5, 15, 15.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [Vector2(0, 0), Vector2(1163, 307), Vector2(656, 562), Vector2(1294, 527), Vector2(962, 480), Vector2(594, 650), Vector2(620, 550), Vector2(1346, 732), Vector2(1346, 602), Vector2(1346, 472), Vector2(1346, 342), Vector2(649, 359), Vector2(783, 590), Vector2(1346, 732), Vector2(1346, 602), Vector2(1346, 472), Vector2(1346, 342), Vector2(329, 270), Vector2(558, 534)]
+"values": [Vector2(1118, 679), Vector2(1163, 307), Vector2(656, 562), Vector2(1294, 527), Vector2(962, 480), Vector2(594, 650), Vector2(620, 550), Vector2(1346, 732), Vector2(1346, 602), Vector2(1346, 472), Vector2(1346, 342), Vector2(649, 259), Vector2(783, 490), Vector2(1346, 732), Vector2(1346, 602), Vector2(1346, 472), Vector2(1346, 342), Vector2(329, 270), Vector2(558, 534), Vector2(329, 270), Vector2(936, 385), Vector2(1449, 750), Vector2(1257, 271), Vector2(692.00006, 502), Vector2(351, 259), Vector2(917, 454), Vector2(1260.9999, 768)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -104,10 +104,10 @@ tracks/1/path = NodePath("../positioners/grouping_positioner_0:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 4.5, 5.5, 6.5, 6.75, 7.5, 8.5, 9, 9.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 4.5, 5.5, 6.5, 6.75, 7.5, 8.5, 9, 9.5, 12.5, 13, 13.5, 14, 14.5, 15, 15.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0.0, -0.5235988, 0.0, 0.5235988, 0.6981317007977318, 0.0, 2.530727415391778, -2.530727415391778, 0.0]
+"values": [0.0, -0.5235988, 0.0, 0.5235988, 0.6981317007977318, 0.0, 2.530727415391778, -2.530727415391778, 0.0, 1.5707963267948966, -0.7853982, -2.6179938779914944, -0.7853982, 2.530727415391778, 5.338962181850654, 0.33161256]
 }
 tracks/2/type = "method"
 tracks/2/imported = false
@@ -116,8 +116,8 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(1.5, 3.5, 4.5, 5.5, 6.5, 6.75, 7.5, 7.75, 8, 8.25, 8.5, 9, 9.5, 9.75, 10, 10.25, 10.75, 11.25),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(1.5, 3.5, 4.5, 5.5, 6.5, 6.75, 7.5, 7.75, 8, 8.25, 8.5, 9, 9.5, 9.75, 10, 10.25, 10.75, 11.25, 11.5, 12.5, 13, 13.5, 14, 14.5, 15, 15.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "values": [{
 "args": [5, 0],
 "method": &"_add_group"
@@ -172,6 +172,30 @@ tracks/2/keys = {
 }, {
 "args": [4, 0],
 "method": &"_add_group"
+}, {
+"args": [3, 0],
+"method": &"_add_group"
+}, {
+"args": [5, 0],
+"method": &"_add_group"
+}, {
+"args": [1, 0],
+"method": &"_add_group"
+}, {
+"args": [1, 0],
+"method": &"_add_group"
+}, {
+"args": [1, 0],
+"method": &"_add_group"
+}, {
+"args": [1, 0],
+"method": &"_add_group"
+}, {
+"args": [2, 0],
+"method": &"_add_group"
+}, {
+"args": [0, 0],
+"method": &"_add_group_special"
 }]
 }
 
@@ -358,6 +382,7 @@ rotation = -3.1437721
 mesh = SubResource("PrismMesh_70784")
 
 [node name="grouping_positioner_1" type="Node2D" parent="play_area/positioners" unique_id=577465920]
+position = Vector2(1127, 679)
 
 [node name="debug_mesh" type="Node2D" parent="play_area/positioners/grouping_positioner_1" unique_id=220236765]
 script = ExtResource("2_jygib")
