@@ -11,3 +11,4 @@ enum LEVEL_NAME { # set actual names later
 @export var music_file : AudioStream
 @export var bpm : int
 @export var conductor_anim : String
+@export var background_tscn_path : String

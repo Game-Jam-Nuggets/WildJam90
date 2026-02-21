@@ -1,9 +1,13 @@
 extends Node2D
 
-@export var star_break_sounds: Array[AudioStream]
-
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var existence_timer: Timer = $existence_timer
+
+@export var note_existence_length = 4 # beats
+@export var bonus_note: bool = false # whether to count this note as a bonus or not
+
+@export_subgroup("technicals")
+@export var star_break_sounds: Array[AudioStream]
 
 signal hit
 signal miss
@@ -14,8 +18,16 @@ var enable_miss_hitbox = false # for testing, this might be annoying as fuck?
 func _ready():
 	animation_player.speed_scale = Gamestate.current_bpm / 60
 	animation_player.play("spawning")
+	
+	if bonus_note: Events.bonus_note_spawned.emit()
+	else: Events.note_spawned.emit()
+	
+	if bonus_note: # for now, modulate color
+		self.modulate = Color.MAGENTA
 
 func _on_area_2d_mouse_shape_entered(shape_idx: int) -> void:
+	existence_timer.stop()
+	
 	note_hit = true
 	animation_player.speed_scale = 1.0
 	animation_player.play("hit")
@@ -26,7 +38,7 @@ func _on_area_2d_mouse_shape_entered(shape_idx: int) -> void:
 	Events.note_hit.emit()
 
 func start_existence():
-	existence_timer.wait_time = Gamestate.beat_length * Gamestate.note_existence_length
+	existence_timer.wait_time = Gamestate.beat_length * note_existence_length
 	existence_timer.start()
 
 func note_missed():

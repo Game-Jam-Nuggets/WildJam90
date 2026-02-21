@@ -9,17 +9,21 @@ const debug_start_time = 0.0 # seconds
 # song vars 
 var current_bpm := 60 # default
 var beat_length = 60.0 / float(current_bpm) # seconds
-var note_existence_length = 4 # beats - need to move this to an export of group vars
-var group_existence_length = 4 # beats
+#var note_existence_length = 4 # deprecated, now set on the specific notes themselves
+#var group_existence_length = 4 # deprecated, now set on the specific groups themselves
 
 # storing counts of interactions
 var note_count := 0
 var note_hit_count := 0
 
+var bonus_note_count := 0
+
 var perfect_count := 0
 var good_count := 0
 var okay_count := 0
 var miss_count := 0
+
+var current_level_info = null
 
 # 1. instantiate variables for a choosen song / level ***
 # 2. track scoring and progress of a song ***
@@ -46,7 +50,9 @@ func _setup_level(level_name : Level_Info.LEVEL_NAME):
 		current_bpm = level_info.bpm
 		beat_length = 60.0 / float(current_bpm)
 		
+		current_level_info = level_info # stored if needed to be accessed globally
 		Events.level_start.emit(level_info) # sending this out from gamestate after setting vars to avoid a race condition
+	_reset_vars()
 
 #### counting methods
 func _note_hit(): note_hit_count += 1
@@ -57,3 +63,7 @@ func _group_finished(rating): # tracking group progress
 		Enums.GroupRating.GOOD : good_count += 1
 		Enums.GroupRating.OKAY : okay_count += 1
 		Enums.GroupRating.MISS : perfect_count += 1
+
+func _reset_vars(): # reset variable counts during level setup
+	note_count = 0; note_hit_count = 0; bonus_note_count = 0
+	perfect_count = 0; good_count = 0; okay_count = 0; miss_count = 0

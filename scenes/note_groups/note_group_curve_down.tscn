@@ -16,6 +16,8 @@ position = Vector2(-119.999985, 50)
 
 [node name="note_medium3" parent="note_container" unique_id=1132763664 instance=ExtResource("2_umnk3")]
 position = Vector2(1.5258789e-05, 70)
+note_existence_length = 1
+bonus_note = true
 
 [node name="note_medium4" parent="note_container" unique_id=922674661 instance=ExtResource("2_umnk3")]
 position = Vector2(120.000015, 50)
