@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://bi8ayjyxn2dxa" path="res://assets/visual/ui/main_menu/title_font.ttf" id="3_058lc"]
 
 [resource]
+default_font_size = 0
 Button/colors/font_color = Color(0.6901961, 0.45490196, 0.16862746, 1)
 Button/colors/font_focus_color = Color(0.87058824, 0.59607846, 0.27450982, 1)
 Button/colors/font_hover_color = Color(0.86903757, 0.5968675, 0.27611607, 1)
