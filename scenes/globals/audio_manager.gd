@@ -17,12 +17,12 @@ func _ready():
 
 ## Updates the parameter for main music and plays
 ## @param stream: The audiostream to play
-func set_music(stream: AudioStream, volume := 1.0, pitch := 1.0):
+func set_music(stream: AudioStream, volume := 1.0, pitch := 1.0, position := 0.0):
 	playing = true
 	music_player.stream = stream
 	music_player.volume_linear = volume
 	music_player.pitch_scale = pitch
-	music_player.play()
+	music_player.play(position)
 	
 ## Stops the main music
 func stop_music():

@@ -5,6 +5,8 @@ extends Node2D
 
 @export var group_existence_length: int = 4 # beats
 
+const star_fall_speed = 16.0
+
 var note_count = 0
 var notes_hit = 0
 var notes_finished = 0
@@ -18,6 +20,9 @@ func _ready():
 	existence_timer.wait_time = Gamestate.beat_length * float(group_existence_length)
 	await get_tree().create_timer(Gamestate.beat_length).timeout
 	existence_timer.start()
+	
+func _physics_process(delta):
+	self.position.y += star_fall_speed * delta
 	
 func note_hit():
 	notes_hit += 1

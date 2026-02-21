@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bw1odoph8dl6i"]
+
+[ext_resource type="Script" uid="uid://btyx7xs85pju5" path="res://scenes/note_groups/note_group.gd" id="1_48i64"]
+[ext_resource type="Script" uid="uid://h8iu0qiryp0d" path="res://scenes/note_groups/note_container.gd" id="2_66o7x"]
+[ext_resource type="PackedScene" uid="uid://cmkgi7bk2np52" path="res://scenes/notes/note.tscn" id="3_66o7x"]
+
+[node name="note_group" type="Node2D" unique_id=2065057774]
+script = ExtResource("1_48i64")
+
+[node name="note_container" type="Node2D" parent="." unique_id=1616491492]
+script = ExtResource("2_66o7x")
+
+[node name="note" parent="note_container" unique_id=1990359077 instance=ExtResource("3_66o7x")]
+position = Vector2(80, 3)
+
+[node name="note2" parent="note_container" unique_id=191161078 instance=ExtResource("3_66o7x")]
+position = Vector2(240, -3)
+
+[node name="note3" parent="note_container" unique_id=1338262098 instance=ExtResource("3_66o7x")]
+position = Vector2(-240, 3)
+
+[node name="note4" parent="note_container" unique_id=734666565 instance=ExtResource("3_66o7x")]
+position = Vector2(-80, -3)
+
+[node name="existence_timer" type="Timer" parent="." unique_id=1942558551]
+one_shot = true

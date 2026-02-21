@@ -1,11 +1,50 @@
 [gd_scene format=3 uid="uid://dff2qerboyywc"]
 
 [ext_resource type="Script" uid="uid://78evpf37lpb2" path="res://scenes/play_area/background_container.gd" id="1_70784"]
+[ext_resource type="Script" uid="uid://brs81lk3t0r50" path="res://scenes/play_area/intro_cover.gd" id="1_p06x2"]
 [ext_resource type="Script" uid="uid://df0rrtau0ynkj" path="res://scenes/play_area/positioner_debug_mesh.gd" id="2_jygib"]
 [ext_resource type="Script" uid="uid://b58x0n1lg8eev" path="res://scenes/play_area/note_maker.gd" id="3_1n7fa"]
 [ext_resource type="PackedScene" uid="uid://b7jufijw4whu2" path="res://scenes/star_progress_bar/star_progress_bar.tscn" id="5_tdb20"]
 [ext_resource type="Script" uid="uid://pi0l8btk6wub" path="res://scenes/play_area/play_area_ui.gd" id="6_mungy"]
 [ext_resource type="FontFile" uid="uid://b53i0n502ixiy" path="res://assets/visual/ui/main_menu/body_font.ttf" id="6_tfx60"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_tfx60"]
+
+[sub_resource type="Animation" id="Animation_pohux"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.050980393, 0.12156863, 0.12941177, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2w135"]
+resource_name = "intro"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.32987702, 1),
+"update": 0,
+"values": [Color(0.050980393, 0.12156863, 0.12941177, 1), Color(0.050980393, 0.12156863, 0.12941177, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pohux"]
+_data = {
+&"RESET": SubResource("Animation_pohux"),
+&"intro": SubResource("Animation_2w135")
+}
 
 [sub_resource type="SphereMesh" id="SphereMesh_tefeu"]
 radius = 10.0
@@ -16,6 +55,129 @@ size = Vector3(5, 10, 1)
 
 [sub_resource type="Animation" id="Animation_o6xl0"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../positioners/grouping_positioner_0:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../positioners/grouping_positioner_0:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_tfx60"]
+resource_name = "level 1"
+length = 60.0
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../positioners/grouping_positioner_0:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3.5, 4.5, 5.5, 6.5, 6.75, 7.5, 7.75, 8, 8.25, 8.5, 9, 9.5, 9.75, 10, 10.25, 10.75, 11.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(1163, 307), Vector2(656, 562), Vector2(1294, 527), Vector2(962, 480), Vector2(594, 650), Vector2(620, 550), Vector2(1346, 732), Vector2(1346, 602), Vector2(1346, 472), Vector2(1346, 342), Vector2(649, 359), Vector2(783, 590), Vector2(1346, 732), Vector2(1346, 602), Vector2(1346, 472), Vector2(1346, 342), Vector2(329, 270), Vector2(558, 534)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../positioners/grouping_positioner_0:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4.5, 5.5, 6.5, 6.75, 7.5, 8.5, 9, 9.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0.0, -0.5235988, 0.0, 0.5235988, 0.6981317007977318, 0.0, 2.530727415391778, -2.530727415391778, 0.0]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.5, 3.5, 4.5, 5.5, 6.5, 6.75, 7.5, 7.75, 8, 8.25, 8.5, 9, 9.5, 9.75, 10, 10.25, 10.75, 11.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [5, 0],
+"method": &"_add_group"
+}, {
+"args": [5, 0],
+"method": &"_add_group"
+}, {
+"args": [5, 0],
+"method": &"_add_group"
+}, {
+"args": [4, 0],
+"method": &"_add_group"
+}, {
+"args": [1, 0],
+"method": &"_add_group"
+}, {
+"args": [2, 0],
+"method": &"_add_group"
+}, {
+"args": [5, 0],
+"method": &"_add_group"
+}, {
+"args": [5, 0],
+"method": &"_add_group"
+}, {
+"args": [5, 0],
+"method": &"_add_group"
+}, {
+"args": [5, 0],
+"method": &"_add_group"
+}, {
+"args": [1, 0],
+"method": &"_add_group"
+}, {
+"args": [1, 0],
+"method": &"_add_group"
+}, {
+"args": [5, 0],
+"method": &"_add_group"
+}, {
+"args": [5, 0],
+"method": &"_add_group"
+}, {
+"args": [5, 0],
+"method": &"_add_group"
+}, {
+"args": [5, 0],
+"method": &"_add_group"
+}, {
+"args": [4, 0],
+"method": &"_add_group"
+}, {
+"args": [4, 0],
+"method": &"_add_group"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_p06x2"]
+resource_name = "level 2"
+length = 60.0
+step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -40,6 +202,17 @@ tracks/1/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
 
 [sub_resource type="Animation" id="Animation_tefeu"]
 resource_name = "that 90's feelin"
@@ -54,16 +227,28 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(1, 3),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
+"update": 0,
 "values": [Vector2(500, 500), Vector2(1256, 648)]
 }
-tracks/1/type = "method"
+tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".")
+tracks/1/path = NodePath("../positioners/grouping_positioner_0:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 2.2823417]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(1, 3, 4.75),
 "transitions": PackedFloat32Array(1, 1, 1),
 "values": [{
@@ -77,22 +262,12 @@ tracks/1/keys = {
 "method": &"_end_song"
 }]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../positioners/grouping_positioner_0:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0.0, 2.2823417]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o6xl0"]
 _data = {
 &"RESET": SubResource("Animation_o6xl0"),
+&"level 1": SubResource("Animation_tfx60"),
+&"level 2": SubResource("Animation_p06x2"),
 &"that 90\'s feelin": SubResource("Animation_tefeu")
 }
 
@@ -145,6 +320,19 @@ font_color = Color(0.6901961, 0.45490196, 0.16862746, 1)
 
 [node name="play_area" type="Node2D" parent="." unique_id=1725862042]
 
+[node name="intro_cover" type="Node2D" parent="play_area" unique_id=1987391056]
+script = ExtResource("1_p06x2")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="play_area/intro_cover" unique_id=525650096]
+modulate = Color(0.050980393, 0.12156863, 0.12941177, 0)
+z_index = 2
+position = Vector2(963.74994, 542.5)
+scale = Vector2(1928.4999, 1094.9999)
+mesh = SubResource("BoxMesh_tfx60")
+
+[node name="intro_animation" type="AnimationPlayer" parent="play_area/intro_cover" unique_id=487563587]
+libraries/ = SubResource("AnimationLibrary_pohux")
+
 [node name="background_container" type="Node2D" parent="play_area" unique_id=431924720]
 script = ExtResource("1_70784")
 
@@ -169,7 +357,6 @@ rotation = -3.1437721
 mesh = SubResource("PrismMesh_70784")
 
 [node name="grouping_positioner_1" type="Node2D" parent="play_area/positioners" unique_id=577465920]
-rotation = -0.0037836132
 
 [node name="debug_mesh" type="Node2D" parent="play_area/positioners/grouping_positioner_1" unique_id=220236765]
 script = ExtResource("2_jygib")

@@ -28,6 +28,9 @@ func _ready():
 	
 	global_rotation = 0.0 # ensure stars are always upright
 
+func _physics_process(delta: float) -> void:
+	if rotation != 0.0: global_rotation = 0.0 # ensure stars are always upright
+
 func _on_area_2d_mouse_shape_entered(shape_idx: int) -> void:
 	existence_timer.stop()
 	
