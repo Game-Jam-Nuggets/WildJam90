@@ -9,7 +9,7 @@ script = ExtResource("2_a3xlb")
 music_file = ExtResource("3_54oue")
 bpm = 125
 conductor_anim = "that 90's feelin"
-background_tscn_path = "res://scenes/background scenes/background_test.tscn"
+background_tscn_path = "res://scenes/background scenes/forest_background_scene.tscn"
 metadata/_custom_type_script = "uid://cd8qx1ly8xk5v"
 
 [node name="Gamestate" type="Node" unique_id=1748107146]

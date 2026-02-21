@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://b58x0n1lg8eev" path="res://scenes/play_area/note_maker.gd" id="3_1n7fa"]
 [ext_resource type="PackedScene" uid="uid://b7jufijw4whu2" path="res://scenes/star_progress_bar/star_progress_bar.tscn" id="5_tdb20"]
 [ext_resource type="Script" uid="uid://pi0l8btk6wub" path="res://scenes/play_area/play_area_ui.gd" id="6_mungy"]
+[ext_resource type="FontFile" uid="uid://b53i0n502ixiy" path="res://assets/visual/ui/main_menu/body_font.ttf" id="6_tfx60"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_tefeu"]
 radius = 10.0
@@ -135,6 +136,11 @@ _data = {
 &"update_rating": SubResource("Animation_sugp2")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_p06x2"]
+font = ExtResource("6_tfx60")
+font_size = 32
+font_color = Color(0.6901961, 0.45490196, 0.16862746, 1)
+
 [node name="main" type="Node2D" unique_id=635752093]
 
 [node name="play_area" type="Node2D" parent="." unique_id=1725862042]
@@ -208,18 +214,6 @@ libraries/ = SubResource("AnimationLibrary_o6xl0")
 [node name="ui" type="CanvasLayer" parent="play_area" unique_id=1490530999]
 script = ExtResource("6_mungy")
 
-[node name="StarProgressBar" parent="play_area/ui" unique_id=339716133 instance=ExtResource("5_tdb20")]
-custom_minimum_size = Vector2(128, 128)
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 100.0
-offset_top = -285.0
-offset_right = 612.0
-offset_bottom = 227.0
-grow_vertical = 0
-scale = Vector2(0.40547395, 0.32997403)
-
 [node name="Control" type="Control" parent="play_area/ui" unique_id=1532379901]
 layout_mode = 3
 anchors_preset = 15
@@ -251,5 +245,26 @@ label_settings = SubResource("LabelSettings_sgp6g")
 
 [node name="rating_animator" type="AnimationPlayer" parent="play_area/ui" unique_id=857259075]
 libraries/ = SubResource("AnimationLibrary_jyhfs")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="play_area/ui" unique_id=1581817389]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 128.0
+offset_top = -298.0
+offset_right = 256.0
+offset_bottom = -133.0
+grow_vertical = 0
+
+[node name="StarProgressBar" parent="play_area/ui/VBoxContainer" unique_id=339716133 instance=ExtResource("5_tdb20")]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+progress = 0.5
+
+[node name="Label" type="Label" parent="play_area/ui/VBoxContainer" unique_id=1514782533]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_p06x2")
+horizontal_alignment = 1
 
 [node name="root_menu" type="CanvasLayer" parent="." unique_id=521983113]
