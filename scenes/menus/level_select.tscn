@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://iwff1rpba7k4" path="res://assets/visual/ui/album_arts/chart_album_art.jpg" id="4_p7c2r"]
 [ext_resource type="Texture2D" uid="uid://cyy8eihq673lt" path="res://assets/visual/ui/album_arts/stars_on_map_album_art.jpg" id="5_pwdrg"]
 
-[node name="Settings" type="Control" unique_id=1664080643]
+[node name="LevelSelect" type="Control" unique_id=1664080643]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
