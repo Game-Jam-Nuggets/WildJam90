@@ -1,5 +1,7 @@
 extends Control
 
+@export var story_music: AudioStream
+
 var current_song_time
 var can_fade_out_particles: bool
 var can_fade_out_color_mask: bool
@@ -17,7 +19,7 @@ func _ready() -> void:
 
 func _on_music_timeout() -> void:
 	var tween = create_tween()
-	$Story_music.play()
+	AudioManager.set_music(story_music)
 	
 	tween.tween_property($particles, "speed_scale", 2.0, 2)
 	tween.tween_property($particles, "lifetime", 2000, 300)
@@ -25,7 +27,7 @@ func _on_music_timeout() -> void:
 	tween.tween_callback($particles.queue_free)
 
 func _process(delta: float) -> void:
-	current_song_time = round($Story_music.get_playback_position())
+	current_song_time = round(AudioManager.music_player.get_playback_position())
 	$Label_current_song_time.text = "" + str(current_song_time)
 	if(current_song_time == 4):
 		can_fade_out_color_mask = true

@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bhf4o2vw0uhw5" path="res://assets/visual/ui/main_menu/star_map.png" id="2_bvsed"]
 [ext_resource type="Texture2D" uid="uid://b50inn3vichg5" path="res://assets/visual/ui/main_menu/star_stamp.png" id="3_kpwh7"]
 [ext_resource type="Texture2D" uid="uid://d1rme2adksdgq" path="res://assets/visual/ui/main_menu/menu_border.png" id="4_kpwh7"]
+[ext_resource type="AudioStream" uid="uid://b3d7w4a26s6pl" path="res://assets/audio/music/Hypha_title_theme_120_bpm.wav" id="6_1hnlc"]
 [ext_resource type="AudioStream" uid="uid://nckpyyyxfd3l" path="res://assets/audio/ui/UI Button Select.ogg" id="8_mwm4x"]
 
 [node name="MainMenu" type="Control" unique_id=1344294756]
@@ -69,10 +70,15 @@ layout_mode = 2
 size_flags_vertical = 3
 script = ExtResource("2_6o1s6")
 button_sound = ExtResource("8_mwm4x")
+title_theme = ExtResource("6_1hnlc")
 
 [node name="LevelsButton" type="Button" parent="CenterContainer/VSplitContainer/MarginContainer/VBoxContainer" unique_id=44922294]
 layout_mode = 2
 text = "levels"
+
+[node name="IntroButton" type="Button" parent="CenterContainer/VSplitContainer/MarginContainer/VBoxContainer" unique_id=1795328877]
+layout_mode = 2
+text = "replay intro"
 
 [node name="SettingsButton" type="Button" parent="CenterContainer/VSplitContainer/MarginContainer/VBoxContainer" unique_id=2074663169]
 layout_mode = 2
@@ -148,5 +154,6 @@ theme_override_font_sizes/font_size = 32
 text = "No. 17."
 
 [connection signal="pressed" from="CenterContainer/VSplitContainer/MarginContainer/VBoxContainer/LevelsButton" to="CenterContainer/VSplitContainer/MarginContainer/VBoxContainer" method="_on_levels_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VSplitContainer/MarginContainer/VBoxContainer/IntroButton" to="CenterContainer/VSplitContainer/MarginContainer/VBoxContainer" method="_on_intro_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VSplitContainer/MarginContainer/VBoxContainer/SettingsButton" to="CenterContainer/VSplitContainer/MarginContainer/VBoxContainer" method="_on_settings_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VSplitContainer/MarginContainer/VBoxContainer/CreditsButton" to="CenterContainer/VSplitContainer/MarginContainer/VBoxContainer" method="_on_credits_button_pressed"]
