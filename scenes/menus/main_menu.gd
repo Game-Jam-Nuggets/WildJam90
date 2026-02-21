@@ -14,7 +14,7 @@ extends Control
 
 func _on_levels_button_pressed() -> void:
 	AudioManager.play_sfx(button_sound)
-	SceneManager.load_game_scene()
+	SceneManager.load_level_select_scene()
 	pass
 
 func _on_settings_button_pressed() -> void:

@@ -83,16 +83,12 @@ max_value = 1.0
 step = 0.1
 ticks_position = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/VBoxContainer" unique_id=1879613827]
+[node name="ReturnButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1858144404]
 layout_mode = 2
-theme_override_constants/margin_left = 128
-theme_override_constants/margin_right = 128
-
-[node name="ReturnButton" type="Button" parent="CenterContainer/VBoxContainer/MarginContainer" unique_id=1858144404]
-layout_mode = 2
+size_flags_horizontal = 4
 text = "Return"
 
 [connection signal="value_changed" from="CenterContainer/VBoxContainer/SettingsPanel/MarginContainer/VBoxContainer/VolumeSlider" to="CenterContainer/VBoxContainer/SettingsPanel/MarginContainer/VBoxContainer" method="_on_volume_slider_value_changed"]
 [connection signal="value_changed" from="CenterContainer/VBoxContainer/SettingsPanel/MarginContainer/VBoxContainer/MusicVolumeSlider" to="CenterContainer/VBoxContainer/SettingsPanel/MarginContainer/VBoxContainer" method="_on_music_volume_slider_value_changed"]
 [connection signal="value_changed" from="CenterContainer/VBoxContainer/SettingsPanel/MarginContainer/VBoxContainer/SoundVolumeSlider" to="CenterContainer/VBoxContainer/SettingsPanel/MarginContainer/VBoxContainer" method="_on_sound_volume_slider_value_changed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/MarginContainer/ReturnButton" to="CenterContainer/VBoxContainer/SettingsPanel/MarginContainer/VBoxContainer" method="_on_return_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/ReturnButton" to="CenterContainer/VBoxContainer/SettingsPanel/MarginContainer/VBoxContainer" method="_on_return_button_pressed"]
