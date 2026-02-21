@@ -13,12 +13,10 @@ var grouping_spawn_pos = Vector2(0,0) # percentage between 0 and 100%
 
 # just putting these here for now
 # group loading
-const NOTE_GROUP_HORIZONTAL = preload("uid://4xwpiyf7vc0a")
-const NOTE_GROUP_VERTICAL = preload("uid://nnfnpxbllb62")
-const NOTE_GROUP_DIAG_UP = preload("uid://u8lglrihhur4")
-const NOTE_GROUP_DIAG_DOWN = preload("uid://b52y8y2feytq6")
-const NOTE_GROUP_CURVE_UP = preload("uid://bv0ay11olua0s")
-const NOTE_GROUP_CURVE_DOWN = preload("uid://brewv3vxx0xpu")
+const NOTE_GROUP_SNAKE = preload("uid://ds4fwlp5o7gl2")
+const NOTE_GROUP_CURVE = preload("uid://cytqih3j3bqwn")
+const NOTE_GROUP_CURVESMALL = preload("uid://c1n570fjnsw4y")
+const NOTE_GROUP_SINGLE_BONUS = preload("uid://cryc3yhr40dj1")
 
 # this will need to be able to load a song based upon what is stored and it name under an
 # enum, for right now it will just fucking autostart
@@ -63,6 +61,7 @@ func _add_group(group : Enums.Groups, positioner_index : int): # position is by 
 		2: current_positioner = grouping_positioner_2
 	
 	group_instance.global_position = current_positioner.position
+	group_instance.global_rotation = current_positioner.rotation
 
 #func _fetch_canvas_pos_by_percent(percent : Vector2):
 	#return Vector2(viewport_size.x * (percent.x / 100.0), viewport_size.y * (percent.y / 100.0))
@@ -70,12 +69,10 @@ func _add_group(group : Enums.Groups, positioner_index : int): # position is by 
 func _fetch_group(group_name : Enums.Groups):
 	var group_tscn = null
 	match group_name:
-		Enums.Groups.HORIZONTAL: group_tscn = NOTE_GROUP_HORIZONTAL
-		Enums.Groups.VERTICAL: group_tscn = NOTE_GROUP_VERTICAL
-		Enums.Groups.DIAG_UP: group_tscn = NOTE_GROUP_DIAG_UP
-		Enums.Groups.DIAG_DOWN: group_tscn = NOTE_GROUP_DIAG_DOWN
-		Enums.Groups.CURVE_UP: group_tscn = NOTE_GROUP_CURVE_UP
-		Enums.Groups.CURVE_DOWN: group_tscn = NOTE_GROUP_CURVE_DOWN
+		Enums.Groups.SNAKE: group_tscn = NOTE_GROUP_SNAKE
+		Enums.Groups.CURVE: group_tscn = NOTE_GROUP_CURVE
+		Enums.Groups.CURVE_SMALL: group_tscn = NOTE_GROUP_CURVESMALL
+		Enums.Groups.SINGLE_BONUS: group_tscn = NOTE_GROUP_SINGLE_BONUS
 	
 	if group_tscn != null: return group_tscn
 	else: print_debug("no grouping matching that name?!")
