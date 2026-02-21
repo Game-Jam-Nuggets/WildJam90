@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://b7jufijw4whu2"]
+
+[ext_resource type="Texture2D" uid="uid://dbh2nn3oujq8m" path="res://assets/visual/ui/points_back.png" id="1_c5ii1"]
+[ext_resource type="Script" uid="uid://b8tisjw805kay" path="res://scenes/star_progress_bar/star_progress_bar.gd" id="1_sklye"]
+[ext_resource type="Texture2D" uid="uid://cwjjob13wiq3s" path="res://assets/visual/ui/points_front.png" id="2_ar6m0"]
+[ext_resource type="Shader" uid="uid://djd0apdxblryi" path="res://resources/progressive_fill.gdshader" id="2_tswdw"]
+[ext_resource type="Texture2D" uid="uid://d02mnp1emevsa" path="res://assets/visual/ui/star_points_mask.png" id="3_tswdw"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_tswdw"]
+frequency = 0.0018
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tswdw"]
+noise = SubResource("FastNoiseLite_tswdw")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t4rjk"]
+shader = ExtResource("2_tswdw")
+shader_parameter/fill_color = Color(0.7372549, 0.4745098, 0.11764706, 1)
+shader_parameter/top_color = Color(0.9381247, 0.63505965, 0.26053092, 1)
+shader_parameter/noise_sampler = SubResource("NoiseTexture2D_tswdw")
+shader_parameter/sprite_sampler = ExtResource("3_tswdw")
+
+[node name="StarProgressBar" type="Control" unique_id=339716133 node_paths=PackedStringArray("fill")]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_sklye")
+fill = NodePath("Background/Fill")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1512010407]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_c5ii1")
+expand_mode = 1
+
+[node name="Fill" type="ColorRect" parent="Background" unique_id=183029481]
+material = SubResource("ShaderMaterial_t4rjk")
+instance_shader_parameters/progress = 0.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Glass" type="TextureRect" parent="." unique_id=1027625989]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ar6m0")
+expand_mode = 1

@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c5mmc04isp434" path="res://assets/visual/backgrounds/meekworld.PNG" id="1_jh4e4"]
 [ext_resource type="Script" uid="uid://df0rrtau0ynkj" path="res://scenes/play_area/positioner_debug_mesh.gd" id="2_jygib"]
 [ext_resource type="Script" uid="uid://b58x0n1lg8eev" path="res://scenes/play_area/note_maker.gd" id="3_1n7fa"]
+[ext_resource type="PackedScene" uid="uid://b7jufijw4whu2" path="res://scenes/star_progress_bar/star_progress_bar.tscn" id="5_tdb20"]
 [ext_resource type="Script" uid="uid://pi0l8btk6wub" path="res://scenes/play_area/play_area_ui.gd" id="6_mungy"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_tefeu"]
@@ -140,6 +141,18 @@ libraries/ = SubResource("AnimationLibrary_o6xl0")
 
 [node name="ui" type="CanvasLayer" parent="play_area" unique_id=1490530999]
 script = ExtResource("6_mungy")
+
+[node name="StarProgressBar" parent="play_area/ui" unique_id=339716133 instance=ExtResource("5_tdb20")]
+custom_minimum_size = Vector2(128, 128)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 62.0
+offset_top = -613.0
+offset_right = 574.0
+offset_bottom = -101.0
+grow_vertical = 0
+progress = 0.5
 
 [node name="Control" type="Control" parent="play_area/ui" unique_id=1532379901]
 layout_mode = 3
