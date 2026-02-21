@@ -3,7 +3,9 @@ extends Node2D
 @onready var conductor: AnimationPlayer = $conductor
 
 @export var note_area : Node2D
-@export var grouping_positioner : Node2D
+@export var grouping_positioner_0 : Node2D
+@export var grouping_positioner_1 : Node2D
+@export var grouping_positioner_2 : Node2D
 
 var grouping_spawn_pos = Vector2(0,0) # percentage between 0 and 100%
 
@@ -48,16 +50,22 @@ func _start_level(level_info : Level_Info):
 	# start
 	conductor.play();
 	
-func _add_group(group : Enums.Groups): # position is by canvas percentage
+func _add_group(group : Enums.Groups, positioner_index : int): # position is by canvas percentage
 	#var grouping_spawn_pos = position
 	var group_tscn = _fetch_group(group)
 	
 	var group_instance = group_tscn.instantiate()
 	note_area.add_child(group_instance)
-	group_instance.global_position = grouping_positioner.position
+	var current_positioner = null
+	match positioner_index:
+		0: current_positioner = grouping_positioner_0
+		1: current_positioner = grouping_positioner_1
+		2: current_positioner = grouping_positioner_2
+	
+	group_instance.global_position = current_positioner.position
 
-func _fetch_canvas_pos_by_percent(percent : Vector2):
-	return Vector2(viewport_size.x * (percent.x / 100.0), viewport_size.y * (percent.y / 100.0))
+#func _fetch_canvas_pos_by_percent(percent : Vector2):
+	#return Vector2(viewport_size.x * (percent.x / 100.0), viewport_size.y * (percent.y / 100.0))
 
 func _fetch_group(group_name : Enums.Groups):
 	var group_tscn = null
@@ -71,3 +79,6 @@ func _fetch_group(group_name : Enums.Groups):
 	
 	if group_tscn != null: return group_tscn
 	else: print_debug("no grouping matching that name?!")
+ 
+func _end_song():
+	Events.level_ended.emit()
