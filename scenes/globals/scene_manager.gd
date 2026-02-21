@@ -5,6 +5,7 @@ var current_scene: Node = null
 
 ## --- export vars ---
 @export var main_menu_scene: PackedScene
+@export var intro_scene: PackedScene
 @export var level_select_scene: PackedScene
 @export var game_scene: PackedScene
 @export var settings_scene: PackedScene
@@ -14,7 +15,7 @@ var current_scene: Node = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	load_main_menu_scene()
+	load_intro_scene()
 	
 ## --- public methods ---
 
@@ -27,6 +28,9 @@ func change_room(scene: PackedScene) -> void:
 	# Load new room
 	current_scene = scene.instantiate()
 	add_child(current_scene)
+
+func load_intro_scene():
+	change_room(intro_scene)
 
 ## Loads game scene
 func load_game_scene():
