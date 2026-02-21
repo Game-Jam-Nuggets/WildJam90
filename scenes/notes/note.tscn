@@ -467,7 +467,7 @@ animations = [{
 "speed": 6.5
 }]
 
-[node name="note_medium" type="Node2D" unique_id=1990359077]
+[node name="note" type="Node2D" unique_id=1990359077]
 scale = Vector2(1.6, 1.6)
 script = ExtResource("1_66ngb")
 star_break_sounds = Array[AudioStream]([ExtResource("2_6ioka"), ExtResource("3_ootjf"), ExtResource("4_r2pak"), ExtResource("5_wpmfr")])

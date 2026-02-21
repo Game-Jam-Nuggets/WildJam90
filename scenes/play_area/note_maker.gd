@@ -17,6 +17,9 @@ const NOTE_GROUP_SNAKE = preload("uid://ds4fwlp5o7gl2")
 const NOTE_GROUP_CURVE = preload("uid://cytqih3j3bqwn")
 const NOTE_GROUP_CURVESMALL = preload("uid://c1n570fjnsw4y")
 const NOTE_GROUP_SINGLE_BONUS = preload("uid://cryc3yhr40dj1")
+const NOTE_GROUP_CIRCLE_ROTATE = preload("uid://bqwa6b0b3c4je")
+const NOTE_GROUP_STRAIGHT = preload("uid://bw1odoph8dl6i")
+
 
 # this will need to be able to load a song based upon what is stored and it name under an
 # enum, for right now it will just fucking autostart
@@ -43,10 +46,14 @@ func _start_level(level_info : Level_Info):
 	conductor.speed_scale = 0.25 * (Gamestate.current_bpm / 60.0) # scaling animation to the bpm
 	
 	# music_player.stream = level_info.music_file
-	AudioManager.set_music(level_info.music_file, 0.5)
+	AudioManager.set_music(level_info.music_file, 0.5, 1.0, Gamestate.debug_start_time)
 	
 	# start
-	conductor.play();
+	
+	conductor.play()
+	conductor.pause()
+	conductor.advance(Gamestate.debug_start_time)
+	conductor.play()
 	
 func _add_group(group : Enums.Groups, positioner_index : int): # position is by canvas percentage
 	#var grouping_spawn_pos = position
@@ -73,6 +80,8 @@ func _fetch_group(group_name : Enums.Groups):
 		Enums.Groups.CURVE: group_tscn = NOTE_GROUP_CURVE
 		Enums.Groups.CURVE_SMALL: group_tscn = NOTE_GROUP_CURVESMALL
 		Enums.Groups.SINGLE_BONUS: group_tscn = NOTE_GROUP_SINGLE_BONUS
+		Enums.Groups.CIRCLE_ROTATE: group_tscn = NOTE_GROUP_CIRCLE_ROTATE
+		Enums.Groups.STRAIGHT: group_tscn = NOTE_GROUP_STRAIGHT
 	
 	if group_tscn != null: return group_tscn
 	else: print_debug("no grouping matching that name?!")
