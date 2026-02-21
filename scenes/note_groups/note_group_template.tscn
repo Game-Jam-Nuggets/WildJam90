@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://3i0ew5hj7bfq"]
 
 [ext_resource type="Script" uid="uid://btyx7xs85pju5" path="res://scenes/note_groups/note_group.gd" id="1_c8tr7"]
+[ext_resource type="Script" uid="uid://h8iu0qiryp0d" path="res://scenes/note_groups/note_container.gd" id="2_c8tr7"]
 
 [node name="note_group" type="Node2D" unique_id=2065057774]
 script = ExtResource("1_c8tr7")
 
 [node name="note_container" type="Node2D" parent="." unique_id=1616491492]
+script = ExtResource("2_c8tr7")
 
 [node name="existence_timer" type="Timer" parent="." unique_id=1942558551]
 one_shot = true

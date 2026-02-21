@@ -17,7 +17,7 @@ func _ready():
 
 ## Updates the parameter for main music and plays
 ## @param stream: The audiostream to play
-func set_music(stream: AudioStream, volume := 1.0, pitch := 1.0):
+func set_music(stream: AudioStream, volume := 1.0, pitch := 1.0, position := 0.0):
 	playing = true
 	if (music_player.stream != stream):
 		music_player.stream = stream
