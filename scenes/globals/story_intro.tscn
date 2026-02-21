@@ -123,7 +123,6 @@ texture = ExtResource("10_ycsjx")
 stream = ExtResource("6_a0a33")
 
 [node name="color_mask" type="ColorRect" parent="." unique_id=1662304092]
-visible = false
 layout_mode = 0
 offset_left = -67.0
 offset_top = -31.0
@@ -468,6 +467,7 @@ wait_time = 0.08
 autostart = true
 
 [node name="Label_current_song_time" type="Label" parent="." unique_id=181860509]
+visible = false
 layout_mode = 0
 offset_left = 711.0
 offset_top = 126.0

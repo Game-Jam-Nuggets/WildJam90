@@ -17,7 +17,7 @@ func _ready() -> void:
 
 func _on_music_timeout() -> void:
 	var tween = create_tween()
-	$Story_music.play(38)
+	$Story_music.play()
 	
 	tween.tween_property($particles, "speed_scale", 2.0, 2)
 	tween.tween_property($particles, "lifetime", 2000, 300)
