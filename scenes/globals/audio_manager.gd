@@ -19,15 +19,17 @@ func _ready():
 ## @param stream: The audiostream to play
 func set_music(stream: AudioStream, volume := 1.0, pitch := 1.0, position := 0.0):
 	playing = true
-	music_player.stream = stream
-	music_player.volume_linear = volume
-	music_player.pitch_scale = pitch
-	music_player.play(position)
+	if (music_player.stream != stream):
+		music_player.stream = stream
+		music_player.volume_linear = volume
+		music_player.pitch_scale = pitch
+		music_player.play()
 	
 ## Stops the main music
 func stop_music():
 	playing = false
-	music_player.stop()
+	if (music_player):
+		music_player.stop()
 	
 ## Plays the given sound effect
 ## @param stream: The audiostream to play
