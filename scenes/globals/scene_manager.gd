@@ -30,6 +30,7 @@ func change_room(scene: PackedScene) -> void:
 	add_child(current_scene)
 
 func load_intro_scene():
+	AudioManager.stop_music()
 	change_room(intro_scene)
 
 ## Loads game scene
