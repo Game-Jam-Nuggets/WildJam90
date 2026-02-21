@@ -1,13 +1,19 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://ccwgiu4snij5f"]
 
 [ext_resource type="Shader" uid="uid://djd0apdxblryi" path="res://resources/progressive_fill.gdshader" id="1_4jd1n"]
+[ext_resource type="Texture2D" uid="uid://bj5oey42eloeg" path="res://assets/visual/ui/points_back2.png" id="2_36877"]
 [ext_resource type="Texture2D" uid="uid://d02mnp1emevsa" path="res://assets/visual/ui/star_points_mask.png" id="2_ftll0"]
+[ext_resource type="Texture2D" uid="uid://cwjjob13wiq3s" path="res://assets/visual/ui/points_front.png" id="3_0flwc"]
 
 [resource]
 shader = ExtResource("1_4jd1n")
 shader_parameter/fill_color = Color(0.7372549, 0.4745098, 0.11764706, 1)
 shader_parameter/top_color = Color(0.9381247, 0.63505965, 0.26053092, 1)
+shader_parameter/background_texture = ExtResource("2_36877")
+shader_parameter/foreground_texture = ExtResource("3_0flwc")
 shader_parameter/sprite_sampler = ExtResource("2_ftll0")
-shader_parameter/progress = 0.6810000323475
+shader_parameter/progress = 0.5600000266
 shader_parameter/liquid_effect_amplitude = 2.794000132715
 shader_parameter/liquid_effect_period = 5.5710002646225
+shader_parameter/liquid_highlight_strength = 0.6
+shader_parameter/liquid_highlight_width = 0.02
