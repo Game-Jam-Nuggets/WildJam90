@@ -1,3 +1,4 @@
+class_name StarProgressBar
 extends Control
 
 signal progress_changed(new_progress: float, old_progress: float)

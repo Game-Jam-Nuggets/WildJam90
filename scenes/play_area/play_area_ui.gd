@@ -2,9 +2,13 @@ extends CanvasLayer
 
 @onready var rating_label: Label = $Control/MarginContainer/rating_label
 @onready var rating_animator: AnimationPlayer = $rating_animator
+@onready var star_progress_bar: StarProgressBar = $VBoxContainer/StarProgressBar
+
 
 func _ready():
 	Events.group_finished.connect(update_rating)
+	Events.score_updated.connect(update_score)
+	star_progress_bar.progress = 0.0
 
 func update_rating(rating : Enums.GroupRating):
 	rating_animator.play("RESET") 
@@ -18,3 +22,9 @@ func update_rating(rating : Enums.GroupRating):
 	
 	rating_label.text = rating_text
 	rating_animator.play("update_rating")
+
+func update_score(p_new_score: int, p_new_score_max: int) -> void:
+	var new_score_ratio := 0.0
+	if p_new_score_max > 0:
+		new_score_ratio = p_new_score / float(p_new_score_max)
+	star_progress_bar.progress = new_score_ratio

@@ -55,8 +55,14 @@ func _setup_level(level_name : Level_Info.LEVEL_NAME):
 	_reset_vars()
 
 #### counting methods
-func _note_hit(): note_hit_count += 1
-func _note_spawned(): note_count += 1
+func _note_hit(): 
+	note_hit_count += 1
+	Events.score_updated.emit(note_hit_count, note_count)
+
+func _note_spawned(): 
+	note_count += 1
+	Events.score_updated.emit(note_hit_count, note_count)
+	
 func _group_finished(rating): # tracking group progress
 	match rating:
 		Enums.GroupRating.PERFECT : perfect_count += 1
