@@ -5,6 +5,7 @@ var current_scene: Node = null
 
 ## --- export vars ---
 @export var main_menu_scene: PackedScene
+@export var level_select_scene: PackedScene
 @export var game_scene: PackedScene
 @export var settings_scene: PackedScene
 
@@ -33,6 +34,10 @@ func load_game_scene():
 ## Loads the main menu scene
 func load_main_menu_scene():
 	change_room(main_menu_scene)
+	
+## Loads level select scene
+func load_level_select_scene():
+	change_room(level_select_scene)
 	
 ## Loads settings scene
 func load_settings_scene():

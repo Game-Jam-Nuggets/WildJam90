@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://sqmod2kbqptc" path="res://assets/visual/ui/main_menu/selection_button.png" id="1_0ojqx"]
 
 [resource]
+content_margin_left = 128.0
 content_margin_top = 64.0
+content_margin_right = 128.0
 content_margin_bottom = 64.0
 texture = ExtResource("1_0ojqx")
