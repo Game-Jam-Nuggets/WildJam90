@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var existence_timer: Timer = $existence_timer
+@onready var particle_emitter_hit: GPUParticles2D = $particle_emitter_hit
 
 @export var note_existence_length = 4 # beats
 @export var bonus_note: bool = false # whether to count this note as a bonus or not
@@ -36,6 +37,13 @@ func _on_area_2d_mouse_shape_entered(shape_idx: int) -> void:
 	
 	hit.emit()
 	Events.note_hit.emit()
+	
+	# spawn emitter
+	self.remove_child(particle_emitter_hit)
+	add_sibling(particle_emitter_hit)
+	particle_emitter_hit.global_position = self.global_position
+	
+	particle_emitter_hit.emitting = true
 
 func start_existence():
 	existence_timer.wait_time = Gamestate.beat_length * note_existence_length
@@ -59,3 +67,7 @@ func _on_animation_tree_animation_finished(anim_name: StringName) -> void:
 		"spawning": start_existence()
 		"hit": queue_free()
 		"miss": queue_free()
+
+
+func _on_particle_emitter_hit_finished() -> void:
+	pass # Replace with function body.
