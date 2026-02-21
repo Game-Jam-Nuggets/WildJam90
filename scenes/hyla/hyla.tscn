@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b2ikhgnuy6c7x"]
+
+[ext_resource type="Texture2D" uid="uid://bcpdif0ydm727" path="res://assets/visual/sprites/Hyla-MC_Back.png" id="1_ufhjr"]
+[ext_resource type="Texture2D" uid="uid://do3addcsoto1f" path="res://assets/visual/sprites/Hyla_Sword-1.png" id="1_vupcl"]
+
+[node name="Hyla" type="Node2D" unique_id=523409213]
+
+[node name="SwordPoint" type="Node2D" parent="." unique_id=717480434]
+position = Vector2(-28, -31)
+
+[node name="HylaSword1" type="Sprite2D" parent="SwordPoint" unique_id=1836803700]
+position = Vector2(0, -23)
+texture = ExtResource("1_vupcl")
+
+[node name="HylaMcBack" type="Sprite2D" parent="." unique_id=166418454]
+position = Vector2(0, -48)
+texture = ExtResource("1_ufhjr")

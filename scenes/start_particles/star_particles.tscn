@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bj7ae8uu0llco"]
+
+[ext_resource type="Texture2D" uid="uid://cvfiwyeibwsmm" path="res://assets/visual/sprites/anim_star-spin_spritesheet.png" id="1_880mt"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8avlw"]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 2
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_1ms5y"]
+_data = [Vector2(0, 0.21436709), 0.0, 0.0, 0, 0, Vector2(0.9682081, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_wr13f"]
+curve = SubResource("Curve_1ms5y")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6857q"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = -30.0
+initial_velocity_max = 75.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_wr13f")
+anim_offset_max = 1.0
+
+[node name="StarParticles" type="GPUParticles2D" unique_id=1452563507]
+material = SubResource("CanvasItemMaterial_8avlw")
+texture = ExtResource("1_880mt")
+lifetime = 0.5
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_6857q")
