@@ -4,9 +4,13 @@ uniform vec3 fill_color: source_color;
 uniform vec3 top_color: source_color;
 uniform sampler2D noise_sampler;
 uniform sampler2D sprite_sampler;
-instance uniform float progress: hint_range(0.0, 1.0, 0.001);
+uniform float progress: hint_range(0.0, 1.0, 0.001);
+uniform float liquid_effect_amplitude: hint_range(0.0, 100.0, 0.001) = 2.0;
+uniform float liquid_effect_period: hint_range(0.0, 100.0, 0.001) = 2.0;
 
-void vertex() {
+
+float wave(float x, float amplitude, float period) {
+	return amplitude * sin(period * x);
 }
 
 vec4 orb(vec2 p) {
@@ -15,7 +19,7 @@ vec4 orb(vec2 p) {
 	
 	// Sample y + (sin(uv.x + (amplitude * TIME))) to see if we can add a bit more progress.
 	float noise = texture(noise_sampler, vec2(p.x, y)).r;
-	y = y + sin(p.x + noise + TIME) * 0.01;
+	y = y + wave(TIME + noise + p.x, liquid_effect_amplitude, liquid_effect_period) * 0.01;
 	float v = step(y, progress);
 	float a = v * texture(sprite_sampler, p).a * 0.75;
 

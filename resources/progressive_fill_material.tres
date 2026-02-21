@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://ccwgiu4snij5f"]
+
+[ext_resource type="Shader" uid="uid://djd0apdxblryi" path="res://resources/progressive_fill.gdshader" id="1_4jd1n"]
+[ext_resource type="Texture2D" uid="uid://d02mnp1emevsa" path="res://assets/visual/ui/star_points_mask.png" id="2_ftll0"]
+
+[resource]
+shader = ExtResource("1_4jd1n")
+shader_parameter/fill_color = Color(0.7372549, 0.4745098, 0.11764706, 1)
+shader_parameter/top_color = Color(0.9381247, 0.63505965, 0.26053092, 1)
+shader_parameter/sprite_sampler = ExtResource("2_ftll0")
+shader_parameter/progress = 0.6810000323475
+shader_parameter/liquid_effect_amplitude = 2.794000132715
+shader_parameter/liquid_effect_period = 5.5710002646225

@@ -3,9 +3,7 @@ extends Control
 signal progress_changed(new_progress: float, old_progress: float)
 
 @export var uniform_name_progress: StringName = &"progress";
-
-@export_category("Nodes")
-@export var fill: ColorRect
+@export var mat_progressive_fill: ShaderMaterial
 
 ## progress is a float that ranges from (0, 1).
 @export var progress: float:
@@ -13,9 +11,9 @@ signal progress_changed(new_progress: float, old_progress: float)
 		var old_progress := progress
 		progress = p_value
 		progress_changed.emit(old_progress, progress)
-		if fill:
-			fill.set_instance_shader_parameter(uniform_name_progress, progress)
+		if mat_progressive_fill:
+			mat_progressive_fill.set_shader_parameter(uniform_name_progress, progress)
 
 func _ready() -> void:
-	if fill:
-		fill.set_instance_shader_parameter(uniform_name_progress, progress)
+	if mat_progressive_fill:
+		mat_progressive_fill.set_shader_parameter(uniform_name_progress, progress)
