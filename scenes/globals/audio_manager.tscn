@@ -1,8 +1,16 @@
 [gd_scene format=3 uid="uid://dn8ysd41ppc2j"]
 
 [ext_resource type="Script" uid="uid://dq6k3337e1rl0" path="res://scenes/globals/audio_manager.gd" id="1_kic43"]
+[ext_resource type="AudioStream" uid="uid://bv3oyvuc0revk" path="res://assets/audio/ui/UI Button Interact 1.ogg" id="2_o8ntj"]
+[ext_resource type="AudioStream" uid="uid://b774nydnjrcpe" path="res://assets/audio/ui/UI Button Interact 2.ogg" id="3_aa7mi"]
+[ext_resource type="AudioStream" uid="uid://cemwcq84py2hx" path="res://assets/audio/ui/UI Button Interact 3.ogg" id="4_vtr8g"]
+[ext_resource type="AudioStream" uid="uid://dkmbmcd2xdxqp" path="res://assets/audio/ui/UI Button Interact 4.ogg" id="5_hmupl"]
+[ext_resource type="AudioStream" uid="uid://dhqt5yn5hic74" path="res://assets/audio/ui/UI Button Interact 5.ogg" id="6_kym88"]
+[ext_resource type="AudioStream" uid="uid://dc4tsfamb8epp" path="res://assets/audio/ui/UI Button Interact 6.ogg" id="7_3cs75"]
 
 [node name="AudioManager" type="Node" unique_id=1055105965]
 script = ExtResource("1_kic43")
+ui_click_sounds = Array[AudioStream]([ExtResource("2_o8ntj"), ExtResource("3_aa7mi"), ExtResource("4_vtr8g"), ExtResource("5_hmupl"), ExtResource("6_kym88"), ExtResource("7_3cs75")])
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1243563437]
+bus = &"Music"
