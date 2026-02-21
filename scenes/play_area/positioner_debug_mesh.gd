@@ -1,4 +1,4 @@
-extends MeshInstance2D
+extends Node2D
 
 @export var show_positioner = false
 

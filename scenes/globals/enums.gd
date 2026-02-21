@@ -1,4 +1,4 @@
 extends Node
 
 enum GroupRating { MISS, OKAY, GOOD, PERFECT, BONUS }
-enum Groups { HORIZONTAL, VERTICAL, DIAG_UP, DIAG_DOWN, CURVE_UP, CURVE_DOWN }
+enum Groups { SNAKE, CURVE, CURVE_SMALL, SINGLE_BONUS }
