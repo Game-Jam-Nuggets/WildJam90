@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://27puu8x3hot3" path="res://assets/audio/game/Star Break 3.ogg" id="4_r2pak"]
 [ext_resource type="AudioStream" uid="uid://dbrtnhvh63v26" path="res://assets/audio/game/Star Break 4.ogg" id="5_wpmfr"]
 [ext_resource type="Script" uid="uid://bixeanyj0um5i" path="res://scenes/notes/particle_emitter_hit.gd" id="6_ootjf"]
+[ext_resource type="Texture2D" uid="uid://cvfiwyeibwsmm" path="res://assets/visual/sprites/anim_star-spin_spritesheet.png" id="7_tjdnf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w7eif"]
 radius = 22.0
@@ -159,6 +160,18 @@ tracks/10/keys = {
 "update": 0,
 "values": [Color(0.90588236, 0.2901961, 0, 0.61960787)]
 }
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("StarSprite:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_v7wvs"]
 resource_name = "hit"
@@ -277,6 +290,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [Color(0.90588236, 0.2901961, 0, 0.61960787), Color(0.90588236, 0.2901961, 0, 0)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("StarSprite:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_xjeh5"]
 resource_name = "spawning"
@@ -295,7 +320,7 @@ tracks/0/keys = {
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/path = NodePath("mesh:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -343,6 +368,18 @@ tracks/4/keys = {
 "method": &"send_ready"
 }]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("StarSprite:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xjeh5"]
 _data = {
@@ -379,6 +416,56 @@ radial_velocity_max = 155.81998
 gravity = Vector3(0, 0, 0)
 scale_curve = SubResource("CurveTexture_wpmfr")
 color_ramp = SubResource("GradientTexture1D_ootjf")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tjdnf"]
+atlas = ExtResource("7_tjdnf")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2yt2i"]
+atlas = ExtResource("7_tjdnf")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_joe8b"]
+atlas = ExtResource("7_tjdnf")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k63v4"]
+atlas = ExtResource("7_tjdnf")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blmen"]
+atlas = ExtResource("7_tjdnf")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aw3k1"]
+atlas = ExtResource("7_tjdnf")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8k7yo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tjdnf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2yt2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_joe8b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k63v4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blmen")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aw3k1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.5
+}]
 
 [node name="note_medium" type="Node2D" unique_id=1990359077]
 scale = Vector2(1.6, 1.6)
@@ -438,6 +525,14 @@ explosiveness = 0.87
 fixed_fps = 120
 process_material = SubResource("ParticleProcessMaterial_yup7j")
 script = ExtResource("6_ootjf")
+
+[node name="StarSprite" type="AnimatedSprite2D" parent="." unique_id=1679595648]
+visible = false
+z_index = 2
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_8k7yo")
+autoplay = "default"
+frame_progress = 0.40911946
 
 [connection signal="mouse_shape_entered" from="area_hit_collider" to="." method="_on_area_2d_mouse_shape_entered"]
 [connection signal="mouse_shape_exited" from="area_miss_collider" to="." method="_on_area_miss_collider_mouse_shape_exited"]
