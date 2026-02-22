@@ -5,13 +5,91 @@
 [ext_resource type="Script" uid="uid://dtk65d7eihlkc" path="res://scenes/menus/level_select.gd" id="2_vgm8m"]
 [ext_resource type="AudioStream" uid="uid://laxnk0mydqha" path="res://assets/audio/ui/Level Select.ogg" id="3_p7c2r"]
 [ext_resource type="Texture2D" uid="uid://iwff1rpba7k4" path="res://assets/visual/ui/album_arts/chart_album_art.jpg" id="4_p7c2r"]
+[ext_resource type="AudioStream" uid="uid://b3d7w4a26s6pl" path="res://assets/audio/music/Hypha_title_theme_120_bpm.wav" id="4_tnwi7"]
 [ext_resource type="Texture2D" uid="uid://cyy8eihq673lt" path="res://assets/visual/ui/album_arts/stars_on_map_album_art.jpg" id="5_pwdrg"]
 [ext_resource type="FontFile" uid="uid://b53i0n502ixiy" path="res://assets/visual/ui/main_menu/body_font.ttf" id="7_pwdrg"]
+[ext_resource type="Texture2D" uid="uid://6hjw0ebc6g5d" path="res://assets/visual/ui/controls_guide.jpg" id="9_ng7pr"]
+[ext_resource type="Script" uid="uid://cfps0hw3rlmm6" path="res://scenes/menus/control_guide.gd" id="9_tyig4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tnwi7"]
 font = ExtResource("7_pwdrg")
 font_size = 48
 font_color = Color(0.6901961, 0.45490196, 0.16862746, 1)
+
+[sub_resource type="Animation" id="Animation_ng7pr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8khru"]
+resource_name = "guide_transition"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4.9666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"goto_level"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xl4el"]
+_data = {
+&"RESET": SubResource("Animation_ng7pr"),
+&"guide_transition": SubResource("Animation_8khru")
+}
 
 [node name="LevelSelect" type="Control" unique_id=1664080643]
 layout_mode = 3
@@ -23,6 +101,7 @@ grow_vertical = 2
 theme = ExtResource("1_vgm8m")
 script = ExtResource("2_vgm8m")
 level_select_sound = ExtResource("3_p7c2r")
+main_theme = ExtResource("4_tnwi7")
 
 [node name="BG" type="TextureRect" parent="." unique_id=538344818]
 layout_mode = 0
@@ -105,6 +184,18 @@ label_settings = SubResource("LabelSettings_tnwi7")
 layout_mode = 2
 text = "00000"
 label_settings = SubResource("LabelSettings_tnwi7")
+
+[node name="ControlGuide" type="TextureRect" parent="." unique_id=1580725066]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("9_ng7pr")
+script = ExtResource("9_tyig4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ControlGuide" unique_id=43850964]
+libraries/ = SubResource("AnimationLibrary_xl4el")
+autoplay = &"RESET"
 
 [connection signal="pressed" from="HBoxContainer/ReturnButton" to="." method="_on_return_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer/GridContainer/Level1" to="." method="_on_level_1_pressed"]
