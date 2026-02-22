@@ -35,5 +35,11 @@ func _on_level_ended() -> void:
 		save_data.scores = {}
 	
 	var level_id = Gamestate.current_level_info.level_id
-	save_data.scores[level_id] = Gamestate.note_hit_count
+	save_data.scores[str(level_id)] = Gamestate.note_hit_count
 	save_game()
+
+func get_score(p_level_id: Level_Info.LEVEL_ID) -> int:
+	var str_p_level_id := str(p_level_id)
+	if save_data.scores.has(str_p_level_id):
+		return save_data.scores[str_p_level_id];
+	return 0

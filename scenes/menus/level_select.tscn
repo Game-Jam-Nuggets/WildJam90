@@ -6,6 +6,12 @@
 [ext_resource type="AudioStream" uid="uid://laxnk0mydqha" path="res://assets/audio/ui/Level Select.ogg" id="3_p7c2r"]
 [ext_resource type="Texture2D" uid="uid://iwff1rpba7k4" path="res://assets/visual/ui/album_arts/chart_album_art.jpg" id="4_p7c2r"]
 [ext_resource type="Texture2D" uid="uid://cyy8eihq673lt" path="res://assets/visual/ui/album_arts/stars_on_map_album_art.jpg" id="5_pwdrg"]
+[ext_resource type="FontFile" uid="uid://b53i0n502ixiy" path="res://assets/visual/ui/main_menu/body_font.ttf" id="7_pwdrg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tnwi7"]
+font = ExtResource("7_pwdrg")
+font_size = 48
+font_color = Color(0.6901961, 0.45490196, 0.16862746, 1)
 
 [node name="LevelSelect" type="Control" unique_id=1664080643]
 layout_mode = 3
@@ -73,6 +79,32 @@ text = "Play"
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Play"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer/MarginContainer/GridContainer" unique_id=2008121574]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/GridContainer/VBoxContainer2" unique_id=1282484268]
+layout_mode = 2
+text = "HI SCORE: "
+label_settings = SubResource("LabelSettings_tnwi7")
+
+[node name="HiScoreLevel1" type="Label" parent="HBoxContainer/MarginContainer/GridContainer/VBoxContainer2" unique_id=708627705]
+layout_mode = 2
+text = "000000"
+label_settings = SubResource("LabelSettings_tnwi7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer/GridContainer" unique_id=229836827]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/GridContainer/VBoxContainer" unique_id=76458100]
+layout_mode = 2
+text = "HI SCORE: "
+label_settings = SubResource("LabelSettings_tnwi7")
+
+[node name="HiScoreLevel2" type="Label" parent="HBoxContainer/MarginContainer/GridContainer/VBoxContainer" unique_id=1505046909]
+layout_mode = 2
+text = "00000"
+label_settings = SubResource("LabelSettings_tnwi7")
 
 [connection signal="pressed" from="HBoxContainer/ReturnButton" to="." method="_on_return_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer/GridContainer/Level1" to="." method="_on_level_1_pressed"]
