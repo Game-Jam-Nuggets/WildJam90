@@ -7,7 +7,7 @@ extends Node
 var playing: bool = false
 
 # --- onready variables ---
-@onready var music_player: AudioStreamPlayer = $MusicPlayer
+@onready var music_player: AudioStreamPlayer = $"MusicPlayer"
 
 # --- built-in functions ---
 func _ready():
