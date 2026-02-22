@@ -505,7 +505,7 @@ _data = {
 
 [sub_resource type="LabelSettings" id="LabelSettings_p06x2"]
 font = ExtResource("6_tfx60")
-font_size = 64
+font_size = 92
 font_color = Color(0.6901961, 0.45490196, 0.16862746, 1)
 
 [node name="main" type="Node2D" unique_id=635752093]
@@ -599,12 +599,13 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 128.0
-offset_top = -298.0
-offset_right = 256.0
-offset_bottom = -133.0
+offset_top = -490.0
+offset_right = 528.0
+offset_bottom = -22.0
 grow_vertical = 0
 
 [node name="StarProgressBar" parent="play_area/ui/VBoxContainer" unique_id=339716133 instance=ExtResource("5_tdb20")]
+custom_minimum_size = Vector2(400, 400)
 layout_mode = 2
 progress = 0.5
 
