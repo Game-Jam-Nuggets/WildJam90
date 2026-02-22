@@ -38,8 +38,6 @@ const NOTE_GROUP_BIG_DIPPER = preload("uid://dvsymbgqr4b01")
 
 func _ready():
 	Events.level_start.connect(_start_level)
-	
-	Events.level_selected.emit(Level_Info.LEVEL_NAME.LEVEL_1) # debug
 
 func _start_level(level_info : Level_Info):
 	# setup 
