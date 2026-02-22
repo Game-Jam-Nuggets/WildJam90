@@ -14,7 +14,7 @@ music_file = ExtResource("3_54oue")
 bpm = 110
 conductor_anim = "level 1"
 cover_art = ExtResource("3_0mtk8")
-background_tscn_path = "res://scenes/background scenes/forest_background_scene_static.tscn"
+background_tscn_path = "res://scenes/background scenes/forest_background_scene.tscn"
 metadata/_custom_type_script = "uid://cd8qx1ly8xk5v"
 
 [sub_resource type="Resource" id="Resource_54oue"]
@@ -25,7 +25,7 @@ music_file = ExtResource("4_7u0hp")
 bpm = 130
 conductor_anim = "level 2"
 cover_art = ExtResource("5_f6fr7")
-background_tscn_path = "res://scenes/background scenes/forest_background_scene_static.tscn"
+background_tscn_path = "res://scenes/background scenes/forest_background_scene.tscn"
 metadata/_custom_type_script = "uid://cd8qx1ly8xk5v"
 
 [node name="Gamestate" type="Node" unique_id=1748107146]

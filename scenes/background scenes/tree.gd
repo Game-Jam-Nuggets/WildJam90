@@ -4,7 +4,7 @@ extends Node2D
 @export var tree_path: TreePath
 @export var path_point: int
 @export var speed: float
-@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var sprite_2d: Sprite2D = $TreeVisual/Sprite2D
 
 var tween: Tween
 
