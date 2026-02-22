@@ -717,10 +717,12 @@ offset_top = -490.0
 offset_right = 528.0
 offset_bottom = -22.0
 grow_vertical = 0
+mouse_filter = 2
 
 [node name="StarProgressBar" parent="play_area/ui/VBoxContainer" unique_id=339716133 instance=ExtResource("5_tdb20")]
 custom_minimum_size = Vector2(400, 400)
 layout_mode = 2
+mouse_filter = 2
 progress = 0.5
 
 [node name="Label" type="Label" parent="play_area/ui/VBoxContainer" unique_id=1514782533]
@@ -735,6 +737,7 @@ offset_top = 784.0
 offset_right = 1814.0
 offset_bottom = 934.0
 size_flags_horizontal = 4
+mouse_filter = 2
 texture = ExtResource("8_pohux")
 expand_mode = 1
 
