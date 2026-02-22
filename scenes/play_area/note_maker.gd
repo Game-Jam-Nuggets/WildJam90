@@ -21,6 +21,8 @@ const NOTE_GROUP_CIRCLE_ROTATE = preload("uid://bqwa6b0b3c4je")
 const NOTE_GROUP_STRAIGHT = preload("uid://bw1odoph8dl6i")
 
 const NOTE_GROUP_BIG_DIPPER = preload("uid://dvsymbgqr4b01")
+const NOTE_GROUP_ORION = preload("uid://c3olfhl7wmgua")
+const NOTE_GROUP_HERCULES = preload("uid://6o6t18sjjcpp")
 
 # this will need to be able to load a song based upon what is stored and it name under an
 # enum, for right now it will just fucking autostart
@@ -105,6 +107,8 @@ func _fetch_group_special(group_name : Enums.Groups):
 	var group_tscn = null
 	match group_name:
 		Enums.GroupsSpecial.BIG_DIPPER: group_tscn = NOTE_GROUP_BIG_DIPPER
+		Enums.GroupsSpecial.ORION: group_tscn = NOTE_GROUP_ORION
+		Enums.GroupsSpecial.HERCULES: group_tscn = NOTE_GROUP_HERCULES
 	
 	if group_tscn != null: return group_tscn
 	else: print_debug("no grouping matching that name?!")
