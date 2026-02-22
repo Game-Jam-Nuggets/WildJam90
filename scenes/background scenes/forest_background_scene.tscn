@@ -1,18 +1,18 @@
 [gd_scene format=3 uid="uid://86xthh6ugcfi"]
 
 [ext_resource type="Texture2D" uid="uid://bhiwrrf8u2que" path="res://assets/visual/backgrounds/bg.jpeg" id="1_djtid"]
-[ext_resource type="Script" path="res://scenes/background scenes/forest_background_scene.gd" id="1_fdhpq"]
+[ext_resource type="Script" uid="uid://comqiu7ly3720" path="res://scenes/background scenes/forest_background_scene.gd" id="1_fdhpq"]
 [ext_resource type="Texture2D" uid="uid://5msqdmfg2hp3" path="res://assets/visual/backgrounds/1_HtSM - Level Bg.png" id="2_4ovim"]
 [ext_resource type="Texture2D" uid="uid://ci88n5hv14doh" path="res://assets/visual/backgrounds/2_HtSM - Level Bg.png" id="3_1joeb"]
 [ext_resource type="Texture2D" uid="uid://dxw2m3lv3hkjf" path="res://assets/visual/backgrounds/3_HtSM - Level Bg.png" id="4_axxvl"]
 [ext_resource type="Texture2D" uid="uid://bes52gvenp447" path="res://assets/visual/backgrounds/4_HtSM - Level Bg.png" id="5_fdhpq"]
 [ext_resource type="Texture2D" uid="uid://c2ky1mxpld2gy" path="res://assets/visual/backgrounds/5_HtSM - Level Bg.png" id="6_txocx"]
 [ext_resource type="Texture2D" uid="uid://bl7yen2nrgudj" path="res://assets/visual/backgrounds/6_HtSM - Level Bg.png" id="7_5jex5"]
-[ext_resource type="Script" path="res://scenes/background scenes/tree_path.gd" id="7_axxvl"]
-[ext_resource type="Script" path="res://scenes/background scenes/tree_path_node.gd" id="8_fdhpq"]
-[ext_resource type="PackedScene" path="res://scenes/background scenes/tree.tscn" id="8_txocx"]
+[ext_resource type="Script" uid="uid://c4ecqwf0ddkiy" path="res://scenes/background scenes/tree_path.gd" id="7_axxvl"]
+[ext_resource type="Script" uid="uid://b14k4w5w2p8e6" path="res://scenes/background scenes/tree_path_node.gd" id="8_fdhpq"]
+[ext_resource type="PackedScene" uid="uid://bgv0k8evygmwc" path="res://scenes/background scenes/tree.tscn" id="8_txocx"]
 
-[node name="ForestBackgroundScene" type="Node2D" unique_id=1618595223]
+[node name="ForestBackgroundScene2" type="Node2D" unique_id=1618595223]
 script = ExtResource("1_fdhpq")
 
 [node name="Background" type="Node2D" parent="." unique_id=1021255365]
@@ -43,55 +43,186 @@ texture = ExtResource("7_5jex5")
 [node name="Trees" type="Node2D" parent="Background" unique_id=583943891]
 
 [node name="Left" type="Node2D" parent="Background/Trees" unique_id=554662454]
+y_sort_enabled = true
 
-[node name="Tree1_1" parent="Background/Trees/Left" unique_id=1657449726 node_paths=PackedStringArray("tree_path") instance=ExtResource("8_txocx")]
-position = Vector2(-133, -65.25)
-tree_path = NodePath("../../../TreePaths/TreePath1")
+[node name="TreeGroup1" type="Node2D" parent="Background/Trees/Left" unique_id=1890043253]
+y_sort_enabled = true
 
-[node name="Tree1_2" parent="Background/Trees/Left" unique_id=1305988985 node_paths=PackedStringArray("tree_path") instance=ExtResource("8_txocx")]
+[node name="Tree1_1" parent="Background/Trees/Left/TreeGroup1" unique_id=1657449726 node_paths=PackedStringArray("tree_path") instance=ExtResource("8_txocx")]
 position = Vector2(-133, -65.25)
-tree_path = NodePath("../../../TreePaths/TreePath1")
+tree_path = NodePath("../../../../TreePaths/TreePath1")
+
+[node name="Tree1_2" parent="Background/Trees/Left/TreeGroup1" unique_id=1305988985 node_paths=PackedStringArray("tree_path") instance=ExtResource("8_txocx")]
+position = Vector2(-133, -65.25)
+tree_path = NodePath("../../../../TreePaths/TreePath1")
 path_point = 1
 
-[node name="Tree1_3" parent="Background/Trees/Left" unique_id=268929804 node_paths=PackedStringArray("tree_path") instance=ExtResource("8_txocx")]
+[node name="Tree1_3" parent="Background/Trees/Left/TreeGroup1" unique_id=268929804 node_paths=PackedStringArray("tree_path") instance=ExtResource("8_txocx")]
 position = Vector2(-133, -65.25)
-tree_path = NodePath("../../../TreePaths/TreePath1")
+tree_path = NodePath("../../../../TreePaths/TreePath1")
 path_point = 2
 
-[node name="Tree1_4" parent="Background/Trees/Left" unique_id=292323305 node_paths=PackedStringArray("tree_path") instance=ExtResource("8_txocx")]
+[node name="Tree1_4" parent="Background/Trees/Left/TreeGroup1" unique_id=292323305 node_paths=PackedStringArray("tree_path") instance=ExtResource("8_txocx")]
 position = Vector2(-133, -65.25)
-tree_path = NodePath("../../../TreePaths/TreePath1")
+tree_path = NodePath("../../../../TreePaths/TreePath1")
 path_point = 3
 
-[node name="Tree1_5" parent="Background/Trees/Left" unique_id=429280261 node_paths=PackedStringArray("tree_path") instance=ExtResource("8_txocx")]
+[node name="Tree1_5" parent="Background/Trees/Left/TreeGroup1" unique_id=429280261 node_paths=PackedStringArray("tree_path") instance=ExtResource("8_txocx")]
 position = Vector2(-133, -65.25)
-tree_path = NodePath("../../../TreePaths/TreePath1")
+tree_path = NodePath("../../../../TreePaths/TreePath1")
+path_point = 4
+
+[node name="TreeGroup2" type="Node2D" parent="Background/Trees/Left" unique_id=844251688]
+y_sort_enabled = true
+
+[node name="Tree1_1" parent="Background/Trees/Left/TreeGroup2" unique_id=172079569 node_paths=PackedStringArray("tree_path") instance=ExtResource("8_txocx")]
+position = Vector2(-133, -65.25)
+tree_path = NodePath("../../../../TreePaths/TreePath2")
+
+[node name="Tree1_2" parent="Background/Trees/Left/TreeGroup2" unique_id=1168168486 node_paths=PackedStringArray("tree_path") instance=ExtResource("8_txocx")]
+position = Vector2(-133, -65.25)
+tree_path = NodePath("../../../../TreePaths/TreePath2")
+path_point = 1
+
+[node name="Tree1_3" parent="Background/Trees/Left/TreeGroup2" unique_id=1757573493 node_paths=PackedStringArray("tree_path") instance=ExtResource("8_txocx")]
+position = Vector2(-133, -65.25)
+tree_path = NodePath("../../../../TreePaths/TreePath2")
+path_point = 2
+
+[node name="Tree1_4" parent="Background/Trees/Left/TreeGroup2" unique_id=1852563968 node_paths=PackedStringArray("tree_path") instance=ExtResource("8_txocx")]
+position = Vector2(-133, -65.25)
+tree_path = NodePath("../../../../TreePaths/TreePath2")
+path_point = 3
+
+[node name="Tree1_5" parent="Background/Trees/Left/TreeGroup2" unique_id=1089604683 node_paths=PackedStringArray("tree_path") instance=ExtResource("8_txocx")]
+position = Vector2(-133, -65.25)
+tree_path = NodePath("../../../../TreePaths/TreePath2")
+path_point = 4
+
+[node name="TreeGroup3" type="Node2D" parent="Background/Trees/Left" unique_id=838500072]
+y_sort_enabled = true
+
+[node name="Tree1_1" parent="Background/Trees/Left/TreeGroup3" unique_id=46493999 node_paths=PackedStringArray("tree_path") instance=ExtResource("8_txocx")]
+position = Vector2(-133, -65.25)
+tree_path = NodePath("../../../../TreePaths/TreePath3")
+
+[node name="Tree1_2" parent="Background/Trees/Left/TreeGroup3" unique_id=13721554 node_paths=PackedStringArray("tree_path") instance=ExtResource("8_txocx")]
+position = Vector2(-133, -65.25)
+tree_path = NodePath("../../../../TreePaths/TreePath3")
+path_point = 1
+
+[node name="Tree1_3" parent="Background/Trees/Left/TreeGroup3" unique_id=1052558126 node_paths=PackedStringArray("tree_path") instance=ExtResource("8_txocx")]
+position = Vector2(-133, -65.25)
+tree_path = NodePath("../../../../TreePaths/TreePath3")
+path_point = 2
+
+[node name="Tree1_4" parent="Background/Trees/Left/TreeGroup3" unique_id=1827661042 node_paths=PackedStringArray("tree_path") instance=ExtResource("8_txocx")]
+position = Vector2(-133, -65.25)
+tree_path = NodePath("../../../../TreePaths/TreePath3")
+path_point = 3
+
+[node name="Tree1_5" parent="Background/Trees/Left/TreeGroup3" unique_id=1174947391 node_paths=PackedStringArray("tree_path") instance=ExtResource("8_txocx")]
+position = Vector2(-133, -65.25)
+tree_path = NodePath("../../../../TreePaths/TreePath3")
 path_point = 4
 
 [node name="Right" type="Node2D" parent="Background/Trees" unique_id=326306035]
+y_sort_enabled = true
 
-[node name="Tree2_1" parent="Background/Trees/Right" unique_id=1907961784 node_paths=PackedStringArray("tree_path") instance=ExtResource("8_txocx")]
-position = Vector2(-133, -65.25)
-tree_path = NodePath("../../../TreePaths/TreePath2")
+[node name="TreeGroup1" type="Node2D" parent="Background/Trees/Right" unique_id=301735739]
+y_sort_enabled = true
 
-[node name="Tree2_2" parent="Background/Trees/Right" unique_id=1175555900 node_paths=PackedStringArray("tree_path") instance=ExtResource("8_txocx")]
+[node name="Tree1_1" parent="Background/Trees/Right/TreeGroup1" unique_id=1196242939 node_paths=PackedStringArray("tree_path") instance=ExtResource("8_txocx")]
 position = Vector2(-133, -65.25)
-tree_path = NodePath("../../../TreePaths/TreePath2")
+shade_right = true
+tree_path = NodePath("../../../../TreePaths/TreePath4")
+
+[node name="Tree1_2" parent="Background/Trees/Right/TreeGroup1" unique_id=599281922 node_paths=PackedStringArray("tree_path") instance=ExtResource("8_txocx")]
+position = Vector2(-133, -65.25)
+shade_right = true
+tree_path = NodePath("../../../../TreePaths/TreePath4")
 path_point = 1
 
-[node name="Tree2_3" parent="Background/Trees/Right" unique_id=2055077540 node_paths=PackedStringArray("tree_path") instance=ExtResource("8_txocx")]
+[node name="Tree1_3" parent="Background/Trees/Right/TreeGroup1" unique_id=697404394 node_paths=PackedStringArray("tree_path") instance=ExtResource("8_txocx")]
 position = Vector2(-133, -65.25)
-tree_path = NodePath("../../../TreePaths/TreePath2")
+shade_right = true
+tree_path = NodePath("../../../../TreePaths/TreePath4")
 path_point = 2
 
-[node name="Tree2_4" parent="Background/Trees/Right" unique_id=1718130039 node_paths=PackedStringArray("tree_path") instance=ExtResource("8_txocx")]
+[node name="Tree1_4" parent="Background/Trees/Right/TreeGroup1" unique_id=920034884 node_paths=PackedStringArray("tree_path") instance=ExtResource("8_txocx")]
 position = Vector2(-133, -65.25)
-tree_path = NodePath("../../../TreePaths/TreePath2")
+shade_right = true
+tree_path = NodePath("../../../../TreePaths/TreePath4")
 path_point = 3
 
-[node name="Tree2_5" parent="Background/Trees/Right" unique_id=1425745208 node_paths=PackedStringArray("tree_path") instance=ExtResource("8_txocx")]
+[node name="Tree1_5" parent="Background/Trees/Right/TreeGroup1" unique_id=726888523 node_paths=PackedStringArray("tree_path") instance=ExtResource("8_txocx")]
 position = Vector2(-133, -65.25)
-tree_path = NodePath("../../../TreePaths/TreePath2")
+shade_right = true
+tree_path = NodePath("../../../../TreePaths/TreePath4")
+path_point = 4
+
+[node name="TreeGroup2" type="Node2D" parent="Background/Trees/Right" unique_id=1244149125]
+y_sort_enabled = true
+
+[node name="Tree1_1" parent="Background/Trees/Right/TreeGroup2" unique_id=1323910344 node_paths=PackedStringArray("tree_path") instance=ExtResource("8_txocx")]
+position = Vector2(-133, -65.25)
+shade_right = true
+tree_path = NodePath("../../../../TreePaths/TreePath5")
+
+[node name="Tree1_2" parent="Background/Trees/Right/TreeGroup2" unique_id=799000245 node_paths=PackedStringArray("tree_path") instance=ExtResource("8_txocx")]
+position = Vector2(-133, -65.25)
+shade_right = true
+tree_path = NodePath("../../../../TreePaths/TreePath5")
+path_point = 1
+
+[node name="Tree1_3" parent="Background/Trees/Right/TreeGroup2" unique_id=2060936405 node_paths=PackedStringArray("tree_path") instance=ExtResource("8_txocx")]
+position = Vector2(-133, -65.25)
+shade_right = true
+tree_path = NodePath("../../../../TreePaths/TreePath5")
+path_point = 2
+
+[node name="Tree1_4" parent="Background/Trees/Right/TreeGroup2" unique_id=466324544 node_paths=PackedStringArray("tree_path") instance=ExtResource("8_txocx")]
+position = Vector2(-133, -65.25)
+shade_right = true
+tree_path = NodePath("../../../../TreePaths/TreePath5")
+path_point = 3
+
+[node name="Tree1_5" parent="Background/Trees/Right/TreeGroup2" unique_id=2058786007 node_paths=PackedStringArray("tree_path") instance=ExtResource("8_txocx")]
+position = Vector2(-133, -65.25)
+shade_right = true
+tree_path = NodePath("../../../../TreePaths/TreePath5")
+path_point = 4
+
+[node name="TreeGroup3" type="Node2D" parent="Background/Trees/Right" unique_id=1666258309]
+y_sort_enabled = true
+
+[node name="Tree1_1" parent="Background/Trees/Right/TreeGroup3" unique_id=2033511910 node_paths=PackedStringArray("tree_path") instance=ExtResource("8_txocx")]
+position = Vector2(-133, -65.25)
+shade_right = true
+tree_path = NodePath("../../../../TreePaths/TreePath6")
+
+[node name="Tree1_2" parent="Background/Trees/Right/TreeGroup3" unique_id=1075396000 node_paths=PackedStringArray("tree_path") instance=ExtResource("8_txocx")]
+position = Vector2(-133, -65.25)
+shade_right = true
+tree_path = NodePath("../../../../TreePaths/TreePath6")
+path_point = 1
+
+[node name="Tree1_3" parent="Background/Trees/Right/TreeGroup3" unique_id=1009213755 node_paths=PackedStringArray("tree_path") instance=ExtResource("8_txocx")]
+position = Vector2(-133, -65.25)
+shade_right = true
+tree_path = NodePath("../../../../TreePaths/TreePath6")
+path_point = 2
+
+[node name="Tree1_4" parent="Background/Trees/Right/TreeGroup3" unique_id=1967046777 node_paths=PackedStringArray("tree_path") instance=ExtResource("8_txocx")]
+position = Vector2(-133, -65.25)
+shade_right = true
+tree_path = NodePath("../../../../TreePaths/TreePath6")
+path_point = 3
+
+[node name="Tree1_5" parent="Background/Trees/Right/TreeGroup3" unique_id=347265423 node_paths=PackedStringArray("tree_path") instance=ExtResource("8_txocx")]
+position = Vector2(-133, -65.25)
+shade_right = true
+tree_path = NodePath("../../../../TreePaths/TreePath6")
 path_point = 4
 
 [node name="TreePaths" type="Node2D" parent="Background" unique_id=296640493]
@@ -127,34 +258,160 @@ position = Vector2(-216.75, 308.75)
 script = ExtResource("8_fdhpq")
 tree_scale = 2.0
 
-[node name="TreePath2" type="Node2D" parent="Background/TreePaths" unique_id=173922948]
+[node name="TreePath2" type="Node2D" parent="Background/TreePaths" unique_id=317846863]
 position = Vector2(-1, -2.25)
 script = ExtResource("7_axxvl")
 
-[node name="TreePath2_1" type="Node2D" parent="Background/TreePaths/TreePath2" unique_id=1896844547]
-position = Vector2(113.75, 3.5)
+[node name="TreePath1_1" type="Node2D" parent="Background/TreePaths/TreePath2" unique_id=600998945]
+position = Vector2(-121.75, 16.25)
 script = ExtResource("8_fdhpq")
 is_foreground = true
 tree_scale = 0.5
 
-[node name="TreePath2_2" type="Node2D" parent="Background/TreePaths/TreePath2" unique_id=1816113421]
-position = Vector2(81.5, -47.75)
+[node name="TreePath1_2" type="Node2D" parent="Background/TreePaths/TreePath2" unique_id=1868833122]
+position = Vector2(-105, -41.5)
 script = ExtResource("8_fdhpq")
 is_foreground = true
 tree_scale = 0.5
 
-[node name="TreePath2_3" type="Node2D" parent="Background/TreePaths/TreePath2" unique_id=1330764345]
-position = Vector2(99.5, -13)
+[node name="TreePath1_3" type="Node2D" parent="Background/TreePaths/TreePath2" unique_id=1916390493]
+position = Vector2(-130, -6.75)
 script = ExtResource("8_fdhpq")
 tree_scale = 1.0
 
-[node name="TreePath2_4" type="Node2D" parent="Background/TreePaths/TreePath2" unique_id=1930320346]
-position = Vector2(150, 82.25)
+[node name="TreePath1_4" type="Node2D" parent="Background/TreePaths/TreePath2" unique_id=1252576234]
+position = Vector2(-174.25, 83.5)
 script = ExtResource("8_fdhpq")
 tree_scale = 1.0
 
-[node name="TreePath2_5" type="Node2D" parent="Background/TreePaths/TreePath2" unique_id=1843270369]
-position = Vector2(248, 300.75)
+[node name="TreePath1_5" type="Node2D" parent="Background/TreePaths/TreePath2" unique_id=1911093834]
+position = Vector2(-216.75, 308.75)
+script = ExtResource("8_fdhpq")
+tree_scale = 2.0
+
+[node name="TreePath3" type="Node2D" parent="Background/TreePaths" unique_id=443162162]
+position = Vector2(-1, -2.25)
+script = ExtResource("7_axxvl")
+
+[node name="TreePath1_1" type="Node2D" parent="Background/TreePaths/TreePath3" unique_id=1382724367]
+position = Vector2(-189, 26.25)
+script = ExtResource("8_fdhpq")
+is_foreground = true
+tree_scale = 0.5
+
+[node name="TreePath1_2" type="Node2D" parent="Background/TreePaths/TreePath3" unique_id=1979748086]
+position = Vector2(-162.25, -25.75)
+script = ExtResource("8_fdhpq")
+is_foreground = true
+tree_scale = 0.5
+
+[node name="TreePath1_3" type="Node2D" parent="Background/TreePaths/TreePath3" unique_id=1235894631]
+position = Vector2(-165.5, -1.75)
+script = ExtResource("8_fdhpq")
+tree_scale = 1.0
+
+[node name="TreePath1_4" type="Node2D" parent="Background/TreePaths/TreePath3" unique_id=1374408740]
+position = Vector2(-206.5, 60.75)
+script = ExtResource("8_fdhpq")
+tree_scale = 1.0
+
+[node name="TreePath1_5" type="Node2D" parent="Background/TreePaths/TreePath3" unique_id=2052367105]
+position = Vector2(-358, 236)
+script = ExtResource("8_fdhpq")
+tree_scale = 2.0
+
+[node name="TreePath4" type="Node2D" parent="Background/TreePaths" unique_id=156616057]
+visible = false
+position = Vector2(-1, -2.25)
+script = ExtResource("7_axxvl")
+
+[node name="TreePath1_1" type="Node2D" parent="Background/TreePaths/TreePath4" unique_id=788324440]
+position = Vector2(66.25, -0.5)
+script = ExtResource("8_fdhpq")
+is_foreground = true
+tree_scale = 0.5
+
+[node name="TreePath1_2" type="Node2D" parent="Background/TreePaths/TreePath4" unique_id=1304120507]
+position = Vector2(63.75, -48.75)
+script = ExtResource("8_fdhpq")
+is_foreground = true
+tree_scale = 0.5
+
+[node name="TreePath1_3" type="Node2D" parent="Background/TreePaths/TreePath4" unique_id=1689912121]
+position = Vector2(98, 13.25)
+script = ExtResource("8_fdhpq")
+tree_scale = 1.0
+
+[node name="TreePath1_4" type="Node2D" parent="Background/TreePaths/TreePath4" unique_id=109532403]
+position = Vector2(134.5, 99)
+script = ExtResource("8_fdhpq")
+tree_scale = 1.0
+
+[node name="TreePath1_5" type="Node2D" parent="Background/TreePaths/TreePath4" unique_id=1342663039]
+position = Vector2(182.25, 235.5)
+script = ExtResource("8_fdhpq")
+tree_scale = 2.0
+
+[node name="TreePath5" type="Node2D" parent="Background/TreePaths" unique_id=1771790721]
+visible = false
+position = Vector2(-1, -2.25)
+script = ExtResource("7_axxvl")
+
+[node name="TreePath1_1" type="Node2D" parent="Background/TreePaths/TreePath5" unique_id=1736818741]
+position = Vector2(123.25, 0.25)
+script = ExtResource("8_fdhpq")
+is_foreground = true
+tree_scale = 0.5
+
+[node name="TreePath1_2" type="Node2D" parent="Background/TreePaths/TreePath5" unique_id=1453718712]
+position = Vector2(121.25, -36.75)
+script = ExtResource("8_fdhpq")
+is_foreground = true
+tree_scale = 0.5
+
+[node name="TreePath1_3" type="Node2D" parent="Background/TreePaths/TreePath5" unique_id=1990613597]
+position = Vector2(146.25, 1)
+script = ExtResource("8_fdhpq")
+tree_scale = 1.0
+
+[node name="TreePath1_4" type="Node2D" parent="Background/TreePaths/TreePath5" unique_id=252667969]
+position = Vector2(168.5, 55.5)
+script = ExtResource("8_fdhpq")
+tree_scale = 1.0
+
+[node name="TreePath1_5" type="Node2D" parent="Background/TreePaths/TreePath5" unique_id=1429394003]
+position = Vector2(263.5, 199)
+script = ExtResource("8_fdhpq")
+tree_scale = 2.0
+
+[node name="TreePath6" type="Node2D" parent="Background/TreePaths" unique_id=444987161]
+position = Vector2(-1, -2.25)
+script = ExtResource("7_axxvl")
+
+[node name="TreePath1_1" type="Node2D" parent="Background/TreePaths/TreePath6" unique_id=539103447]
+position = Vector2(168.25, 18)
+script = ExtResource("8_fdhpq")
+is_foreground = true
+tree_scale = 0.5
+
+[node name="TreePath1_2" type="Node2D" parent="Background/TreePaths/TreePath6" unique_id=1533768961]
+position = Vector2(176, -20.75)
+script = ExtResource("8_fdhpq")
+is_foreground = true
+tree_scale = 0.5
+
+[node name="TreePath1_3" type="Node2D" parent="Background/TreePaths/TreePath6" unique_id=1086606143]
+position = Vector2(194.5, 18.75)
+script = ExtResource("8_fdhpq")
+tree_scale = 1.0
+
+[node name="TreePath1_4" type="Node2D" parent="Background/TreePaths/TreePath6" unique_id=417137349]
+position = Vector2(213.5, 68)
+script = ExtResource("8_fdhpq")
+tree_scale = 1.0
+
+[node name="TreePath1_5" type="Node2D" parent="Background/TreePaths/TreePath6" unique_id=1353480350]
+position = Vector2(288.25, 209.75)
 script = ExtResource("8_fdhpq")
 tree_scale = 2.0
 
