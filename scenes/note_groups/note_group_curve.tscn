@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cmkgi7bk2np52" path="res://scenes/notes/note.tscn" id="2_obfw3"]
 
 [node name="note_group" type="Node2D" unique_id=2065057774]
+z_index = 1
 script = ExtResource("1_f1uc6")
 
 [node name="note_container" type="Node2D" parent="." unique_id=1616491492]

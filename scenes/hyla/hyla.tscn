@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b2ikhgnuy6c7x"]
 
-[ext_resource type="Script" uid="uid://cnudljnsc8v1v" path="res://scenes/hyla/hyla.gd" id="1_1osun"]
+[ext_resource type="Script" path="res://scenes/hyla/hyla.gd" id="1_1osun"]
 [ext_resource type="Texture2D" uid="uid://do3addcsoto1f" path="res://assets/visual/sprites/Hyla_Sword-1.png" id="1_vupcl"]
 [ext_resource type="AudioStream" uid="uid://symmg2wk4dxq" path="res://assets/audio/game/Footstep 1.ogg" id="2_rrpej"]
 [ext_resource type="AudioStream" uid="uid://rwaivgvah0a7" path="res://assets/audio/game/Footstep 2.ogg" id="3_x1u1l"]
@@ -226,6 +226,7 @@ _data = {
 }
 
 [node name="Hyla" type="Node2D" unique_id=523409213]
+z_index = 1
 script = ExtResource("1_1osun")
 footstep_sounds = Array[AudioStream]([ExtResource("2_rrpej"), ExtResource("3_x1u1l"), ExtResource("4_7rp17")])
 sword_slash_sounds = Array[AudioStream]([ExtResource("5_yvxhs"), ExtResource("6_mot0m"), ExtResource("7_6aff1"), ExtResource("8_rq3ga")])
