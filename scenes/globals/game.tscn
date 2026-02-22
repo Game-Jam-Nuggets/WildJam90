@@ -622,10 +622,10 @@ label_settings = SubResource("LabelSettings_p06x2")
 horizontal_alignment = 1
 
 [node name="AlbumArt" type="TextureRect" parent="play_area/ui" unique_id=1717389686]
-offset_left = 1614.0
-offset_top = 784.0
-offset_right = 1814.0
-offset_bottom = 934.0
+offset_left = 1616.0
+offset_top = 736.0
+offset_right = 1816.0
+offset_bottom = 936.0
 size_flags_horizontal = 4
 texture = ExtResource("8_pohux")
 expand_mode = 1
