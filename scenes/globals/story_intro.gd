@@ -16,6 +16,9 @@ func _ready() -> void:
 	for subtitles in subtitle_nodes:
 		subtitle_text += subtitles.get_children()
 
+	SaveManager.save_data.intro_played = true
+	SaveManager.save_game()
+
 func _on_music_timeout() -> void:
 	var tween = create_tween()
 	AudioManager.set_music(story_music)

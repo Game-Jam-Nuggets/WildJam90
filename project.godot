@@ -26,6 +26,7 @@ Events="*uid://cx20otxa87gdr"
 Enums="*uid://c1rbw8j0mwig1"
 SceneManager="*uid://bvop8rwuptfdh"
 AudioManager="*uid://dn8ysd41ppc2j"
+SaveManager="*uid://drwap32ow5kmg"
 
 [display]
 

@@ -15,7 +15,12 @@ var current_scene: Node = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	load_intro_scene.call_deferred()
+	var do_intro = func():
+		if SaveManager.save_data.intro_played:
+			load_main_menu_scene()
+		else:
+			load_intro_scene()
+	do_intro.call_deferred()
 	
 ## --- public methods ---
 
