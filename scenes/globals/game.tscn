@@ -9,6 +9,7 @@
 [ext_resource type="FontFile" uid="uid://b53i0n502ixiy" path="res://assets/visual/ui/main_menu/body_font.ttf" id="6_tfx60"]
 [ext_resource type="PackedScene" uid="uid://b2ikhgnuy6c7x" path="res://scenes/hyla/hyla.tscn" id="7_p06x2"]
 [ext_resource type="Texture2D" uid="uid://iwff1rpba7k4" path="res://assets/visual/ui/album_arts/chart_album_art.jpg" id="8_pohux"]
+[ext_resource type="Theme" uid="uid://b713thhl0tehm" path="res://themes/main_menu.tres" id="9_xxes2"]
 [ext_resource type="PackedScene" uid="uid://dpkqi1rja4d7p" path="res://scenes/Cursor.tscn" id="10_edyb2"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_tfx60"]
@@ -755,6 +756,11 @@ text = "CHART THE STARS"
 label_settings = SubResource("LabelSettings_pohux")
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="BackButton" type="Button" parent="play_area/ui" unique_id=912640779]
+size_flags_horizontal = 4
+theme = ExtResource("9_xxes2")
+text = "Return"
 
 [node name="Hyla" parent="play_area" unique_id=523409213 instance=ExtResource("7_p06x2")]
 position = Vector2(960, 1000)

@@ -30,7 +30,10 @@ func _read_save_file() -> Variant:
 		return JSON.parse_string(save_file_contents)
 	return null
 
-func _on_level_ended() -> void:
+func _on_level_ended(p_did_finish: bool) -> void:
+	if not p_did_finish:
+		return
+
 	if save_data.scores == null:
 		save_data.scores = {}
 	
