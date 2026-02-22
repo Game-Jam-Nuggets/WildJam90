@@ -10,5 +10,8 @@ func _process(delta: float) -> void:
 	
 	var offset = Vector2(14,14)
 	position = get_viewport().get_mouse_position() + offset
+
+func _exit_tree() -> void:
+	Input.set_custom_mouse_cursor(null)
 	
 	
