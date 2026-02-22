@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://86xthh6ugcfi"]
 
 [ext_resource type="Texture2D" uid="uid://bhiwrrf8u2que" path="res://assets/visual/backgrounds/bg.jpeg" id="1_djtid"]
-[ext_resource type="Script" uid="uid://comqiu7ly3720" path="res://scenes/background scenes/forest_background_scene.gd" id="1_fdhpq"]
+[ext_resource type="Script" path="res://scenes/background scenes/forest_background_scene.gd" id="1_fdhpq"]
 [ext_resource type="Texture2D" uid="uid://5msqdmfg2hp3" path="res://assets/visual/backgrounds/1_HtSM - Level Bg.png" id="2_4ovim"]
 [ext_resource type="Texture2D" uid="uid://ci88n5hv14doh" path="res://assets/visual/backgrounds/2_HtSM - Level Bg.png" id="3_1joeb"]
 [ext_resource type="Texture2D" uid="uid://dxw2m3lv3hkjf" path="res://assets/visual/backgrounds/3_HtSM - Level Bg.png" id="4_axxvl"]
 [ext_resource type="Texture2D" uid="uid://bes52gvenp447" path="res://assets/visual/backgrounds/4_HtSM - Level Bg.png" id="5_fdhpq"]
 [ext_resource type="Texture2D" uid="uid://c2ky1mxpld2gy" path="res://assets/visual/backgrounds/5_HtSM - Level Bg.png" id="6_txocx"]
 [ext_resource type="Texture2D" uid="uid://bl7yen2nrgudj" path="res://assets/visual/backgrounds/6_HtSM - Level Bg.png" id="7_5jex5"]
-[ext_resource type="Script" uid="uid://c4ecqwf0ddkiy" path="res://scenes/background scenes/tree_path.gd" id="7_axxvl"]
-[ext_resource type="Script" uid="uid://b14k4w5w2p8e6" path="res://scenes/background scenes/tree_path_node.gd" id="8_fdhpq"]
-[ext_resource type="PackedScene" uid="uid://bgv0k8evygmwc" path="res://scenes/background scenes/tree.tscn" id="8_txocx"]
+[ext_resource type="Script" path="res://scenes/background scenes/tree_path.gd" id="7_axxvl"]
+[ext_resource type="Script" path="res://scenes/background scenes/tree_path_node.gd" id="8_fdhpq"]
+[ext_resource type="PackedScene" path="res://scenes/background scenes/tree.tscn" id="8_txocx"]
 
 [node name="ForestBackgroundScene2" type="Node2D" unique_id=1618595223]
 script = ExtResource("1_fdhpq")
