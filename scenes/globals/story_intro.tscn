@@ -506,7 +506,7 @@ offset_bottom = 1276.0
 scale = Vector2(0.2895372, 0.2895372)
 theme = ExtResource("13_ycsjx")
 theme_override_font_sizes/font_size = 81
-text = "Hold to skip"
+text = "Skip"
 
 [connection signal="timeout" from="Music" to="." method="_on_music_timeout"]
 [connection signal="timeout" from="Text_timer" to="." method="_on_text_timer_timeout"]
