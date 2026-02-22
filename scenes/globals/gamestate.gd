@@ -23,7 +23,7 @@ var good_count := 0
 var okay_count := 0
 var miss_count := 0
 
-var current_level_info = null
+var current_level_info: Level_Info = null
 
 # 1. instantiate variables for a choosen song / level ***
 # 2. track scoring and progress of a song ***
@@ -33,7 +33,7 @@ func _ready():
 	_establish_events()
 	
 	for info in level_infos:
-		level_dict[info.name] = info
+		level_dict[info.level_id] = info
 	
 
 func _establish_events():
@@ -42,7 +42,7 @@ func _establish_events():
 	Events.note_spawned.connect(_note_spawned)
 	Events.level_selected.connect(_setup_level)
 
-func _setup_level(level_name : Level_Info.LEVEL_NAME):
+func _setup_level(level_name : Level_Info.LEVEL_ID):
 	if !level_dict.has(level_name): push_error("Unable to find " + str(level_name) + "in level info class!")
 	else:
 		var level_info : Level_Info = level_dict[level_name]
@@ -51,6 +51,9 @@ func _setup_level(level_name : Level_Info.LEVEL_NAME):
 		beat_length = 60.0 / float(current_bpm)
 		
 		current_level_info = level_info # stored if needed to be accessed globally
+
+		SceneManager.load_game_scene()
+		
 		Events.level_start.emit(level_info) # sending this out from gamestate after setting vars to avoid a race condition
 	_reset_vars()
 

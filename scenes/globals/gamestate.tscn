@@ -2,23 +2,29 @@
 
 [ext_resource type="Script" uid="uid://bjs75bujddsv1" path="res://scenes/globals/gamestate.gd" id="1_jayoo"]
 [ext_resource type="Script" uid="uid://cd8qx1ly8xk5v" path="res://scenes/globals/level settings/Level_Info.gd" id="2_a3xlb"]
+[ext_resource type="Texture2D" uid="uid://iwff1rpba7k4" path="res://assets/visual/ui/album_arts/chart_album_art.jpg" id="3_0mtk8"]
 [ext_resource type="AudioStream" uid="uid://smfscg7uy5wx" path="res://assets/audio/music/Chart the Stars_110_bpm.wav" id="3_54oue"]
 [ext_resource type="AudioStream" uid="uid://bul1uaat7kopy" path="res://assets/audio/music/Stars on the Map_130_bpm.wav" id="4_7u0hp"]
+[ext_resource type="Texture2D" uid="uid://cyy8eihq673lt" path="res://assets/visual/ui/album_arts/stars_on_map_album_art.jpg" id="5_f6fr7"]
 
 [sub_resource type="Resource" id="Resource_a3xlb"]
 script = ExtResource("2_a3xlb")
+level_name = "Chart the Stars"
 music_file = ExtResource("3_54oue")
 bpm = 110
 conductor_anim = "level 1"
+cover_art = ExtResource("3_0mtk8")
 background_tscn_path = "res://scenes/background scenes/forest_background_scene.tscn"
 metadata/_custom_type_script = "uid://cd8qx1ly8xk5v"
 
 [sub_resource type="Resource" id="Resource_54oue"]
 script = ExtResource("2_a3xlb")
-name = 1
+level_id = 1
+level_name = "Stars on the Map"
 music_file = ExtResource("4_7u0hp")
 bpm = 130
 conductor_anim = "level 2"
+cover_art = ExtResource("5_f6fr7")
 background_tscn_path = "res://scenes/background scenes/forest_background_scene.tscn"
 metadata/_custom_type_script = "uid://cd8qx1ly8xk5v"
 
