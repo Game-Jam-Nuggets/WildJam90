@@ -4,7 +4,7 @@ extends Node
 var level_dict = {}
 
 # shifts the song to start further in, nice for testing tracks
-const debug_start_time = 0.0 # seconds
+const debug_start_time = 140.0 # seconds
 
 # song vars 
 var current_bpm := 60 # default
