@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://cimsr3e51gk28"]
+
+[ext_resource type="Texture2D" uid="uid://bhiwrrf8u2que" path="res://assets/visual/backgrounds/bg.jpeg" id="1_djtid"]
+[ext_resource type="Texture2D" uid="uid://5msqdmfg2hp3" path="res://assets/visual/backgrounds/1_HtSM - Level Bg.png" id="2_4ovim"]
+[ext_resource type="Texture2D" uid="uid://ci88n5hv14doh" path="res://assets/visual/backgrounds/2_HtSM - Level Bg.png" id="3_1joeb"]
+[ext_resource type="Texture2D" uid="uid://dxw2m3lv3hkjf" path="res://assets/visual/backgrounds/3_HtSM - Level Bg.png" id="4_axxvl"]
+[ext_resource type="Texture2D" uid="uid://bes52gvenp447" path="res://assets/visual/backgrounds/4_HtSM - Level Bg.png" id="5_fdhpq"]
+[ext_resource type="Texture2D" uid="uid://c2ky1mxpld2gy" path="res://assets/visual/backgrounds/5_HtSM - Level Bg.png" id="6_txocx"]
+[ext_resource type="Texture2D" uid="uid://bl7yen2nrgudj" path="res://assets/visual/backgrounds/6_HtSM - Level Bg.png" id="7_5jex5"]
+[ext_resource type="PackedScene" uid="uid://bg72ll30wgb6s" path="res://scenes/background scenes/tree_visual_right.tscn" id="8_6cij3"]
+[ext_resource type="PackedScene" uid="uid://8jlxxvytft25" path="res://scenes/background scenes/tree_visual.tscn" id="8_s5rxj"]
+
+[node name="ForestBackgroundScene" type="Node2D" unique_id=1618595223]
+
+[node name="Background" type="Node2D" parent="." unique_id=1021255365]
+position = Vector2(960, 540)
+scale = Vector2(4, 4)
+
+[node name="1HtSmLevelBg" type="Sprite2D" parent="Background" unique_id=513197916]
+texture = ExtResource("2_4ovim")
+
+[node name="2HtSmLevelBg" type="Sprite2D" parent="Background" unique_id=1666438435]
+texture = ExtResource("3_1joeb")
+
+[node name="3HtSmLevelBg" type="Sprite2D" parent="Background" unique_id=706101811]
+texture = ExtResource("4_axxvl")
+
+[node name="4HtSmLevelBg" type="Sprite2D" parent="Background" unique_id=1187760664]
+texture = ExtResource("5_fdhpq")
+
+[node name="5HtSmLevelBg" type="Sprite2D" parent="Background" unique_id=149338580]
+texture = ExtResource("6_txocx")
+
+[node name="6HtSmLevelBg" type="Sprite2D" parent="Background" unique_id=872083831]
+texture = ExtResource("7_5jex5")
+
+[node name="Trees" type="Node2D" parent="Background" unique_id=583943891]
+
+[node name="Left" type="Node2D" parent="Background/Trees" unique_id=554662454]
+y_sort_enabled = true
+
+[node name="TreeVisual" parent="Background/Trees/Left" unique_id=122533717 instance=ExtResource("8_s5rxj")]
+position = Vector2(-62.75, -31.75)
+
+[node name="TreeVisual9" parent="Background/Trees/Left" unique_id=1377629608 instance=ExtResource("8_s5rxj")]
+position = Vector2(-117, -16)
+
+[node name="TreeVisual10" parent="Background/Trees/Left" unique_id=234234201 instance=ExtResource("8_s5rxj")]
+position = Vector2(-201.5, 10.5)
+
+[node name="TreeVisual2" parent="Background/Trees/Left" unique_id=1934661465 instance=ExtResource("8_s5rxj")]
+position = Vector2(-71, 3.25)
+scale = Vector2(1.378064, 1.378064)
+
+[node name="TreeVisual3" parent="Background/Trees/Left" unique_id=1901944807 instance=ExtResource("8_s5rxj")]
+position = Vector2(-102.5, 43.5)
+scale = Vector2(1.8459011, 1.8459011)
+
+[node name="TreeVisual7" parent="Background/Trees/Left" unique_id=1747677490 instance=ExtResource("8_s5rxj")]
+position = Vector2(-175, 30.250002)
+scale = Vector2(1.8459011, 1.8459011)
+
+[node name="TreeVisual8" parent="Background/Trees/Left" unique_id=1969139324 instance=ExtResource("8_s5rxj")]
+position = Vector2(-217.75, 63.75)
+scale = Vector2(1.8459011, 1.8459011)
+
+[node name="TreeVisual4" parent="Background/Trees/Left" unique_id=733021671 instance=ExtResource("8_s5rxj")]
+position = Vector2(-132.75002, 82.5)
+scale = Vector2(1.8459011, 1.8459011)
+
+[node name="TreeVisual6" parent="Background/Trees/Left" unique_id=2087961280 instance=ExtResource("8_s5rxj")]
+position = Vector2(-176.25002, 70.75)
+scale = Vector2(1.8459011, 1.8459011)
+
+[node name="Right" type="Node2D" parent="Background/Trees" unique_id=326306035]
+y_sort_enabled = true
+
+[node name="TreeVisual" parent="Background/Trees/Right" unique_id=250945899 instance=ExtResource("8_6cij3")]
+position = Vector2(67.25, -29.75)
+
+[node name="TreeVisual2" parent="Background/Trees/Right" unique_id=1403164631 instance=ExtResource("8_6cij3")]
+position = Vector2(106.25, -12.25)
+
+[node name="TreeVisual3" parent="Background/Trees/Right" unique_id=1923662927 instance=ExtResource("8_6cij3")]
+position = Vector2(78, 15)
+scale = Vector2(1.3750334, 1.3750334)
+
+[node name="TreeVisual4" parent="Background/Trees/Right" unique_id=572873777 instance=ExtResource("8_6cij3")]
+position = Vector2(133.5, 21.25)
+scale = Vector2(1.9016039, 1.9016039)
+
+[node name="TreeVisual5" parent="Background/Trees/Right" unique_id=89200647 instance=ExtResource("8_6cij3")]
+position = Vector2(115, 64.5)
+scale = Vector2(1.9016039, 1.9016039)
+
+[node name="TreeVisual6" parent="Background/Trees/Right" unique_id=1845707195 instance=ExtResource("8_6cij3")]
+position = Vector2(165.25, 69.25)
+scale = Vector2(2.1707118, 2.1707118)
+
+[node name="TreeVisual7" parent="Background/Trees/Right" unique_id=1339960362 instance=ExtResource("8_6cij3")]
+position = Vector2(197.5, 35.25)
+scale = Vector2(2.1707118, 2.1707118)
+
+[node name="TreeVisual8" parent="Background/Trees/Right" unique_id=1464066926 instance=ExtResource("8_s5rxj")]
+position = Vector2(202.99995, 87.25)
+scale = Vector2(2.5886645, 2.5886645)
+
+[node name="Bg" type="Sprite2D" parent="." unique_id=1395908420]
+visible = false
+self_modulate = Color(1, 1, 1, 0.14117648)
+position = Vector2(960, 540)
+texture = ExtResource("1_djtid")

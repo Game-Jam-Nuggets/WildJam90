@@ -1,18 +1,10 @@
-[gd_scene format=3 uid="uid://bcgmi8ctciru2"]
+[gd_scene format=3 uid="uid://bgv0k8evygmwc"]
 
-[ext_resource type="Script" uid="uid://pamlawq0yyr3" path="res://scenes/background scenes/tree.gd" id="2_nr4ib"]
-[ext_resource type="Texture2D" uid="uid://b0prakvnv0evy" path="res://assets/visual/sprites/HtSM_tree_v2.png" id="2_q7bt1"]
-[ext_resource type="Texture2D" uid="uid://ckxnd4ykplpra" path="res://assets/visual/sprites/Hyla_Shadow.png" id="2_wj0kc"]
+[ext_resource type="Script" path="res://scenes/background scenes/tree.gd" id="2_nr4ib"]
+[ext_resource type="PackedScene" uid="uid://8jlxxvytft25" path="res://scenes/background scenes/tree_visual.tscn" id="2_q7bt1"]
 
 [node name="Tree" type="Node2D" unique_id=1305988985]
 script = ExtResource("2_nr4ib")
 speed = 2.0
 
-[node name="HylaShadow" type="Sprite2D" parent="." unique_id=1630907681]
-position = Vector2(-1, -8)
-scale = Vector2(0.3786936, 0.3786936)
-texture = ExtResource("2_wj0kc")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=114285911]
-position = Vector2(0, -32)
-texture = ExtResource("2_q7bt1")
+[node name="TreeVisual" parent="." unique_id=122533717 instance=ExtResource("2_q7bt1")]

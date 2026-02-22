@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dvsymbgqr4b01"]
 
 [ext_resource type="Script" uid="uid://btyx7xs85pju5" path="res://scenes/note_groups/note_group.gd" id="1_34hmt"]
-[ext_resource type="Script" uid="uid://h8iu0qiryp0d" path="res://scenes/note_groups/note_container.gd" id="2_advcb"]
-[ext_resource type="Script" uid="uid://cof77t0sl281r" path="res://scenes/note_groups/constellation_line.gd" id="2_tmt67"]
+[ext_resource type="Script" path="res://scenes/note_groups/note_container.gd" id="2_advcb"]
+[ext_resource type="Script" path="res://scenes/note_groups/constellation_line.gd" id="2_tmt67"]
 [ext_resource type="PackedScene" uid="uid://cmkgi7bk2np52" path="res://scenes/notes/note.tscn" id="3_x42wh"]
 
 [sub_resource type="Animation" id="Animation_tmt67"]
@@ -42,6 +42,7 @@ _data = {
 }
 
 [node name="note_group" type="Node2D" unique_id=2065057774]
+z_index = 1
 script = ExtResource("1_34hmt")
 group_existence_length = 8
 

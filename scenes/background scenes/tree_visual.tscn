@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://8jlxxvytft25"]
+
+[ext_resource type="Texture2D" uid="uid://ckxnd4ykplpra" path="res://assets/visual/sprites/Hyla_Shadow.png" id="1_8tbi2"]
+[ext_resource type="Texture2D" uid="uid://b0prakvnv0evy" path="res://assets/visual/sprites/HtSM_tree_v2.png" id="2_li6kc"]
+
+[node name="TreeVisual" type="Node2D" unique_id=122533717]
+
+[node name="HylaShadow" type="Sprite2D" parent="." unique_id=855404547]
+position = Vector2(-1, -8)
+scale = Vector2(0.3786936, 0.3786936)
+texture = ExtResource("1_8tbi2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1633257911]
+position = Vector2(0, -32)
+texture = ExtResource("2_li6kc")
