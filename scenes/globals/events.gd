@@ -3,7 +3,7 @@ extends Node
 ###### level calls
 signal level_selected(level_name : Level_Info.LEVEL_ID) # read by gamestate for setup
 signal level_start(level_info : Level_Info) # called by gamestate, read by conductor
-signal level_ended() # read by gamestate, call to send end info to results screen
+signal level_ended(p_did_finish: bool) # read by gamestate, call to send end info to results screen
 signal open_results() # read by the result screens (might not need this)
 
 ###### for tracking values in the gamestate
