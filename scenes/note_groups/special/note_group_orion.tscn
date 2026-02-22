@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://c3olfhl7wmgua"]
+
+[ext_resource type="Script" uid="uid://btyx7xs85pju5" path="res://scenes/note_groups/note_group.gd" id="1_xntpw"]
+[ext_resource type="Script" uid="uid://cof77t0sl281r" path="res://scenes/note_groups/constellation_line.gd" id="2_6iorx"]
+[ext_resource type="Script" uid="uid://h8iu0qiryp0d" path="res://scenes/note_groups/note_container.gd" id="3_oqule"]
+[ext_resource type="PackedScene" uid="uid://cmkgi7bk2np52" path="res://scenes/notes/note.tscn" id="4_o71ak"]
+
+[sub_resource type="Animation" id="Animation_tmt67"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:default_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.81960785, 0.58431375, 0, 0.6509804)]
+}
+
+[sub_resource type="Animation" id="Animation_x42wh"]
+resource_name = "line_fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:default_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2.6390142, 1),
+"update": 0,
+"values": [Color(0.81960785, 0.58431375, 0, 0.6509804), Color(0.81960785, 0.58431375, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tmt67"]
+_data = {
+&"RESET": SubResource("Animation_tmt67"),
+&"line_fade": SubResource("Animation_x42wh")
+}
+
+[node name="note_group" type="Node2D" unique_id=2065057774]
+z_index = 1
+script = ExtResource("1_xntpw")
+group_existence_length = 8
+
+[node name="constellation_line" type="Line2D" parent="." unique_id=1276646487]
+position = Vector2(563, -17)
+rotation = -0.2043514
+scale = Vector2(2.15, 1.75)
+points = PackedVector2Array(-394.02606, -260.19644, -554.02606, -441.3393, -694.02606, -445.3393, -688.44464, -187.05359, -445.654, -161.3393, -347.51443, 23.803572, -236.35165, -189.91072, -393.09583, -259.0536, -445.654, -164.19644)
+default_color = Color(0.81960785, 0.58431375, 0, 0.6509804)
+script = ExtResource("2_6iorx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="constellation_line" unique_id=139512315]
+libraries/ = SubResource("AnimationLibrary_tmt67")
+
+[node name="note_container" type="Node2D" parent="." unique_id=1616491492]
+script = ExtResource("3_oqule")
+
+[node name="note2" parent="note_container" unique_id=1990359077 instance=ExtResource("4_o71ak")]
+position = Vector2(-1043, -476)
+note_existence_length = 8
+
+[node name="note4" parent="note_container" unique_id=1251665049 instance=ExtResource("4_o71ak")]
+position = Vector2(-755, -530)
+note_existence_length = 8
+
+[node name="note5" parent="note_container" unique_id=2081710250 instance=ExtResource("4_o71ak")]
+position = Vector2(-363, -291)
+note_existence_length = 8
+
+[node name="note6" parent="note_container" unique_id=914425470 instance=ExtResource("4_o71ak")]
+position = Vector2(-10.999996, -235.00003)
+note_existence_length = 8
+
+[node name="note7" parent="note_container" unique_id=1569028964 instance=ExtResource("4_o71ak")]
+position = Vector2(-163, 164)
+note_existence_length = 8
+
+[node name="note3" parent="note_container" unique_id=276854321 instance=ExtResource("4_o71ak")]
+position = Vector2(-439, -89.000015)
+note_existence_length = 8
+
+[node name="note8" parent="note_container" unique_id=1070051316 instance=ExtResource("4_o71ak")]
+position = Vector2(-390, -186)
+note_existence_length = 8
+
+[node name="note" parent="note_container" unique_id=1425695791 instance=ExtResource("4_o71ak")]
+position = Vector2(-941, -42.000015)
+note_existence_length = 8
+
+[node name="existence_timer" type="Timer" parent="." unique_id=1942558551]
+one_shot = true

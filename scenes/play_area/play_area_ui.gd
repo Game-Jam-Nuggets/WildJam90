@@ -16,6 +16,7 @@ func _ready():
 func update_score(p_new_score: int, p_new_score_max: int) -> void:
 	var new_score_ratio := 0.0
 	if p_new_score_max > 0:
-		new_score_ratio = p_new_score / float(p_new_score_max)
+		var music_progress = AudioManager.music_player.get_playback_position()/AudioManager.music_player.stream.get_length()
+		new_score_ratio = lerpf(0.0, p_new_score / float(p_new_score_max), music_progress)
 	star_progress_bar.progress = new_score_ratio
 	points_label.text = str(p_new_score)
