@@ -123,9 +123,9 @@ texture = ExtResource("10_ycsjx")
 
 [node name="color_mask" type="ColorRect" parent="." unique_id=1662304092]
 layout_mode = 0
-offset_left = -67.0
+offset_left = -114.0
 offset_top = -31.0
-offset_right = 1852.0
+offset_right = 1805.0
 offset_bottom = 1044.0
 scale = Vector2(1.0547624, 1.0689713)
 color = Color(0.012617188, 0.012617188, 0.012617188, 1)
@@ -155,20 +155,20 @@ label_settings = SubResource("LabelSettings_yv40p")
 [node name="A species" type="Label" parent="Subtitles/paragraph1" unique_id=1725496567]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 762.0
+offset_left = 733.0
 offset_top = 920.0
-offset_right = 1479.0
-offset_bottom = 1034.0
+offset_right = 1450.0
+offset_bottom = 967.0
 text = "a species that thrived for many moons,"
 label_settings = SubResource("LabelSettings_yv40p")
 
 [node name="Has succumb" type="Label" parent="Subtitles/paragraph1" unique_id=83268046]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 480.0
-offset_top = 978.0
-offset_right = 1242.0
-offset_bottom = 1092.0
+offset_left = 588.0
+offset_top = 982.0
+offset_right = 1350.0
+offset_bottom = 1033.0
 text = "has succumbed to the error of their ways."
 label_settings = SubResource("LabelSettings_yv40p")
 
@@ -184,46 +184,51 @@ offset_left = 480.0
 offset_top = 920.0
 offset_right = 931.0
 offset_bottom = 1034.0
+scale = Vector2(0.9, 0.9)
 text = "A new order has risen..."
 label_settings = SubResource("LabelSettings_yv40p")
 
 [node name="more evolved" type="Label" parent="Subtitles/paragraph2" unique_id=1157219299]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 944.0
+offset_left = 879.0
 offset_top = 920.0
-offset_right = 1319.0
-offset_bottom = 1034.0
+offset_right = 1173.0
+offset_bottom = 964.0
+scale = Vector2(0.9, 0.9)
 text = "more evolved..."
 label_settings = SubResource("LabelSettings_yv40p")
 
 [node name="more intelligent" type="Label" parent="Subtitles/paragraph2" unique_id=1072516831]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 1239.0
+offset_left = 1141.0
 offset_top = 920.0
-offset_right = 1614.0
-offset_bottom = 1034.0
+offset_right = 1516.0
+offset_bottom = 964.0
+scale = Vector2(0.9, 0.9)
 text = "more intelligent..."
 label_settings = SubResource("LabelSettings_yv40p")
 
 [node name="more sentient" type="Label" parent="Subtitles/paragraph2" unique_id=1534236190]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 480.0
+offset_left = 733.0
 offset_top = 978.0
-offset_right = 855.0
-offset_bottom = 1092.0
+offset_right = 1010.77783
+offset_bottom = 1022.0
+scale = Vector2(0.9, 0.9)
 text = "more sentient:"
 label_settings = SubResource("LabelSettings_yv40p")
 
 [node name="The Anura" type="Label" parent="Subtitles/paragraph2" unique_id=2120802568]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 750.0
+offset_left = 985.0
 offset_top = 978.0
-offset_right = 1125.0
-offset_bottom = 1092.0
+offset_right = 1194.0
+offset_bottom = 1022.0
+scale = Vector2(0.9, 0.9)
 text = "The Anura."
 label_settings = SubResource("LabelSettings_yv40p")
 
@@ -238,38 +243,43 @@ layout_mode = 0
 offset_left = 480.0
 offset_top = 920.0
 offset_right = 940.0
-offset_bottom = 1034.0
+offset_bottom = 965.0
+scale = Vector2(0.87, 0.87)
 text = "Cosmic amphibian power,"
 label_settings = SubResource("LabelSettings_yv40p")
 
 [node name="commanding" type="Label" parent="Subtitles/paragraph3" unique_id=205915417]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 959.0
-offset_top = 920.0
-offset_right = 1521.0
-offset_bottom = 1034.0
-text = "commanding the elemements in"
+offset_left = 879.99994
+offset_top = 919.99994
+offset_right = 1442.0
+offset_bottom = 966.99994
+scale = Vector2(0.87, 0.87)
+text = "commanding the elemements in and"
 label_settings = SubResource("LabelSettings_yv40p")
 
 [node name="and around" type="Label" parent="Subtitles/paragraph3" unique_id=1941245966]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 480.0
+offset_left = 528.0
 offset_top = 978.0
-offset_right = 855.0
-offset_bottom = 1092.0
-text = "and around us, "
+offset_right = 743.0
+offset_bottom = 1022.0
+rotation = 0.0008225808
+scale = Vector2(0.87, 0.87)
+text = "around us, "
 label_settings = SubResource("LabelSettings_yv40p")
 
 [node name="with a force" type="Label" parent="Subtitles/paragraph3" unique_id=369461558]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 795.00006
-offset_top = 982.00006
-offset_right = 1608.0
-offset_bottom = 1060.0
-scale = Vector2(0.92202723, 0.92202723)
+offset_left = 706.0
+offset_top = 978.00006
+offset_right = 1475.1221
+offset_bottom = 1023.5518
+rotation = 0.0008225808
+scale = Vector2(0.86982304, 0.86982304)
 text = "with a force that no human can withstand."
 label_settings = SubResource("LabelSettings_yv40p")
 
@@ -291,30 +301,30 @@ label_settings = SubResource("LabelSettings_yv40p")
 [node name="unwavering" type="Label" parent="Subtitles/paragraph4" unique_id=760960666]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 1232.0
+offset_left = 1173.0
 offset_top = 920.0
-offset_right = 1607.0
-offset_bottom = 1034.0
+offset_right = 1437.0
+offset_bottom = 965.0
 text = "unwavering..."
 label_settings = SubResource("LabelSettings_yv40p")
 
 [node name="uncomprising" type="Label" parent="Subtitles/paragraph4" unique_id=697728767]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 480.0
+offset_left = 588.0
 offset_top = 978.0
-offset_right = 898.0
-offset_bottom = 1092.0
+offset_right = 1006.0
+offset_bottom = 1022.0
 text = "and uncompromising..."
 label_settings = SubResource("LabelSettings_yv40p")
 
 [node name="all but one" type="Label" parent="Subtitles/paragraph4" unique_id=2139404141]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 917.0
+offset_left = 1004.0
 offset_top = 978.0
-offset_right = 1717.0
-offset_bottom = 1056.0
+offset_right = 1232.0
+offset_bottom = 1022.0
 text = "all but one."
 label_settings = SubResource("LabelSettings_yv40p")
 
@@ -327,38 +337,42 @@ offset_bottom = 40.0
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 480.0
-offset_top = 920.0
-offset_right = 585.0
-offset_bottom = 1034.0
+offset_top = 924.0
+offset_right = 588.0
+offset_bottom = 968.0
+scale = Vector2(0.9, 0.9)
 text = "Hyla,"
 label_settings = SubResource("LabelSettings_yv40p")
 
 [node name="a brilliant" type="Label" parent="Subtitles/paragraph5" unique_id=386791480]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 598.0
-offset_top = 920.0
-offset_right = 1046.0
-offset_bottom = 1034.0
+offset_left = 582.0
+offset_top = 924.0
+offset_right = 1050.0
+offset_bottom = 968.0
+rotation = 0.0011701292
+scale = Vector2(0.9, 0.9)
 text = "a brilliant star-mapper;"
 label_settings = SubResource("LabelSettings_yv40p")
 
 [node name="rejected" type="Label" parent="Subtitles/paragraph5" unique_id=1019027086]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 1064.0
-offset_top = 920.0
-offset_right = 1490.0
-offset_bottom = 1034.0
+offset_left = 1004.0
+offset_top = 924.0
+offset_right = 1441.0
+offset_bottom = 968.0
+scale = Vector2(0.9, 0.9)
 text = "rejected from the order"
 label_settings = SubResource("LabelSettings_yv40p")
 
 [node name="for his" type="Label" parent="Subtitles/paragraph5/rejected" unique_id=2026731226]
 layout_mode = 0
-offset_left = -584.0
-offset_top = 58.0
-offset_right = 72.0
-offset_bottom = 172.0
+offset_left = -398.88885
+offset_top = 64.44446
+offset_right = 257.11108
+offset_bottom = 108.44446
 text = "for his curiousity towards humans."
 label_settings = SubResource("LabelSettings_yv40p")
 
@@ -373,36 +387,37 @@ layout_mode = 0
 offset_left = 480.0
 offset_top = 920.0
 offset_right = 1233.0
-offset_bottom = 1034.0
+offset_bottom = 967.0
 text = "Fascinated with something so pleasantly"
 label_settings = SubResource("LabelSettings_yv40p")
 
 [node name="harmonious" type="Label" parent="Subtitles/paragraph6" unique_id=1348718181]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 1252.0
+offset_left = 1228.0001
 offset_top = 920.0
-offset_right = 1504.0
-offset_bottom = 1034.0
+offset_right = 1489.0001
+offset_bottom = 964.0
+rotation = 0.0013103291
 text = "harmonious..."
 label_settings = SubResource("LabelSettings_yv40p")
 
 [node name="music" type="Label" parent="Subtitles/paragraph6" unique_id=1984342776]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 489.0
-offset_top = 978.0
-offset_right = 741.0
-offset_bottom = 1092.0
+offset_left = 879.0
+offset_top = 982.0
+offset_right = 1016.0
+offset_bottom = 1029.0
 text = "music."
 label_settings = SubResource("LabelSettings_yv40p")
 
 [node name="paragraph7" type="Control" parent="Subtitles" unique_id=1922093731]
 anchors_preset = 0
 offset_left = -96.0
-offset_top = -173.00002
+offset_top = -178.0
 offset_right = -56.0
-offset_bottom = -133.00002
+offset_bottom = -138.0
 scale = Vector2(1.2, 1.2)
 
 [node name="Without the order" type="Label" parent="Subtitles/paragraph7" unique_id=1585758069]
@@ -411,7 +426,7 @@ layout_mode = 0
 offset_left = 485.0
 offset_top = 921.0
 offset_right = 1053.0
-offset_bottom = 999.0
+offset_bottom = 965.0
 scale = Vector2(0.7, 0.7)
 text = "Without the order, he is weak,"
 label_settings = SubResource("LabelSettings_yv40p")
@@ -419,32 +434,33 @@ label_settings = SubResource("LabelSettings_yv40p")
 [node name="But nothing is" type="Label" parent="Subtitles/paragraph7" unique_id=1374619041]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 894.0
-offset_top = 920.0
-offset_right = 1494.0
-offset_bottom = 998.0
+offset_left = 867.5
+offset_top = 921.6667
+offset_right = 1482.5
+offset_bottom = 965.6667
 scale = Vector2(0.7, 0.7)
 text = "but nothing is stopping him from"
 label_settings = SubResource("LabelSettings_yv40p")
 
-[node name="From finding" type="Label" parent="Subtitles/paragraph7/But nothing is" unique_id=1853331406]
+[node name="From recharting" type="Label" parent="Subtitles/paragraph7/But nothing is" unique_id=1853331406]
 layout_mode = 0
-offset_left = -578.5715
-offset_top = 62.130398
-offset_right = 332.42853
-offset_bottom = 176.1304
+offset_left = -509.5238
+offset_top = 63.09497
+offset_right = 302.61896
+offset_bottom = 109.29797
+scale = Vector2(0.9, 0.9)
 text = "re-charting the stars to journey back home,"
 label_settings = SubResource("LabelSettings_yv40p")
 
 [node name="One beat" type="Label" parent="Subtitles/paragraph7" unique_id=581521715]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 1070.0001
-offset_top = 964.0
-offset_right = 1412.0001
-offset_bottom = 1078.0
+offset_left = 1016.6665
+offset_top = 965.8333
+offset_right = 1361.6665
+offset_bottom = 1009.8333
 rotation = -0.0031667831
-scale = Vector2(0.7, 0.7)
+scale = Vector2(0.66, 0.66)
 text = "one beat at a time."
 label_settings = SubResource("LabelSettings_yv40p")
 

@@ -39,6 +39,7 @@ func _process(delta: float) -> void:
 	if(current_song_time == 9):
 		var tween = create_tween()
 		tween.tween_property($Story1, "modulate:a", 1, 1)
+		tween.parallel()
 		tween.tween_property(subtitle_text[0], "modulate:a", 1, 1)
 		
 		$star.emitting = false
@@ -65,13 +66,13 @@ func _process(delta: float) -> void:
 		# "A new order"
 		tween.tween_property(subtitle_text[3], "modulate:a", 1, 0.2)
 	
-	if(current_song_time == 19):
+	if(current_song_time == 18):
 		var tween = create_tween()
 		tween.tween_property($Story2, "modulate:a", 1, 1)
 		tween.tween_property(subtitle_text[4], "modulate:a", 1, 1)
 		# "more evolved"
 	
-	if(current_song_time == 21):
+	if(current_song_time == 20):
 		var tween = create_tween()
 		tween.tween_property(subtitle_text[5], "modulate:a", 1, 1)
 		# "more intelligent"
@@ -164,7 +165,7 @@ func _process(delta: float) -> void:
 		# "A brilliant"
 		tween.tween_property(subtitle_text[17], "modulate:a", 1, 1)
 	
-	if(current_song_time == 48):
+	if(current_song_time == 47):
 		var tween = create_tween()
 		
 		# "Rejected"
@@ -175,7 +176,7 @@ func _process(delta: float) -> void:
 		
 		# Fade out paragraph 5
 		tween.tween_property(subtitle_nodes[4], "modulate:a", 0, 0.2)
-		
+		tween.parallel()
 		# "Fascinated"
 		tween.tween_property(subtitle_text[19], "modulate:a", 1, 0.2)
 		
