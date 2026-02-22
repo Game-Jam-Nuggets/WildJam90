@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cpkd2qxnmvqos" path="res://assets/visual/sprites/Hyla_Arm18px-1.png" id="6_x1u1l"]
 [ext_resource type="AudioStream" uid="uid://c328mmnq61f24" path="res://assets/audio/game/sword slash 3.ogg" id="7_6aff1"]
 [ext_resource type="AudioStream" uid="uid://cs00c68osq7vj" path="res://assets/audio/game/sword slash 4.ogg" id="8_rq3ga"]
+[ext_resource type="Texture2D" uid="uid://ckxnd4ykplpra" path="res://assets/visual/sprites/Hyla_Shadow.png" id="9_mot0m"]
 
 [sub_resource type="Animation" id="Animation_x1u1l"]
 length = 0.001
@@ -111,6 +112,18 @@ tracks/4/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Shadow:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -24)]
+}
 
 [sub_resource type="Animation" id="Animation_1osun"]
 resource_name = "walk_loop"
@@ -193,6 +206,18 @@ tracks/5/keys = {
 "update": 0,
 "values": [0.0, -0.17453292, 0.0, 0.17453292]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Shadow:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.90000004),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-8, -24), Vector2(-6, -22), Vector2(8, -24), Vector2(6, -22)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lle8x"]
 _data = {
@@ -204,6 +229,10 @@ _data = {
 script = ExtResource("1_1osun")
 footstep_sounds = Array[AudioStream]([ExtResource("2_rrpej"), ExtResource("3_x1u1l"), ExtResource("4_7rp17")])
 sword_slash_sounds = Array[AudioStream]([ExtResource("5_yvxhs"), ExtResource("6_mot0m"), ExtResource("7_6aff1"), ExtResource("8_rq3ga")])
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=1858051354]
+position = Vector2(0, -24)
+texture = ExtResource("9_mot0m")
 
 [node name="HylaBody" type="Node2D" parent="." unique_id=782083511]
 rotation = -0.21816616
