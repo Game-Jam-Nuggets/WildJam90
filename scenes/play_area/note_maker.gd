@@ -112,3 +112,4 @@ func _fetch_group_special(group_name : Enums.Groups):
 
 func _end_song():
 	Events.level_ended.emit()
+	SceneManager.load_level_select_scene()
