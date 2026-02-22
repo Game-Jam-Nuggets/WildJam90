@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://modlaqaoey48"]
+
+[ext_resource type="Script" uid="uid://dyby1ixg247od" path="res://scenes/shader_compilator/shader_compilator.gd" id="1_rr5i1"]
+[ext_resource type="Texture2D" uid="uid://yjlpsiv3k6f5" path="res://icon.svg" id="2_v88p8"]
+
+[node name="ShaderCompilator" type="Node2D" unique_id=1799229798]
+scale = Vector2(1e-05, 1e-05)
+script = ExtResource("1_rr5i1")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=548528551]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1e-05, 1e-05)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1260871930]
+visibility_layer = 0
+texture = ExtResource("2_v88p8")
