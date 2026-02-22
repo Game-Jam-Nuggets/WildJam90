@@ -1,10 +1,12 @@
 extends Control
 
 @export var level_select_sound: AudioStream
+@export var main_theme: AudioStream
 @onready var hi_score_level_1: Label = $HBoxContainer/MarginContainer/GridContainer/VBoxContainer2/HiScoreLevel1
 @onready var hi_score_level_2: Label = $HBoxContainer/MarginContainer/GridContainer/VBoxContainer/HiScoreLevel2
 
 func _ready() -> void:
+	AudioManager.set_music(main_theme)
 	hi_score_level_1.text = str(SaveManager.get_score(Level_Info.LEVEL_ID.LEVEL_1))
 	hi_score_level_2.text = str(SaveManager.get_score(Level_Info.LEVEL_ID.LEVEL_2))
 

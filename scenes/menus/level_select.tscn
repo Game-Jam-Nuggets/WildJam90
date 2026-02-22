@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://dtk65d7eihlkc" path="res://scenes/menus/level_select.gd" id="2_vgm8m"]
 [ext_resource type="AudioStream" uid="uid://laxnk0mydqha" path="res://assets/audio/ui/Level Select.ogg" id="3_p7c2r"]
 [ext_resource type="Texture2D" uid="uid://iwff1rpba7k4" path="res://assets/visual/ui/album_arts/chart_album_art.jpg" id="4_p7c2r"]
+[ext_resource type="AudioStream" uid="uid://b3d7w4a26s6pl" path="res://assets/audio/music/Hypha_title_theme_120_bpm.wav" id="4_tnwi7"]
 [ext_resource type="Texture2D" uid="uid://cyy8eihq673lt" path="res://assets/visual/ui/album_arts/stars_on_map_album_art.jpg" id="5_pwdrg"]
 [ext_resource type="FontFile" uid="uid://b53i0n502ixiy" path="res://assets/visual/ui/main_menu/body_font.ttf" id="7_pwdrg"]
 
@@ -23,6 +24,7 @@ grow_vertical = 2
 theme = ExtResource("1_vgm8m")
 script = ExtResource("2_vgm8m")
 level_select_sound = ExtResource("3_p7c2r")
+main_theme = ExtResource("4_tnwi7")
 
 [node name="BG" type="TextureRect" parent="." unique_id=538344818]
 layout_mode = 0
