@@ -33,7 +33,7 @@ func move_to_next_path_point() -> void:
 		if tween and tween.is_running():
 			tween.kill()
 			tween = null
-		tween = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+		tween = create_tween().set_trans(Tween.TRANS_LINEAR)
 		tween.parallel().tween_property(self, "global_position", tree_path.get_path_position(path_point), speed)
 		tween.parallel().tween_property(self, "scale", tree_path.get_path_scale(path_point), speed)
 		

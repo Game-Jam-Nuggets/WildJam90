@@ -912,6 +912,7 @@ script = ExtResource("1_70784")
 z_index = 1
 
 [node name="positioners" type="Node2D" parent="play_area" unique_id=722837137]
+visible = false
 z_index = 1
 
 [node name="grouping_positioner_0" type="Node2D" parent="play_area/positioners" unique_id=1155303027]
