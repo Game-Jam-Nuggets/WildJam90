@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://crnbxxoijrecg" path="res://assets/audio/game/Star Break 2.ogg" id="3_ootjf"]
 [ext_resource type="AudioStream" uid="uid://27puu8x3hot3" path="res://assets/audio/game/Star Break 3.ogg" id="4_r2pak"]
 [ext_resource type="AudioStream" uid="uid://dbrtnhvh63v26" path="res://assets/audio/game/Star Break 4.ogg" id="5_wpmfr"]
-[ext_resource type="Script" uid="uid://bixeanyj0um5i" path="res://scenes/notes/particle_emitter_hit.gd" id="6_ootjf"]
+[ext_resource type="PackedScene" uid="uid://3wnar3ip8nvo" path="res://scenes/notes/particle_emitter_hit.tscn" id="6_tjdnf"]
 [ext_resource type="Texture2D" uid="uid://cvfiwyeibwsmm" path="res://assets/visual/sprites/anim_star-spin_spritesheet.png" id="7_tjdnf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w7eif"]
@@ -389,34 +389,6 @@ _data = {
 &"spawning": SubResource("Animation_xjeh5")
 }
 
-[sub_resource type="Gradient" id="Gradient_6ioka"]
-offsets = PackedFloat32Array(0, 0.5327869)
-colors = PackedColorArray(1, 1, 0.24705882, 1, 0.8530033, 0.36843076, 7.70092e-07, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_ootjf"]
-gradient = SubResource("Gradient_6ioka")
-
-[sub_resource type="Curve" id="Curve_r2pak"]
-_limits = [0.0, 54.19, 0.0, 1.0]
-_data = [Vector2(0, 10.350899), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_wpmfr"]
-curve = SubResource("Curve_r2pak")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yup7j"]
-particle_flag_disable_z = true
-emission_shape = 2
-emission_sphere_radius = 20.0
-spread = 180.0
-orbit_velocity_min = 1.1080002
-orbit_velocity_max = 1.1080002
-radial_velocity_min = 134.30997
-radial_velocity_max = 155.81998
-gravity = Vector3(0, 0, 0)
-scale_curve = SubResource("CurveTexture_wpmfr")
-color_ramp = SubResource("GradientTexture1D_ootjf")
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_tjdnf"]
 atlas = ExtResource("7_tjdnf")
 region = Rect2(0, 0, 32, 32)
@@ -516,15 +488,7 @@ libraries/ = SubResource("AnimationLibrary_xjeh5")
 [node name="existence_timer" type="Timer" parent="." unique_id=859043313]
 one_shot = true
 
-[node name="particle_emitter_hit" type="GPUParticles2D" parent="." unique_id=849446216]
-emitting = false
-amount = 12
-lifetime = 0.3
-one_shot = true
-explosiveness = 0.87
-fixed_fps = 120
-process_material = SubResource("ParticleProcessMaterial_yup7j")
-script = ExtResource("6_ootjf")
+[node name="particle_emitter_hit" parent="." unique_id=1676785552 instance=ExtResource("6_tjdnf")]
 
 [node name="StarSprite" type="AnimatedSprite2D" parent="." unique_id=1679595648]
 visible = false
@@ -538,4 +502,3 @@ frame_progress = 0.40911946
 [connection signal="mouse_shape_exited" from="area_miss_collider" to="." method="_on_area_miss_collider_mouse_shape_exited"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_tree_animation_finished"]
 [connection signal="timeout" from="existence_timer" to="." method="_on_existence_timer_timeout"]
-[connection signal="finished" from="particle_emitter_hit" to="particle_emitter_hit" method="_on_finished"]

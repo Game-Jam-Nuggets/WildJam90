@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://3wnar3ip8nvo"]
+
+[ext_resource type="Script" uid="uid://bixeanyj0um5i" path="res://scenes/notes/particle_emitter_hit.gd" id="1_i4ee6"]
+[ext_resource type="Material" uid="uid://1uvl8pn3bk6v" path="res://scenes/notes/particle_emitter_hit_material.tres" id="1_u7svn"]
+
+[node name="particle_emitter_hit" type="GPUParticles2D" unique_id=1676785552]
+emitting = false
+amount = 12
+lifetime = 0.3
+one_shot = true
+explosiveness = 0.87
+fixed_fps = 120
+process_material = ExtResource("1_u7svn")
+script = ExtResource("1_i4ee6")
+
+[connection signal="finished" from="." to="." method="_on_finished"]
