@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dff2qerboyywc"]
 
 [ext_resource type="Script" uid="uid://78evpf37lpb2" path="res://scenes/play_area/background_container.gd" id="1_70784"]
-[ext_resource type="Script" path="res://scenes/play_area/intro_cover.gd" id="1_p06x2"]
+[ext_resource type="Script" uid="uid://brs81lk3t0r50" path="res://scenes/play_area/intro_cover.gd" id="1_p06x2"]
 [ext_resource type="Script" uid="uid://df0rrtau0ynkj" path="res://scenes/play_area/positioner_debug_mesh.gd" id="2_jygib"]
 [ext_resource type="Script" uid="uid://b58x0n1lg8eev" path="res://scenes/play_area/note_maker.gd" id="3_1n7fa"]
 [ext_resource type="PackedScene" uid="uid://b7jufijw4whu2" path="res://scenes/star_progress_bar/star_progress_bar.tscn" id="5_tdb20"]
@@ -763,3 +763,4 @@ scale = Vector2(3, 3)
 [node name="root_menu" type="CanvasLayer" parent="." unique_id=521983113]
 
 [node name="Cursor" parent="." unique_id=1424990589 instance=ExtResource("10_edyb2")]
+z_index = 1
